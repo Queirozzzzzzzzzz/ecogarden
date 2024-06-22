@@ -1,0 +1,80 @@
+<resources>
+    <!-- DEFAULT -->
+    <string name="app_name" translatable="false">Estufa sem Estufa</string>
+    <string name="explain_me_text">(Why?)</string>
+    <string name="next_btn">NEXT</string>
+    <string name="back_btn">GO BACK</string>
+    <string name="cancel_btn">CANCEL</string>
+    <string name="create_btn">CREATE</string>
+    <string name="finish_btn">FINISH</string>
+
+    <!-- DESCRIPTIONS -->
+    <string name="logo_description" translatable="false">logo</string>
+    <string name="theme_icon_description" translatable="false">theme</string>
+    <string name="checkbox_description" translatable="false">checkbox</string>
+
+    <!-- HOME -->
+    <string name="home_btn_create_environment">CREATE ENVIRONMENT</string>
+    <string name="home_btn_access_environments">ENVIRONMENTS</string>
+    <string name="home_logo_title" translatable="false">ESTUFA SEM ESTUFA</string>
+
+    <!-- NEW ENVIRONMENT PLACE -->
+
+    <string name="new_environment_title">NEW ENVIRONMENT</string>
+    <string name="new_environment_place_subtitle">PLANTING LOCATION</string>
+    <string name="new_environment_place_closed_environments_text">Closed environment (Houses, Backyards…)</string>
+    <string name="new_environment_place_open_environments_text">Open environment (Parks, Forests…)</string>
+    <string name="new_environment_place_location_text">Location</string>
+    <string name="new_environment_place_photo_text">Environment photo</string>
+
+    <!-- NEW ENVIRONMENT GOAL -->
+
+    <string name="new_environment_goal_subtitle">GOAL</string>
+    <string name="new_environment_goal_aesthetic_option">Beautiful environment</string>
+    <string name="new_environment_goal_air_option">Air filtering</string>
+    <string name="new_environment_goal_medicinal_option">Medicinal plants</string>
+    <string name="new_environment_goal_spices_option">Spices</string>
+
+    <!-- NEW ENVIRONMENT PLANTS -->
+
+    <string name="new_environment_plants_subtitle">PLANTS</string>
+    <string name="new_environment_plants_create_plant_btn">+ NEW PLANT</string>
+    <string name="new_environment_plants_plants_title">PLANTS</string>
+
+    <!-- NEW PLANT -->
+    <string name="new_plant_subtitle">PLANT</string>
+    <string name="new_plant_search">SEARCH PLANT</string>
+    <string name="new_plant_name">NAME</string>
+    <string name="new_plant_humidity">HUMIDITY</string>
+    <string name="new_plant_ph">pH</string>
+    <string name="new_plant_light_intensity">LIGHT INTENSITY</string>
+    <string name="new_plant_light_duration">LIGHT DURATION</string>
+    <string name="new_plant_soil_conductivity">SOIL CONDUCTIVITY</string>v
+    <string name="new_plant_soil_salinity">SOIL SALINITY</string>
+    <string name="new_plant_temperature">TEMPERATURE</string>
+
+    <string name="new_plant_search_hint">Name</string>
+    <string name="new_plant_name_hint">Name</string>
+    <string name="new_plant_humidity_hint">Humid</string>
+    <string name="new_plant_ph_hint">0</string>
+    <string name="new_plant_light_intensity_hint">Strong</string>
+    <string name="new_plant_light_duration_hint">0h</string>
+    <string name="new_plant_soil_conductivity_hint">0 (μS/cm)</string>
+    <string name="new_plant_soil_salinity_hint">0 (mg/L)</string>
+    <string name="new_plant_temperature_hint">0 (°C)</string>
+
+    <!-- NEW ENVIRONMENT TIMETABLES -->
+
+    <string name="new_environment_timetables_subtitle">TIMETABLES</string>
+    <string name="new_environment_timetables_create_plant_btn">+ NEW TIMETABLE</string>
+    <string name="new_environment_timetables_timetables_title">TIMETABLES</string>
+    <string name="new_environment_timetables_time_hint" translatable="false">00:00</string>
+    <string name="new_environment_timetables_times_between">to</string>
+
+    <!-- NEW TIMETABLE -->
+    <string name="new_timetable_subtitle">TIMETABLE</string>
+    <string name="new_timetable_start">START</string>
+    <string name="new_timetable_finish">FINISH</string>
+
+
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DEFAULTS -->
+    <dimen name="default_bottom_margin">35dp</dimen>
+
+    <!-- MAIN -->
+    <dimen name="main_logo_width">150dp</dimen>
+
+    <!-- HOME -->
+    <dimen name="home_logo_width">125dp</dimen>
+    <dimen name="home_theme_icon_width">35dp</dimen>
+    <dimen name="home_theme_icon_height">35dp</dimen>
+    <dimen name="home_theme_icon_margin">50dp</dimen>
+
+    <!-- HEADER -->
+    <dimen name="header_height">75dp</dimen>"
+
+    <!-- TEXT -->
+    <dimen name="title_size">30sp</dimen>"
+    <dimen name="subtitle_size">22sp</dimen>
+    <dimen name="up_text_size">20sp</dimen>
+    <dimen name="text_size">18sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="btn_text_size">24sp</dimen>
+
+    <!-- DEFAULT BUTTON -->
+    <dimen name="btn_width">275dp</dimen>
+    <dimen name="btn_height">55dp</dimen>
+    <dimen name="btn_radius">3dp</dimen>
+    <dimen name="btn_padding">5dp</dimen>
+    <dimen name="btn_margin">10dp</dimen>
+
+    <!-- CANCEL BUTTON -->
+    <dimen name="cancel_btn_width">275dp</dimen>
+    <dimen name="cancel_btn_height">25dp</dimen>
+    <dimen name="cancel_btn_radius">3dp</dimen>
+    <dimen name="cancel_btn_padding">5dp</dimen>
+    <dimen name="cancel_btn_margin">10dp</dimen>
+
+    <!-- SMALL BUTTON -->
+    <dimen name="small_btn_width">100dp</dimen>
+    <dimen name="small_btn_height">25dp</dimen>
+    <dimen name="small_btn_radius">3dp</dimen>
+    <dimen name="small_btn_padding">5dp</dimen>
+    <dimen name="small_btn_margin">10dp</dimen>
+
+    <!-- CHECKBOX -->
+    <dimen name="checkbox_width">25dp</dimen>
+    <dimen name="checkbox_height">25dp</dimen>
+    <dimen name="checkbox_margin">15dp</dimen>
+
+    <!-- ICON BUTTON -->
+    <dimen name="icon_width">35dp</dimen>
+    <dimen name="icon_height">35dp</dimen>
+    <dimen name="icon_margin">10dp</dimen>
+
+    <!-- INPUT -->
+    <dimen name="input_width">275dp</dimen>
+    <dimen name="input_height">55dp</dimen>
+    <dimen name="input_padding">5dp</dimen>
+    <dimen name="input_margin_top">15dp</dimen>
+</resources>

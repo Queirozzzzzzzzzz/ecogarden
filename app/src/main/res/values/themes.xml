@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="Base.Theme.EstufaSemEstufa" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    <style name="Theme.EstufaSemEstufa" parent="Base.Theme.EstufaSemEstufa" />
+</resources>
