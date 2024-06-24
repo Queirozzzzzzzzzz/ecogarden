@@ -87,6 +87,7 @@
     <dimen name="input_margin_top">15dp</dimen>
 
     <!-- GALLERY -->
-    <dimen name="gallery_image_height">155dp</dimen>
+    <dimen name="gallery_image_width">350dp</dimen>
+    <dimen name="gallery_image_height">275dp</dimen>
 
 </resources>

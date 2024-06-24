@@ -122,7 +122,7 @@
 
                     <ImageView
                         android:id="@+id/image_1_img"
-                        android:layout_width="wrap_content"
+                        android:layout_width="@dimen/gallery_image_width"
                         android:layout_height="@dimen/gallery_image_height"
                         android:layout_marginTop="@dimen/default_top_margin"
                         android:src="@drawable/img_placeholder" />
