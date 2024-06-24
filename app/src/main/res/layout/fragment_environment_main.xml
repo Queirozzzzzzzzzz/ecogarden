@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnvironmentActivity">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".fragments.EnvironmentMainFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            tools:ignore="MissingConstraints">
+
+            <View
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_height"
+                android:background="@color/primary"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AMBIENTE 1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/header"
+                app:layout_constraintEnd_toEndOf="@id/header"
+                app:layout_constraintStart_toStartOf="@id/header"
+                app:layout_constraintTop_toTopOf="@id/header" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/default_linear_layout_padding">
+
+                <LinearLayout
+                    android:id="@+id/open_gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/btn_margin"
+                    android:gravity="center"
+                    android:onClick="galleryFragment"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/embed_btn_image_width"
+                        android:layout_height="@dimen/embed_btn_image_height"
+                        android:src="@drawable/gallery_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-8dp"
+                        android:background="@drawable/right_round_rectangle"
+                        android:text="@string/environment_main_gallery_btn"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/open_tasks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/btn_margin"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:onClick="tasksFragment">
+
+                    <ImageView
+                        android:layout_width="@dimen/embed_btn_image_width"
+                        android:layout_height="@dimen/embed_btn_image_height"
+                        android:src="@drawable/tasks_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-8dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/right_round_rectangle"
+                        android:text="@string/environment_main_tasks_btn"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/environment_main_soil"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/up_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_section_margin_top"
+                    android:text="@string/environment_main_soil_ph"
+                    android:textColor="@color/primary_light"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/soil_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_section_margin_top"
+                    android:text="@string/environment_main_soil_umidity"
+                    android:textColor="@color/primary_light"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/soil_umidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Úmido"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textSize="@dimen/text_size" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_section_margin_top"
+                    android:text="@string/environment_main_soil_conductivity"
+                    android:textColor="@color/primary_light"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/soil_conductivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11.29 μS/cm"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_section_margin_top"
+                    android:text="@string/environment_main_soil_salinity"
+                    android:textColor="@color/primary_light"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/soil_salinity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="97 mg/L"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/environment_main_weather"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/up_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_section_margin_top"
+                    android:text="@string/environment_main_weather_temperature"
+                    android:textColor="@color/primary_light"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/weather_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="27°C"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_section_margin_top"
+                    android:text="@string/environment_main_weather_light_intensity"
+                    android:textColor="@color/primary_light"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/weather_light_intensity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forte"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/plant_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_dark"
+                android:minHeight="150dp"
+                android:orientation="vertical"
+                android:padding="@dimen/default_linear_layout_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/plant_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_small_margin"
+                        android:text="PLANTA 1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/up_text_size"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin">
+
+                    <Button
+                        android:id="@+id/plant_1_edit_btn"
+                        android:layout_width="@dimen/small_btn_width"
+                        android:layout_height="@dimen/small_btn_height"
+                        android:background="@drawable/default_button"
+                        android:text="@string/edit_btn"
+                        android:textColor="@color/white"
+                        android:onClick="editPlantFragment"
+                        android:textSize="@dimen/small_text_size" />
+
+                    <Button
+                        android:id="@+id/plant_1_delete_btn"
+                        android:layout_width="@dimen/small_btn_width"
+                        android:layout_height="@dimen/small_btn_height"
+                        android:layout_marginStart="@dimen/default_small_margin"
+                        android:background="@drawable/default_button"
+                        android:text="@string/delete_btn"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/small_text_size" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
+                    android:background="@drawable/round_rectangle"
+                    android:backgroundTint="@color/yellow_dark"
+                    android:padding="@dimen/default_background_color_padding"
+                    android:text="@string/environment_main_plant_light_duration"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/plant_1_light_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="30 minutos restantes"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
+                    android:background="@drawable/round_rectangle"
+                    android:backgroundTint="@color/green_light"
+                    android:padding="@dimen/default_background_color_padding"
+                    android:text="@string/environment_main_plant_light_intensity"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/plant_1_light_intensity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="Boa"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
+                    android:background="@drawable/round_rectangle"
+                    android:backgroundTint="@color/green_light"
+                    android:padding="@dimen/default_background_color_padding"
+                    android:text="@string/environment_main_plant_umidity"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/plant_1_umidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="Boa"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
+                    android:background="@drawable/round_rectangle"
+                    android:backgroundTint="@color/red_light"
+                    android:padding="@dimen/default_background_color_padding"
+                    android:text="@string/environment_main_plant_ph"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/plant_1_ph"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="4 níveis abaixo"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
+                    android:background="@drawable/round_rectangle"
+                    android:backgroundTint="@color/gray_dark"
+                    android:padding="@dimen/default_background_color_padding"
+                    android:text="@string/environment_main_plant_soil_conductivity"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="Sem informações predefinidas"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
+                    android:background="@drawable/round_rectangle"
+                    android:backgroundTint="@color/gray_dark"
+                    android:padding="@dimen/default_background_color_padding"
+                    android:text="@string/environment_main_plant_soil_salinity"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="Sem informações predefinidas"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
+                    android:background="@drawable/round_rectangle"
+                    android:backgroundTint="@color/green_light"
+                    android:padding="@dimen/default_background_color_padding"
+                    android:text="@string/environment_main_plant_temperature"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_small_margin"
+                    android:text="+1°C da temperatura ideal"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

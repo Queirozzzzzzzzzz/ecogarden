@@ -74,7 +74,7 @@
             android:layout_weight="6"
             android:gravity="start"
             android:orientation="vertical"
-            android:padding="25dp">
+            android:padding="@dimen/default_linear_layout_padding">
 
             <Button
                 android:id="@+id/btn_create_plant"

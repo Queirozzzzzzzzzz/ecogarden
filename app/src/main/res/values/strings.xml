@@ -1,12 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- DEFAULT -->
     <string name="app_name" translatable="false">Estufa sem Estufa</string>
-    <string name="explain_me_text">(Why?)</string>
-    <string name="next_btn">NEXT</string>
-    <string name="back_btn">GO BACK</string>
-    <string name="cancel_btn">CANCEL</string>
-    <string name="create_btn">CREATE</string>
-    <string name="finish_btn">FINISH</string>
+    <string name="explain_me_text">(Por quê?)</string>
+    <string name="next_btn">PRÓXIMO</string>
+    <string name="back_btn">VOLTAR</string>
+    <string name="cancel_btn">CANCELAR</string>
+    <string name="create_btn">CRIAR</string>
+    <string name="finish_btn">FINALIZAR</string>
+    <string name="save_btn">SALVAR</string>
+    <string name="delete_btn">EXCLUIR</string>
+    <string name="edit_btn">EDITAR</string>
 
     <!-- DESCRIPTIONS -->
     <string name="logo_description" translatable="false">logo</string>
@@ -14,67 +18,139 @@
     <string name="checkbox_description" translatable="false">checkbox</string>
 
     <!-- HOME -->
-    <string name="home_btn_create_environment">CREATE ENVIRONMENT</string>
-    <string name="home_btn_access_environments">ENVIRONMENTS</string>
     <string name="home_logo_title" translatable="false">ESTUFA SEM ESTUFA</string>
+    <string name="home_btn_create_environment">NOVO AMBIENTE</string>
+    <string name="home_btn_access_environments">AMBIENTES</string>
 
     <!-- NEW ENVIRONMENT PLACE -->
 
-    <string name="new_environment_title">NEW ENVIRONMENT</string>
-    <string name="new_environment_place_subtitle">PLANTING LOCATION</string>
-    <string name="new_environment_place_closed_environments_text">Closed environment (Houses, Backyards…)</string>
-    <string name="new_environment_place_open_environments_text">Open environment (Parks, Forests…)</string>
-    <string name="new_environment_place_location_text">Location</string>
-    <string name="new_environment_place_photo_text">Environment photo</string>
+    <string name="new_environment_title">NOVO AMBIENTE</string>
+    <string name="new_environment_place_subtitle">LOCAL DE PLANTIO</string>
+    <string name="new_environment_place_closed_environments_text">Ambiente fechado (Casas, Quintais…)</string>
+    <string name="new_environment_place_open_environments_text">Open environment (Parques, Florestas…)</string>
+    <string name="new_environment_place_location_text">Localização</string>
+    <string name="new_environment_place_photo_text">Foto do ambiente</string>
 
     <!-- NEW ENVIRONMENT GOAL -->
 
-    <string name="new_environment_goal_subtitle">GOAL</string>
-    <string name="new_environment_goal_aesthetic_option">Beautiful environment</string>
-    <string name="new_environment_goal_air_option">Air filtering</string>
-    <string name="new_environment_goal_medicinal_option">Medicinal plants</string>
-    <string name="new_environment_goal_spices_option">Spices</string>
+    <string name="new_environment_goal_subtitle">OBJETIVO</string>
+    <string name="new_environment_goal_aesthetic_option">Ambiente bonito</string>
+    <string name="new_environment_goal_air_option">Filtragem de ar</string>
+    <string name="new_environment_goal_medicinal_option">Plantas medicinais</string>
+    <string name="new_environment_goal_spices_option">Temperos</string>
 
     <!-- NEW ENVIRONMENT PLANTS -->
 
-    <string name="new_environment_plants_subtitle">PLANTS</string>
-    <string name="new_environment_plants_create_plant_btn">+ NEW PLANT</string>
-    <string name="new_environment_plants_plants_title">PLANTS</string>
+    <string name="new_environment_plants_subtitle">PLANTAS</string>
+    <string name="new_environment_plants_create_plant_btn">+ NOVA PLANTA</string>
+    <string name="new_environment_plants_plants_title">PLANTAS</string>
 
     <!-- NEW PLANT -->
-    <string name="new_plant_subtitle">PLANT</string>
-    <string name="new_plant_search">SEARCH PLANT</string>
-    <string name="new_plant_name">NAME</string>
-    <string name="new_plant_humidity">HUMIDITY</string>
-    <string name="new_plant_ph">pH</string>
-    <string name="new_plant_light_intensity">LIGHT INTENSITY</string>
-    <string name="new_plant_light_duration">LIGHT DURATION</string>
-    <string name="new_plant_soil_conductivity">SOIL CONDUCTIVITY</string>v
-    <string name="new_plant_soil_salinity">SOIL SALINITY</string>
-    <string name="new_plant_temperature">TEMPERATURE</string>
+    <string name="new_plant_subtitle">PLANTA</string>
 
-    <string name="new_plant_search_hint">Name</string>
-    <string name="new_plant_name_hint">Name</string>
-    <string name="new_plant_humidity_hint">Humid</string>
+    <string name="new_plant_search">BUSCAR PLANTA</string>
+    <string name="new_plant_name">NOME</string>
+    <string name="new_plant_humidity">UMIDADE</string>
+    <string name="new_plant_ph">pH</string>
+    <string name="new_plant_light_intensity">INTENSIDADE DE LUZ</string>
+    <string name="new_plant_light_duration">DURAÇÃO DA LUZ</string>
+    <string name="new_plant_soil_conductivity">CONDUTIVIDADE DO SOLO</string>
+    <string name="new_plant_soil_salinity">SALINIDADE DO SOLO</string>
+    <string name="new_plant_temperature">TEMPERATURA</string>
+
+    <string name="new_plant_search_hint">Nome</string>
+    <string name="new_plant_name_hint">Nome da Planta</string>
+    <string name="new_plant_humidity_hint">Umidade</string>
     <string name="new_plant_ph_hint">0</string>
-    <string name="new_plant_light_intensity_hint">Strong</string>
+    <string name="new_plant_light_intensity_hint">Intensidade</string>
     <string name="new_plant_light_duration_hint">0h</string>
-    <string name="new_plant_soil_conductivity_hint">0 (μS/cm)</string>
+    <string name="new_plant_soil_conductivity_hint">0 (µS/cm)</string>
     <string name="new_plant_soil_salinity_hint">0 (mg/L)</string>
     <string name="new_plant_temperature_hint">0 (°C)</string>
 
     <!-- NEW ENVIRONMENT TIMETABLES -->
-
-    <string name="new_environment_timetables_subtitle">TIMETABLES</string>
-    <string name="new_environment_timetables_create_plant_btn">+ NEW TIMETABLE</string>
-    <string name="new_environment_timetables_timetables_title">TIMETABLES</string>
     <string name="new_environment_timetables_time_hint" translatable="false">00:00</string>
-    <string name="new_environment_timetables_times_between">to</string>
+    <string name="new_environment_timetables_subtitle">HORÁRIOS</string>
+    <string name="new_environment_timetables_create_plant_btn">+ NOVO HORÁRIO</string>
+    <string name="new_environment_timetables_timetables_title">HORÁRIOS</string>
+    <string name="new_environment_timetables_times_between">até</string>
 
     <!-- NEW TIMETABLE -->
-    <string name="new_timetable_subtitle">TIMETABLE</string>
-    <string name="new_timetable_start">START</string>
-    <string name="new_timetable_finish">FINISH</string>
 
+    <string name="new_timetable_subtitle">HORÁRIO</string>
+    <string name="new_timetable_start">INÍCIO</string>
+    <string name="new_timetable_finish">TÉRMINO</string>
+    <string name="environments_title">ENVIRONMENTS</string>
+
+    <!-- ENVIRONMENT MAIN -->
+    <string name="environment_main_gallery_btn">GALERIA</string>
+    <string name="environment_main_tasks_btn">TAREFAS</string>
+
+    <string name="environment_main_soil">SOLO</string>
+    <string name="environment_main_soil_ph">pH</string>
+    <string name="environment_main_soil_conductivity">Condutividade</string>
+    <string name="environment_main_soil_salinity">Salinidade</string>
+    <string name="environment_main_soil_umidity">Umidade</string>
+
+    <string name="environment_main_weather">TEMPO</string>
+    <string name="environment_main_weather_temperature">Temperatura</string>
+    <string name="environment_main_weather_light_intensity">Intensidade da Luz</string>
+
+    <string name="environment_main_plant_light_duration">DURAÇÃO DA LUZ</string>
+    <string name="environment_main_plant_light_intensity">INTENSIDADE DA LUZ</string>
+    <string name="environment_main_plant_umidity">UMIDADE</string>
+    <string name="environment_main_plant_ph" translatable="false">pH</string>
+    <string name="environment_main_plant_soil_conductivity">CONDUTIVIDADE DO SOLO</string>
+    <string name="environment_main_plant_soil_salinity">SALINIDADE DO SOLO</string>
+    <string name="environment_main_plant_temperature">TEMPERATURA</string>
+
+    <!-- EDIT PLANT -->
+    <string name="edit_plant_subtitle">EDITAR PLANTA</string>
+
+    <string name="edit_plant_name">NOME</string>
+    <string name="edit_plant_humidity">UMIDADE</string>
+    <string name="edit_plant_ph">pH</string>
+    <string name="edit_plant_light_intensity">INTENSIDADE DA LUZ</string>
+    <string name="edit_plant_light_duration">DURAÇÃO DA LUZ</string>
+    <string name="edit_plant_soil_conductivity">CONDUTIVIDADE DO SOLO</string>
+    <string name="edit_plant_soil_salinity">SALINIDADE DO SOLO</string>
+    <string name="edit_plant_temperature">TEMPERATURA</string>
+
+    <!-- GALLERY -->
+    <string name="environment_gallery_title">GALERIA</string>
+    <string name="environment_gallery_subtitle">GALERIA</string>
+    <string name="environment_gallery_add_new_picture">+ ADICIONAR FOTO</string>
+
+    <!-- ENVIRONMENT TASKS -->
+    <string name="environment_tasks_history">HISTÓRICO</string>
+    <string name="environment_tasks_manage_tasks">GERENCIAR TAREFAS</string>
+
+    <string name="environment_tasks_sunday">DOMINGO</string>
+    <string name="environment_tasks_monday">SEGUNDA</string>
+    <string name="environment_tasks_tuesday">TERÇA</string>
+    <string name="environment_tasks_wednesday">QUARTA</string>
+    <string name="environment_tasks_thursday">QUINTA</string>
+    <string name="environment_tasks_friday">SEXTA</string>
+    <string name="environment_tasks_saturday">SÁBADO</string>
+
+    <!-- ENVIRONMENT TASKS HISTORY -->
+    <string name="environment_tasks_history_subtitle">HISTÓRICO</string>
+
+    <!-- ENVIRONMENT TASKS MANAGE TASKS -->
+    <string name="environment_tasks_manage_tasks_tasks">TAREFAS</string>
+    <string name="environment_tasks_manage_tasks_subtitle">GERENCIAR TAREFAS</string>
+
+    <!-- ENVIRONMENT TASKS CREATE TASK -->
+    <string name="environment_tasks_create_task_subtitle">NOVA TAREFA</string>
+    <string name="environment_tasks_create_task_name">NOME</string>
+
+    <string name="environment_tasks_create_task_sunday">Domingo</string>
+    <string name="environment_tasks_create_task_monday">Segunda</string>
+    <string name="environment_tasks_create_task_tuesday">Terça</string>
+    <string name="environment_tasks_create_task_wednesday">Quarta</string>
+    <string name="environment_tasks_create_task_thursday">Quinta</string>
+    <string name="environment_tasks_create_task_friday">Sexta</string>
+    <string name="environment_tasks_create_task_saturday">Sábado</string>
 
 </resources>
+

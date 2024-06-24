@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnvironmentActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        tools:ignore="MissingConstraints">
+
+        <View
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            android:background="@color/primary"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AMBIENTE 1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/header"
+            app:layout_constraintEnd_toEndOf="@id/header"
+            app:layout_constraintStart_toStartOf="@id/header"
+            app:layout_constraintTop_toTopOf="@id/header" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="75dp"
+        android:orientation="vertical"
+        tools:context=".fragments.EnvironmentGalleryFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/small_btn_width"
+                android:layout_height="@dimen/small_btn_height"
+                android:layout_marginTop="@dimen/small_btn_margin"
+                android:layout_marginBottom="@dimen/small_btn_margin"
+                android:background="@drawable/default_button"
+                android:onClick="mainFragment"
+                android:text="@string/back_btn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/environment_gallery_subtitle"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="@dimen/subtitle_size"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6">
+
+            <LinearLayout
+                android:id="@+id/gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="@dimen/default_linear_layout_padding">
+
+                <LinearLayout
+                    android:id="@+id/take_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/btn_margin"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/camera_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-11dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/right_round_rectangle"
+                        android:text="@string/environment_gallery_add_new_picture"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/image_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="09/01/2025"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/image_1_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/gallery_image_height"
+                        android:layout_marginTop="@dimen/default_top_margin"
+                        android:src="@drawable/img_placeholder" />
+
+                    <Button
+                        android:layout_width="@dimen/small_btn_width"
+                        android:layout_height="@dimen/small_btn_height"
+                        android:layout_marginTop="@dimen/default_top_margin"
+                        android:background="@drawable/cancel_button"
+                        android:text="@string/delete_btn"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/small_text_size" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

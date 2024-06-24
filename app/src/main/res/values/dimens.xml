@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- DEFAULTS -->
+    <dimen name="default_top_margin">15dp</dimen>
     <dimen name="default_bottom_margin">35dp</dimen>
+    <dimen name="default_linear_layout_padding">25dp</dimen>
+    <dimen name="default_small_margin">10dp</dimen>
+    <dimen name="default_embed_btn_padding">5dp</dimen>
+    <dimen name="default_section_margin_top">5dp</dimen>
+    <dimen name="default_background_color_padding">5dp</dimen>
+
+    <!-- RECTANGLE -->
+    <dimen name="rectangle_radius">6dp</dimen>
+    <dimen name="right_rectangle_radius">25dp</dimen>
+
+    <!-- EMBED BUTTON -->
+    <dimen name="embed_btn_image_width">45dp</dimen>
+    <dimen name="embed_btn_image_height">45dp</dimen>
 
     <!-- MAIN -->
     <dimen name="main_logo_width">150dp</dimen>
@@ -44,10 +58,22 @@
     <dimen name="small_btn_padding">5dp</dimen>
     <dimen name="small_btn_margin">10dp</dimen>
 
+    <!-- MEDIUM BUTTON -->
+    <dimen name="medium_btn_width">150dp</dimen>
+    <dimen name="medium_btn_height">35dp</dimen>
+    <dimen name="medium_btn_radius">3dp</dimen>
+    <dimen name="medium_btn_padding">5dp</dimen>
+    <dimen name="medium_btn_margin">10dp</dimen>
+
     <!-- CHECKBOX -->
     <dimen name="checkbox_width">25dp</dimen>
     <dimen name="checkbox_height">25dp</dimen>
     <dimen name="checkbox_margin">15dp</dimen>
+
+    <!-- SMALL CHECKBOX -->
+    <dimen name="small_checkbox_width">20dp</dimen>
+    <dimen name="small_checkbox_height">20dp</dimen>
+    <dimen name="small_checkbox_margin">10dp</dimen>
 
     <!-- ICON BUTTON -->
     <dimen name="icon_width">35dp</dimen>
@@ -59,4 +85,8 @@
     <dimen name="input_height">55dp</dimen>
     <dimen name="input_padding">5dp</dimen>
     <dimen name="input_margin_top">15dp</dimen>
+
+    <!-- GALLERY -->
+    <dimen name="gallery_image_height">155dp</dimen>
+
 </resources>
