@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewEnvironmentActivity">
+    tools:context=".EditEnvironmentActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:id="@+id/header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/new_environment_title"
+            android:text="@string/edit_environment_title"
             android:textColor="@color/white"
             android:textSize="@dimen/title_size"
             android:textStyle="bold"
@@ -37,7 +37,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="75dp"
         android:orientation="vertical"
-        tools:context=".fragments.NewPlantFragment">
+        tools:context=".fragments.EditEnvironmentEditPlantFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_plant_subtitle"
+                android:text="@string/edit_plant_subtitle"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/subtitle_size"
                 android:textStyle="bold" />
@@ -81,24 +81,10 @@
                 android:padding="@dimen/default_linear_layout_padding">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/new_plant_search"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size"
-                    android:textStyle="bold" />
-
-                <Spinner
-                    android:layout_width="@dimen/input_width"
-                    android:layout_height="@dimen/input_height"
-                    android:layout_marginBottom="@dimen/default_bottom_margin"
-                    android:prompt="@string/new_plant_search_hint" />
-
-                <TextView
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_name"
+                    android:text="@string/edit_plant_name"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -108,7 +94,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
-                    android:hint="@string/new_plant_name_hint"
                     android:inputType="text"
                     android:padding="@dimen/input_padding" />
 
@@ -116,7 +101,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_humidity"
+                    android:text="@string/edit_plant_humidity"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -126,7 +111,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
-                    android:hint="@string/new_plant_humidity_hint"
                     android:inputType="text"
                     android:padding="@dimen/input_padding" />
 
@@ -134,7 +118,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_ph"
+                    android:text="@string/edit_plant_ph"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -144,7 +128,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
-                    android:hint="@string/new_plant_ph_hint"
                     android:inputType="number"
                     android:padding="@dimen/input_padding" />
 
@@ -152,7 +135,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_light_intensity"
+                    android:text="@string/edit_plant_light_intensity"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -162,7 +145,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
-                    android:hint="@string/new_plant_light_intensity_hint"
                     android:inputType="numberDecimal"
                     android:padding="@dimen/input_padding" />
 
@@ -170,7 +152,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_light_duration"
+                    android:text="@string/edit_plant_light_duration"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -180,7 +162,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
-                    android:hint="@string/new_plant_light_duration_hint"
                     android:inputType="numberDecimal"
                     android:padding="@dimen/input_padding" />
 
@@ -188,7 +169,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_soil_conductivity"
+                    android:text="@string/edit_plant_soil_conductivity"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -198,7 +179,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
-                    android:hint="@string/new_plant_soil_conductivity_hint"
                     android:inputType="numberDecimal"
                     android:padding="@dimen/input_padding" />
 
@@ -206,7 +186,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_soil_salinity"
+                    android:text="@string/edit_plant_soil_salinity"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -216,7 +196,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
-                    android:hint="@string/new_plant_soil_salinity_hint"
                     android:inputType="numberDecimal"
                     android:padding="@dimen/input_padding" />
 
@@ -224,7 +203,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_soil_salinity"
+                    android:text="@string/edit_plant_soil_salinity"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -234,7 +213,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
-                    android:hint="@string/new_plant_temperature_hint"
                     android:inputType="numberDecimal"
                     android:padding="@dimen/input_padding" />
 

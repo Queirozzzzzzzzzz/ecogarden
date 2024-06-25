@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewEnvironmentActivity">
+    tools:context=".EditEnvironmentActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:id="@+id/header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/new_environment_title"
+            android:text="@string/edit_environment_title"
             android:textColor="@color/white"
             android:textSize="@dimen/title_size"
             android:textStyle="bold"
@@ -37,7 +37,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="75dp"
         android:orientation="vertical"
-        tools:context=".fragments.NewEnvironmentPlaceFragment">
+        tools:context=".fragments.EditEnvironmentPlaceFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                 android:layout_marginTop="@dimen/cancel_btn_margin"
                 android:layout_marginBottom="@dimen/cancel_btn_margin"
                 android:background="@drawable/cancel_button"
-                android:onClick="cancelNewEnvironment"
+                android:onClick="cancelEditEnvironment"
                 android:text="@string/cancel_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_environment_place_subtitle"
+                android:text="@string/edit_environment_place_subtitle"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/subtitle_size"
                 android:textStyle="bold" />
@@ -96,7 +96,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/new_environment_place_closed_environments_text"
+                    android:text="@string/edit_environment_place_closed_environments_text"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size" />
             </LinearLayout>
@@ -120,7 +120,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/new_environment_place_open_environments_text"
+                    android:text="@string/edit_environment_place_open_environments_text"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size" />
             </LinearLayout>
@@ -139,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
-                    android:text="@string/new_environment_place_biome"
+                    android:text="@string/edit_environment_place_biome"
                     android:textStyle="bold"/>
 
                 <Spinner
@@ -168,7 +168,7 @@
                     android:id="@+id/photo_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/new_environment_place_photo_text"
+                    android:text="@string/edit_environment_place_photo_text"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size" />
 

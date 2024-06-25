@@ -1,5 +1,6 @@
 package com.queirozzzzzzzzzz.estufasemestufa
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityEnvironmentBinding
-import com.queirozzzzzzzzzz.estufasemestufa.fragments.EditPlantFragment
+import com.queirozzzzzzzzzz.estufasemestufa.fragments.NewEnvironmentEditPlantFragment
 import com.queirozzzzzzzzzz.estufasemestufa.fragments.EnvironmentCreateTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.fragments.EnvironmentEditTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.fragments.EnvironmentGalleryFragment
@@ -38,12 +39,17 @@ class EnvironmentActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
+    fun editEnvironmentActivity(view: View) {
+        val intent = Intent(this, EditEnvironmentActivity::class.java)
+        startActivity(intent)
+    }
+
     fun mainFragment(view: View?) {
         startFragment(EnvironmentMainFragment())
     }
 
     fun editPlantFragment(view: View) {
-        startFragment(EditPlantFragment())
+        startFragment(NewEnvironmentEditPlantFragment())
     }
 
     fun galleryFragment(view: View) {

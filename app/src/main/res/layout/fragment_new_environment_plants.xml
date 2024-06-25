@@ -96,10 +96,45 @@
                 android:textStyle="bold"
                 android:textColor="?android:attr/textColorPrimary"/>
 
-            <ListView
-                android:id="@+id/plants_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:id="@+id/plant_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_top_margin"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Planta 1"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size" />
+
+                <Button
+                    android:id="@+id/plant_1_edit_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/small_btn_height"
+                    android:text="@string/edit_btn"
+                    android:background="@drawable/default_button"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:onClick="editPlantFragment"
+                    android:layout_marginStart="@dimen/default_small_margin"
+                    />
+
+                <Button
+                    android:id="@+id/plant_1_delete_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/small_btn_height"
+                    android:text="@string/delete_btn"
+                    android:background="@drawable/cancel_button"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size"
+                    android:layout_marginStart="@dimen/default_small_margin"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout

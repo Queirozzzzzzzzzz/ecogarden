@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewEnvironmentActivity">
+    tools:context=".EditEnvironmentActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:id="@+id/header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/new_environment_title"
+            android:text="@string/edit_environment_title"
             android:textColor="@color/white"
             android:textSize="@dimen/title_size"
             android:textStyle="bold"
@@ -37,7 +37,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="75dp"
         android:orientation="vertical"
-        tools:context=".fragments.NewEnvironmentTimetablesFragment">
+        tools:context=".fragments.EditEnvironmentPlantsFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_environment_timetables_subtitle"
+                android:text="@string/edit_environment_timetables_subtitle"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/subtitle_size"
                 android:textStyle="bold" />
@@ -89,16 +89,16 @@
                     android:layout_marginTop="@dimen/small_btn_margin"
                     android:layout_marginBottom="@dimen/small_btn_margin"
                     android:background="@drawable/default_button"
-                    android:text="@string/new_environment_timetables_create_plant_btn"
+                    android:onClick="newTimetableFragment"
+                    android:text="@string/edit_environment_timetables_create_plant_btn"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:onClick="newTimetableFragment"/>
+                    android:textSize="@dimen/small_text_size" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_environment_timetables_timetables_title"
+                android:text="@string/edit_environment_timetables_timetables_title"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/text_size"
                 android:textStyle="bold" />
@@ -108,8 +108,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_top_margin"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -122,23 +122,22 @@
                     android:id="@+id/timetable_1_edit_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/small_btn_height"
-                    android:text="@string/edit_btn"
-                    android:background="@drawable/default_button"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:onClick="editTimetableFragment"
                     android:layout_marginStart="@dimen/default_small_margin"
-                    />
+                    android:background="@drawable/default_button"
+                    android:onClick="editTimetableFragment"
+                    android:text="@string/edit_btn"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text_size" />
 
                 <Button
                     android:id="@+id/timetable_1_delete_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/small_btn_height"
-                    android:text="@string/delete_btn"
+                    android:layout_marginStart="@dimen/default_small_margin"
                     android:background="@drawable/cancel_button"
+                    android:text="@string/delete_btn"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:layout_marginStart="@dimen/default_small_margin"/>
+                    android:textSize="@dimen/small_text_size" />
 
             </LinearLayout>
 

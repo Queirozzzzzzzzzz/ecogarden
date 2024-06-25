@@ -5,17 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentNewTimetableBinding
+import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentEditEnvironmentNewTimetableBinding
 
-class NewTimetableFragment : Fragment() {
-    private var _binding: FragmentNewTimetableBinding? = null
+class EditEnvironmentNewTimetableFragment : Fragment() {
+    private var _binding: FragmentEditEnvironmentNewTimetableBinding? = null
 
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNewTimetableBinding.inflate(inflater, container, false)
+        _binding = FragmentEditEnvironmentNewTimetableBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

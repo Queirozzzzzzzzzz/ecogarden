@@ -5,17 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentNewPlantBinding
+import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentEditEnvironmentPlantsBinding
 
-class NewPlantFragment : Fragment() {
-    private var _binding: FragmentNewPlantBinding? = null
+class EditEnvironmentPlantsFragment : Fragment() {
+    private var _binding: FragmentEditEnvironmentPlantsBinding? = null
 
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNewPlantBinding.inflate(inflater, container, false)
+        _binding = FragmentEditEnvironmentPlantsBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

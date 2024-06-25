@@ -37,7 +37,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="75dp"
         android:orientation="vertical"
-        tools:context=".fragments.NewEnvironmentTimetablesFragment">
+        tools:context=".fragments.NewEnvironmentEditTimetableFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,21 +47,21 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_back"
-                android:layout_width="@dimen/small_btn_width"
-                android:layout_height="@dimen/small_btn_height"
-                android:layout_marginTop="@dimen/small_btn_margin"
-                android:layout_marginBottom="@dimen/small_btn_margin"
-                android:background="@drawable/default_button"
-                android:onClick="plantsFragment"
-                android:text="@string/back_btn"
+                android:id="@+id/btn_cancel"
+                android:layout_width="@dimen/cancel_btn_width"
+                android:layout_height="@dimen/cancel_btn_height"
+                android:layout_marginTop="@dimen/cancel_btn_margin"
+                android:layout_marginBottom="@dimen/cancel_btn_margin"
+                android:background="@drawable/cancel_button"
+                android:onClick="timetablesFragment"
+                android:text="@string/cancel_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_environment_timetables_subtitle"
+                android:text="@string/new_timetable_subtitle"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/subtitle_size"
                 android:textStyle="bold" />
@@ -72,75 +72,35 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="6"
-            android:gravity="start"
+            android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/default_linear_layout_padding">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_add_timetable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/small_btn_height"
-                    android:layout_marginTop="@dimen/small_btn_margin"
-                    android:layout_marginBottom="@dimen/small_btn_margin"
-                    android:background="@drawable/default_button"
-                    android:text="@string/new_environment_timetables_create_plant_btn"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:onClick="newTimetableFragment"/>
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_environment_timetables_timetables_title"
-                android:textColor="?android:attr/textColorPrimary"
+                android:text="@string/new_timetable_start"
                 android:textSize="@dimen/text_size"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:id="@+id/timetable_1"
-                android:layout_width="match_parent"
+            <TimePicker
+                android:id="@+id/start_time"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_top_margin"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:timePickerMode="spinner" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="07:00 / 08:45"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_timetable_finish"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/timetable_1_edit_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/small_btn_height"
-                    android:text="@string/edit_btn"
-                    android:background="@drawable/default_button"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:onClick="editTimetableFragment"
-                    android:layout_marginStart="@dimen/default_small_margin"
-                    />
-
-                <Button
-                    android:id="@+id/timetable_1_delete_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/small_btn_height"
-                    android:text="@string/delete_btn"
-                    android:background="@drawable/cancel_button"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:layout_marginStart="@dimen/default_small_margin"/>
-
-            </LinearLayout>
+            <TimePicker
+                android:id="@+id/finish_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner" />
 
         </LinearLayout>
 
@@ -152,14 +112,14 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_next"
+                android:id="@+id/btn_save"
                 android:layout_width="@dimen/btn_width"
                 android:layout_height="@dimen/btn_height"
                 android:layout_marginTop="@dimen/btn_margin"
                 android:layout_marginBottom="@dimen/btn_margin"
                 android:background="@drawable/default_button"
-                android:onClick="nameFragment"
-                android:text="@string/next_btn"
+                android:onClick="timetablesFragment"
+                android:text="@string/save_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/btn_text_size"
                 tools:ignore="MissingConstraints" />
