@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -33,8 +35,12 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    ktlint {
+        android.set(true)
+        verbose.set(true)
+        outputToConsole.set(true)
+    }
 }
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -46,6 +52,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.gson)
+    implementation(libs.hilt.navigation.fragment)
+    ksp(libs.androidx.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

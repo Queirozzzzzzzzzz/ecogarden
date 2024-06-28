@@ -13,22 +13,22 @@
         android:theme="@style/Theme.EstufaSemEstufa"
         tools:targetApi="31">
         <activity
-            android:name=".EditEnvironmentActivity"
+            android:name=".ui.editEnvironment.EditEnvironmentActivity"
             android:exported="false" />
         <activity
-            android:name=".EnvironmentActivity"
+            android:name=".ui.environment.EnvironmentActivity"
             android:exported="false" />
         <activity
-            android:name=".EnvironmentsActivity"
+            android:name=".ui.environments.EnvironmentsActivity"
             android:exported="false" />
         <activity
-            android:name=".NewEnvironmentActivity"
+            android:name=".ui.newEnvironment.fragments.NewEnvironmentActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

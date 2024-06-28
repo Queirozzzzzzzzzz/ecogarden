@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditEnvironmentActivity">
+    tools:context=".ui.editEnvironment.EditEnvironmentActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="75dp"
         android:orientation="vertical"
-        tools:context=".fragments.EditEnvironmentNewTimetableFragment">
+        tools:context=".ui.editEnvironment.fragments.EditEnvironmentNewTimetableFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
