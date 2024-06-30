@@ -8,20 +8,23 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel
-@Inject constructor(
-    private val envRepo: EnvironmentRepository,
-) : ViewModel() {
-    suspend fun getEnvironments(): List<Environment> {
-        val environments = envRepo.getAllEnvironments()
-        return environments
-    }
+    @Inject
+    constructor(
+        private val envRepo: EnvironmentRepository,
+    ) : ViewModel() {
 
-    suspend fun getEnvironmentById(environmentId: Int): Environment? {
-        val environment = envRepo.getEnvironmentById(environmentId)
-        return environment
-    }
+        // Queries
+        suspend fun getEnvironments(): List<Environment> {
+            val environments = envRepo.getAllEnvironments()
+            return environments
+        }
 
-    suspend fun insertEnvironment(environment: Environment) {
-        envRepo.insertEnvironment(environment)
+        suspend fun getEnvironmentById(environmentId: Int): Environment? {
+            val environment = envRepo.getEnvironmentById(environmentId)
+            return environment
+        }
+
+        suspend fun insertEnvironment(environment: Environment) {
+            envRepo.insertEnvironment(environment)
+        }
     }
-}
