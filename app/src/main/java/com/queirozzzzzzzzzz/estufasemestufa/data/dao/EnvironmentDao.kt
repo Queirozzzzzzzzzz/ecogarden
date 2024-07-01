@@ -16,4 +16,16 @@ interface EnvironmentDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEnvironment(environment: Environment)
+
+    @Query("UPDATE environment SET name = :name, closed = :closed, location = :location, goals = :goals WHERE id = :environmentId")
+    suspend fun updateEnvironment(
+        environmentId: Int,
+        name: String,
+        closed: Boolean,
+        location: String,
+        goals: List<String>,
+    )
+
+    @Query("DELETE FROM environment")
+    suspend fun deleteEnvironments()
 }

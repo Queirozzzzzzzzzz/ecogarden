@@ -3,15 +3,12 @@ package com.queirozzzzzzzzzz.estufasemestufa.ui.home
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityHomeBinding
 import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environments.EnvironmentsActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.newEnvironment.fragments.NewEnvironmentActivity
 import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.ThemeViewModel
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
@@ -53,6 +50,12 @@ class HomeActivity : AppCompatActivity() {
         binding.btnCreateEnvironment.setOnClickListener {
             val intent = Intent(this, NewEnvironmentActivity::class.java)
             startActivity(intent)
+        }
+
+        lifecycleScope.launch {
+            val hasEnvironments = viewModel.getEnvironments()
+
+            binding.btnAccessEnvironments.isEnabled = hasEnvironments.isNotEmpty()
         }
 
         binding.btnAccessEnvironments.setOnClickListener {

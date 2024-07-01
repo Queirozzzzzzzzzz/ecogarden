@@ -12,7 +12,6 @@ class HomeViewModel
     constructor(
         private val envRepo: EnvironmentRepository,
     ) : ViewModel() {
-
         // Queries
         suspend fun getEnvironments(): List<Environment> {
             val environments = envRepo.getAllEnvironments()
@@ -26,5 +25,9 @@ class HomeViewModel
 
         suspend fun insertEnvironment(environment: Environment) {
             envRepo.insertEnvironment(environment)
+        }
+
+        suspend fun deleteEnvironments() {
+            envRepo.deleteEnvironments()
         }
     }

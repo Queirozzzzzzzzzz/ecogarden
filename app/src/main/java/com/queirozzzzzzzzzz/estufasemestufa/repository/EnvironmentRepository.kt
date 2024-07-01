@@ -29,4 +29,18 @@ class EnvironmentRepository
         suspend fun insertEnvironment(environment: Environment) {
             environmentDao.insertEnvironment(environment)
         }
+
+        suspend fun updateEnvironment(environment: Environment) {
+            val id = environment.id
+            val name = environment.name
+            val closed = environment.closed
+            val location = environment.location
+            val goals = environment.goals
+
+            environmentDao.updateEnvironment(id, name, closed, location, goals)
+        }
+
+        suspend fun deleteEnvironments() {
+            environmentDao.deleteEnvironments()
+        }
     }
