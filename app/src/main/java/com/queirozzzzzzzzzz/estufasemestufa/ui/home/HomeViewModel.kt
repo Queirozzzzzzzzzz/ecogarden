@@ -1,7 +1,6 @@
 package com.queirozzzzzzzzzz.estufasemestufa.ui.home
 
 import androidx.lifecycle.ViewModel
-import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

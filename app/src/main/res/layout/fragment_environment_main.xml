@@ -59,7 +59,6 @@
                     android:text="@string/environment_edit_environment"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size"
-                    android:onClick="editEnvironmentActivity"
                     android:textStyle="bold" />
 
 
@@ -70,7 +69,6 @@
                     android:layout_marginStart="-5dp"
                     android:layout_marginBottom="@dimen/btn_margin"
                     android:gravity="center"
-                    android:onClick="galleryFragment"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -96,7 +94,6 @@
                     android:layout_marginStart="-5dp"
                     android:layout_marginBottom="@dimen/btn_margin"
                     android:gravity="center"
-                    android:onClick="tasksFragment"
                     android:orientation="horizontal">
 
                     <ImageView

@@ -59,7 +59,6 @@
                     android:background="@drawable/right_round_rectangle"
                     android:text="Ambiente 1"
                     android:textColor="@color/white"
-                    android:onClick="startEnvironment"
                     android:textSize="@dimen/up_text_size"/>
 
             </LinearLayout>

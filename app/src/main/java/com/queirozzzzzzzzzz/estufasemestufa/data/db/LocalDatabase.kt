@@ -25,7 +25,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Timetable
 
 @Database(
     entities = [CompletedTask::class, Environment::class, EnvironmentData::class, Picture::class, Plant::class, Task::class, Timetable::class],
-    version = 6,
+    version = 1,
 )
 @TypeConverters(DateTypeConverter::class, StringListConverter::class, DaysListTypeConverter::class)
 abstract class LocalDatabase : RoomDatabase() {

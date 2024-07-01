@@ -53,7 +53,6 @@
                 android:layout_marginTop="@dimen/cancel_btn_margin"
                 android:layout_marginBottom="@dimen/cancel_btn_margin"
                 android:background="@drawable/cancel_button"
-                android:onClick="manageTasksFragment"
                 android:text="@string/cancel_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -294,7 +293,6 @@
                 android:layout_marginTop="@dimen/btn_margin"
                 android:layout_marginBottom="@dimen/btn_margin"
                 android:background="@drawable/default_button"
-                android:onClick="plantsFragment"
                 android:text="@string/create_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/btn_text_size"

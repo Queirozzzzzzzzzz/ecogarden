@@ -26,21 +26,21 @@ class EnvironmentRepository
             return environmentDao.getEnvironmentById(environmentId)
         }
 
-        suspend fun insertEnvironment(environment: Environment) {
-            environmentDao.insertEnvironment(environment)
+        suspend fun insertEnvironment(environment: Environment): Long {
+            return environmentDao.insertEnvironment(environment)
         }
 
         suspend fun updateEnvironment(environment: Environment) {
             val id = environment.id
             val name = environment.name
             val closed = environment.closed
-            val location = environment.location
+            val biome = environment.biome
             val goals = environment.goals
 
-            environmentDao.updateEnvironment(id, name, closed, location, goals)
+            environmentDao.updateEnvironment(id, name, closed, biome, goals)
         }
 
-        suspend fun deleteEnvironment(environmentId: Int) {
-            environmentDao.deleteEnvironment(environmentId)
+        suspend fun deleteEnvironmentById(environmentId: Int) {
+            environmentDao.deleteEnvironmentById(environmentId)
         }
     }

@@ -53,7 +53,6 @@
                 android:layout_marginTop="@dimen/small_btn_margin"
                 android:layout_marginBottom="@dimen/small_btn_margin"
                 android:background="@drawable/default_button"
-                android:onClick="tasksFragment"
                 android:text="@string/back_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -82,7 +81,6 @@
                 android:layout_height="@dimen/medium_btn_height"
                 android:layout_marginBottom="@dimen/small_btn_margin"
                 android:background="@drawable/right_round_rectangle"
-                android:onClick="createTaskFragment"
                 android:text="+ CRIAR TAREFA"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size" />
@@ -133,7 +131,6 @@
                         android:background="@drawable/default_button"
                         android:textColor="@color/white"
                         android:textSize="@dimen/small_text_size"
-                        android:onClick="editTaskFragment"
                         android:layout_marginStart="@dimen/default_small_margin"
                         />
 

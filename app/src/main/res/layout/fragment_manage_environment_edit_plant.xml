@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.manageEnvironment.ManageEnvironmentActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        tools:ignore="MissingConstraints">
+
+        <View
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            android:background="@color/primary"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_environment_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/header"
+            app:layout_constraintEnd_toEndOf="@id/header"
+            app:layout_constraintStart_toStartOf="@id/header"
+            app:layout_constraintTop_toTopOf="@id/header" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="75dp"
+        android:orientation="vertical"
+        tools:context=".ui.manageEnvironment.fragments.ManageEnvironmentEditPlantFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="@dimen/cancel_btn_width"
+                android:layout_height="@dimen/cancel_btn_height"
+                android:layout_marginTop="@dimen/cancel_btn_margin"
+                android:layout_marginBottom="@dimen/cancel_btn_margin"
+                android:background="@drawable/cancel_button"
+                android:text="@string/cancel_btn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_plant_subtitle"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="@dimen/subtitle_size"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/default_linear_layout_padding">
+
+                <TextView
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:text="@string/edit_plant_name"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="@dimen/input_height"
+                    android:autofillHints=""
+                    android:inputType="text"
+                    android:padding="@dimen/input_padding" />
+
+                <TextView
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:text="@string/edit_plant_humidity"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/humidity"
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="@dimen/input_height"
+                    android:autofillHints=""
+                    android:inputType="text"
+                    android:padding="@dimen/input_padding" />
+
+                <TextView
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:text="@string/edit_plant_ph"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/ph"
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="@dimen/input_height"
+                    android:autofillHints=""
+                    android:inputType="number"
+                    android:padding="@dimen/input_padding" />
+
+                <TextView
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:text="@string/edit_plant_light_intensity"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/light_intensity"
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="@dimen/input_height"
+                    android:autofillHints=""
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/input_padding" />
+
+                <TextView
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:text="@string/edit_plant_light_duration"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/light_duration"
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="@dimen/input_height"
+                    android:autofillHints=""
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/input_padding" />
+
+                <TextView
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:text="@string/edit_plant_soil_conductivity"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/soil_conductivity"
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="@dimen/input_height"
+                    android:autofillHints=""
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/input_padding" />
+
+                <TextView
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:text="@string/edit_plant_soil_salinity"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/soil_salinity"
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="@dimen/input_height"
+                    android:autofillHints=""
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/input_padding" />
+
+                <TextView
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/input_margin_top"
+                    android:text="@string/edit_plant_soil_salinity"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/temperature"
+                    android:layout_width="@dimen/input_width"
+                    android:layout_height="@dimen/input_height"
+                    android:autofillHints=""
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/input_padding" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_create"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginTop="@dimen/btn_margin"
+                android:layout_marginBottom="@dimen/btn_margin"
+                android:background="@drawable/default_button"
+                android:text="@string/create_btn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/btn_text_size"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.queirozzzzzzzzzz.estufasemestufa.R
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityEnvironmentBinding
-import com.queirozzzzzzzzzz.estufasemestufa.ui.editEnvironment.EditEnvironmentActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentCreateTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentEditTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentGalleryFragment
@@ -17,7 +16,8 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentManageTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksHistoryFragment
-import com.queirozzzzzzzzzz.estufasemestufa.ui.newEnvironment.fragments.NewEnvironmentEditPlantFragment
+import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
+import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.ManageEnvironmentEditPlantFragment
 
 class EnvironmentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnvironmentBinding
@@ -42,7 +42,7 @@ class EnvironmentActivity : AppCompatActivity() {
     }
 
     fun editEnvironmentActivity(view: View) {
-        val intent = Intent(this, EditEnvironmentActivity::class.java)
+        val intent = Intent(this, ManageEnvironmentActivity::class.java)
         startActivity(intent)
     }
 
@@ -51,7 +51,7 @@ class EnvironmentActivity : AppCompatActivity() {
     }
 
     fun editPlantFragment(view: View) {
-        startFragment(NewEnvironmentEditPlantFragment())
+        startFragment(ManageEnvironmentEditPlantFragment())
     }
 
     fun galleryFragment(view: View) {

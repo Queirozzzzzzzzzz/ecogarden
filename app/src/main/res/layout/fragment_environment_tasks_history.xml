@@ -53,7 +53,6 @@
                 android:layout_marginTop="@dimen/small_btn_margin"
                 android:layout_marginBottom="@dimen/small_btn_margin"
                 android:background="@drawable/default_button"
-                android:onClick="tasksFragment"
                 android:text="@string/back_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />

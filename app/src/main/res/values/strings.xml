@@ -29,7 +29,7 @@
     <string name="new_environment_place_closed_environments_text">Ambiente fechado (Casas, Quintais…)</string>
     <string name="new_environment_place_open_environments_text">Open environment (Parques, Florestas…)</string>
     <string name="new_environment_place_biome">BIOMA</string>
-    <string name="new_environment_place_photo_text">Foto do ambiente</string>
+    <string name="new_environment_place_picture_text">Foto do ambiente</string>
 
     <!-- NEW ENVIRONMENT GOAL -->
 
@@ -93,7 +93,7 @@
     <string name="edit_environment_place_closed_environments_text">Ambiente fechado (Casas, Quintais…)</string>
     <string name="edit_environment_place_open_environments_text">Open environment (Parques, Florestas…)</string>
     <string name="edit_environment_place_biome">BIOMA</string>
-    <string name="edit_environment_place_photo_text">Foto do ambiente</string>
+    <string name="edit_environment_place_picture_text">Foto do ambiente</string>
 
     <!-- EDIT ENVIRONMENT GOAL -->
 
@@ -190,6 +190,20 @@
     <string name="environment_tasks_create_task_friday">Sexta</string>
     <string name="environment_tasks_create_task_saturday">Sábado</string>
     <string name="environment_edit_environment">EDITAR AMBIENTE</string>
+
+    <!-- IN CODE -->
+    <string-array name="biomes_array">
+        <item>Amazônia</item>
+        <item>Cerrado</item>
+        <item>Caatinga</item>
+        <item>Mata Atlântica</item>
+        <item>Pantanal</item>
+    </string-array>
+
+    <string name="biome_explain_me_title">Por que informar o bioma?</string>
+    <string name="biome_explain_me_message">É necessário informar o bioma em casos de ambientes abertos, pois isso permite evitar infortúnios nos ecossistemas locais.</string>
+    <string name="picture_explain_me_title">Por que adicionar uma foto?</string>
+    <string name="picture_explain_me_message">É interessante tirar fotos da evolução de seu jardim, para observar padrões e apreciar seu crescimento.</string>
 
 </resources>
 
