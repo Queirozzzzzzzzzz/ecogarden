@@ -11,21 +11,21 @@ interface EnvironmentDao {
     @Query("SELECT * FROM environment")
     suspend fun getAllEnvironments(): List<Environment>
 
-    @Query("SELECT * FROM environment WHERE id = :environmentId")
-    suspend fun getEnvironmentById(environmentId: Int): Environment?
+    @Query("SELECT * FROM environment WHERE id = :id")
+    suspend fun getEnvironmentById(id: Int): Environment?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEnvironment(environment: Environment)
 
-    @Query("UPDATE environment SET name = :name, closed = :closed, location = :location, goals = :goals WHERE id = :environmentId")
+    @Query("UPDATE environment SET name = :name, closed = :closed, location = :location, goals = :goals WHERE id = :id")
     suspend fun updateEnvironment(
-        environmentId: Int,
+        id: Int,
         name: String,
         closed: Boolean,
         location: String,
         goals: List<String>,
     )
 
-    @Query("DELETE FROM environment")
-    suspend fun deleteEnvironments()
+    @Query("DELETE FROM environment WHERE id = :id")
+    suspend fun deleteEnvironment(id: Int)
 }

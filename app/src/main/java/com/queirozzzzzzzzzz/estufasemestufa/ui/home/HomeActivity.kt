@@ -53,9 +53,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launch {
-            val hasEnvironments = viewModel.getEnvironments()
-
-            binding.btnAccessEnvironments.isEnabled = hasEnvironments.isNotEmpty()
+            binding.btnAccessEnvironments.isEnabled = viewModel.hasEnvironments()
         }
 
         binding.btnAccessEnvironments.setOnClickListener {

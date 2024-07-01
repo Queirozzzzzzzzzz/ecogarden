@@ -40,7 +40,7 @@ class EnvironmentRepository
             environmentDao.updateEnvironment(id, name, closed, location, goals)
         }
 
-        suspend fun deleteEnvironments() {
-            environmentDao.deleteEnvironments()
+        suspend fun deleteEnvironment(environmentId: Int) {
+            environmentDao.deleteEnvironment(environmentId)
         }
     }

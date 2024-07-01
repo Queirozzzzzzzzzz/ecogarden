@@ -13,21 +13,8 @@ class HomeViewModel
         private val envRepo: EnvironmentRepository,
     ) : ViewModel() {
         // Queries
-        suspend fun getEnvironments(): List<Environment> {
+        suspend fun hasEnvironments(): Boolean {
             val environments = envRepo.getAllEnvironments()
-            return environments
-        }
-
-        suspend fun getEnvironmentById(environmentId: Int): Environment? {
-            val environment = envRepo.getEnvironmentById(environmentId)
-            return environment
-        }
-
-        suspend fun insertEnvironment(environment: Environment) {
-            envRepo.insertEnvironment(environment)
-        }
-
-        suspend fun deleteEnvironments() {
-            envRepo.deleteEnvironments()
+            return environments.isNotEmpty()
         }
     }
