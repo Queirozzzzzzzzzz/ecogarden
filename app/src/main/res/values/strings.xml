@@ -22,28 +22,31 @@
     <string name="home_btn_create_environment">NOVO AMBIENTE</string>
     <string name="home_btn_access_environments">AMBIENTES</string>
 
-    <!-- NEW ENVIRONMENT PLACE -->
+    <!-- MANAGE ENVIRONMENT -->
+    <string name="manage_environment_title">NOVO AMBIENTE</string>
+    <string name="manage_environment_edit_title">EDITAR AMBIENTE</string>
 
-    <string name="new_environment_title">NOVO AMBIENTE</string>
-    <string name="new_environment_place_subtitle">LOCAL DE PLANTIO</string>
-    <string name="new_environment_place_closed_environments_text">Ambiente fechado (Casas, Quintais…)</string>
-    <string name="new_environment_place_open_environments_text">Open environment (Parques, Florestas…)</string>
-    <string name="new_environment_place_biome">BIOMA</string>
-    <string name="new_environment_place_picture_text">Foto do ambiente</string>
+    <!-- MANAGE ENVIRONMENT PLACE -->
 
-    <!-- NEW ENVIRONMENT GOAL -->
+    <string name="manage_environment_place_subtitle">LOCAL DE PLANTIO</string>
+    <string name="manage_environment_place_closed_environments_text">Ambiente fechado (Casas, Quintais…)</string>
+    <string name="manage_environment_place_open_environments_text">Open environment (Parques, Florestas…)</string>
+    <string name="manage_environment_place_biome">BIOMA</string>
+    <string name="manage_environment_place_picture_text">Foto do ambiente</string>
 
-    <string name="new_environment_goal_subtitle">OBJETIVO</string>
-    <string name="new_environment_goal_aesthetic_option">Ambiente bonito</string>
-    <string name="new_environment_goal_air_option">Filtragem de ar</string>
-    <string name="new_environment_goal_medicinal_option">Plantas medicinais</string>
-    <string name="new_environment_goal_spices_option">Temperos</string>
+    <!-- MANAGE ENVIRONMENT GOAL -->
 
-    <!-- NEW ENVIRONMENT PLANTS -->
+    <string name="manage_environment_goal_subtitle">OBJETIVO</string>
+    <string name="manage_environment_goal_aesthetic_option">Ambiente bonito</string>
+    <string name="manage_environment_goal_air_option">Filtragem de ar</string>
+    <string name="manage_environment_goal_medicinal_option">Plantas medicinais</string>
+    <string name="manage_environment_goal_spices_option">Temperos</string>
 
-    <string name="new_environment_plants_subtitle">PLANTAS</string>
-    <string name="new_environment_plants_create_plant_btn">+ NOVA PLANTA</string>
-    <string name="new_environment_plants_plants_title">PLANTAS</string>
+    <!-- MANAGE ENVIRONMENT PLANTS -->
+
+    <string name="manage_environment_plants_subtitle">PLANTAS</string>
+    <string name="manage_environment_plants_create_plant_btn">+ NOVA PLANTA</string>
+    <string name="manage_environment_plants_plants_title">PLANTAS</string>
 
     <!-- NEW PLANT -->
     <string name="new_plant_subtitle">PLANTA</string>
@@ -68,12 +71,12 @@
     <string name="new_plant_soil_salinity_hint">0 (mg/L)</string>
     <string name="new_plant_temperature_hint">0 (°C)</string>
 
-    <!-- NEW ENVIRONMENT TIMETABLES -->
-    <string name="new_environment_timetables_time_hint" translatable="false">00:00</string>
-    <string name="new_environment_timetables_subtitle">HORÁRIOS</string>
-    <string name="new_environment_timetables_create_plant_btn">+ NOVO HORÁRIO</string>
-    <string name="new_environment_timetables_timetables_title">HORÁRIOS</string>
-    <string name="new_environment_timetables_times_between">até</string>
+    <!-- MANAGE ENVIRONMENT TIMETABLES -->
+    <string name="manage_environment_timetables_time_hint" translatable="false">00:00</string>
+    <string name="manage_environment_timetables_subtitle">HORÁRIOS</string>
+    <string name="manage_environment_timetables_create_plant_btn">+ NOVO HORÁRIO</string>
+    <string name="manage_environment_timetables_timetables_title">HORÁRIOS</string>
+    <string name="manage_environment_timetables_times_between">até</string>
 
     <!-- NEW TIMETABLE -->
 
@@ -82,43 +85,10 @@
     <string name="new_timetable_finish">TÉRMINO</string>
     <string name="environments_title">ENVIRONMENTS</string>
 
-    <!-- NEW ENVIRONMENT NAME -->
-    <string name="new_environment_name_subtitle">NOME DO AMBIENTE</string>
-    <string name="new_environment_name">Nome</string>
+    <!-- MANAGE ENVIRONMENT NAME -->
+    <string name="manage_environment_name_subtitle">NOME DO AMBIENTE</string>
+    <string name="manage_environment_name">Nome</string>
 
-    <!-- EDIT ENVIRONMENT PLACE -->
-
-    <string name="edit_environment_title">EDITAR AMBIENTE</string>
-    <string name="edit_environment_place_subtitle">LOCAL DE PLANTIO</string>
-    <string name="edit_environment_place_closed_environments_text">Ambiente fechado (Casas, Quintais…)</string>
-    <string name="edit_environment_place_open_environments_text">Open environment (Parques, Florestas…)</string>
-    <string name="edit_environment_place_biome">BIOMA</string>
-    <string name="edit_environment_place_picture_text">Foto do ambiente</string>
-
-    <!-- EDIT ENVIRONMENT GOAL -->
-
-    <string name="edit_environment_goal_subtitle">OBJETIVO</string>
-    <string name="edit_environment_goal_aesthetic_option">Ambiente bonito</string>
-    <string name="edit_environment_goal_air_option">Filtragem de ar</string>
-    <string name="edit_environment_goal_medicinal_option">Plantas medicinais</string>
-    <string name="edit_environment_goal_spices_option">Temperos</string>
-
-    <!-- EDIT ENVIRONMENT PLANTS -->
-
-    <string name="edit_environment_plants_subtitle">PLANTAS</string>
-    <string name="edit_environment_plants_create_plant_btn">+ NOVA PLANTA</string>
-    <string name="edit_environment_plants_plants_title">PLANTAS</string>
-
-    <!-- EDIT ENVIRONMENT TIMETABLES -->
-    <string name="edit_environment_timetables_time_hint" translatable="false">00:00</string>
-    <string name="edit_environment_timetables_subtitle">HORÁRIOS</string>
-    <string name="edit_environment_timetables_create_plant_btn">+ NOVO HORÁRIO</string>
-    <string name="edit_environment_timetables_timetables_title">HORÁRIOS</string>
-    <string name="edit_environment_timetables_times_between">até</string>
-
-    <!-- EDIT ENVIRONMENT NAME -->
-    <string name="edit_environment_name_subtitle">NOME DO AMBIENTE</string>
-    <string name="edit_environment_name">Nome</string>
 
     <!-- ENVIRONMENT MAIN -->
     <string name="environment_main_gallery_btn">GALERIA</string>

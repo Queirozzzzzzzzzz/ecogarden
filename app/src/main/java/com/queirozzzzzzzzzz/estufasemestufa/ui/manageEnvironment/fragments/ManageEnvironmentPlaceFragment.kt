@@ -41,7 +41,7 @@ class ManageEnvironmentPlaceFragment : Fragment() {
     private fun setElements() {
         // Header
         if (TemporaryFormData.isEditing) {
-            binding.headerTitle.text = resources.getString(R.string.edit_environment_title)
+            binding.headerTitle.text = resources.getString(R.string.manage_environment_edit_title)
             binding.picture.visibility = View.GONE
         } else {
             // Picture

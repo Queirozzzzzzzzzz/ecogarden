@@ -22,7 +22,7 @@
             android:id="@+id/header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/new_environment_title"
+            android:text="@string/manage_environment_title"
             android:textColor="@color/white"
             android:textSize="@dimen/title_size"
             android:textStyle="bold"
@@ -60,7 +60,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_environment_name_subtitle"
+                android:text="@string/manage_environment_name_subtitle"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/subtitle_size"
                 android:textStyle="bold" />
@@ -79,7 +79,7 @@
                 android:id="@+id/environment_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/new_environment_name"/>
+                android:hint="@string/manage_environment_name"/>
 
         </LinearLayout>
 
