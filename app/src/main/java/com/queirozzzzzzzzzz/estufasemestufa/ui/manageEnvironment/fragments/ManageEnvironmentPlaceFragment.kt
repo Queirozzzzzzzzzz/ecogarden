@@ -20,7 +20,7 @@ import androidx.fragment.app.Fragment
 import com.queirozzzzzzzzzz.estufasemestufa.R
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentManageEnvironmentPlaceBinding
 import com.queirozzzzzzzzzz.estufasemestufa.utils.Const.CAMERA_REQUEST_CODE
-import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryFormData
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
 
 class ManageEnvironmentPlaceFragment : Fragment() {
     private var _binding: FragmentManageEnvironmentPlaceBinding? = null
@@ -40,7 +40,7 @@ class ManageEnvironmentPlaceFragment : Fragment() {
 
     private fun setElements() {
         // Header
-        if (TemporaryFormData.isEditing) {
+        if (TemporaryManageEnvironmentData.isEditing) {
             binding.headerTitle.text = resources.getString(R.string.manage_environment_edit_title)
             binding.picture.visibility = View.GONE
         } else {
@@ -70,15 +70,15 @@ class ManageEnvironmentPlaceFragment : Fragment() {
             changeCheckbox(true, binding.closedEnvironmentCheckbox, binding.openEnvironmentCheckbox)
         }
 
-        if (TemporaryFormData.closed != null) {
-            if (TemporaryFormData.closed!!) {
+        if (TemporaryManageEnvironmentData.closed != null) {
+            if (TemporaryManageEnvironmentData.closed!!) {
                 changeCheckbox(
                     true,
                     binding.closedEnvironmentCheckbox,
                     binding.openEnvironmentCheckbox,
                 )
             }
-            if (!TemporaryFormData.closed!!) {
+            if (!TemporaryManageEnvironmentData.closed!!) {
                 changeCheckbox(
                     false,
                     binding.openEnvironmentCheckbox,
@@ -95,9 +95,9 @@ class ManageEnvironmentPlaceFragment : Fragment() {
             )
         }
 
-        if (TemporaryFormData.biome != null) {
+        if (TemporaryManageEnvironmentData.biome != null) {
             binding.biome.setSelection(
-                resources.getStringArray(R.array.biomes_array).indexOf(TemporaryFormData.biome),
+                resources.getStringArray(R.array.biomes_array).indexOf(TemporaryManageEnvironmentData.biome),
             )
         }
     }
@@ -116,12 +116,12 @@ class ManageEnvironmentPlaceFragment : Fragment() {
             removeBiome()
         }
 
-        TemporaryFormData.closed = closed
+        TemporaryManageEnvironmentData.closed = closed
     }
 
     private fun removeBiome() {
         binding.biomeOption.visibility = View.GONE
-        TemporaryFormData.biome = null
+        TemporaryManageEnvironmentData.biome = null
     }
 
     private fun setBiome() {
@@ -141,7 +141,7 @@ class ManageEnvironmentPlaceFragment : Fragment() {
                     id: Long,
                 ) {
                     val selectedBiome = parent?.getItemAtPosition(position).toString()
-                    TemporaryFormData.biome = selectedBiome
+                    TemporaryManageEnvironmentData.biome = selectedBiome
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -190,7 +190,7 @@ class ManageEnvironmentPlaceFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             val imageBitmap = data?.extras?.get("data") as Bitmap?
-            TemporaryFormData.picture = imageBitmap
+            TemporaryManageEnvironmentData.picture = imageBitmap
         }
     }
 }

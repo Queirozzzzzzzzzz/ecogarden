@@ -20,6 +20,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.Manag
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.ManageEnvironmentPlaceFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.ManageEnvironmentPlantsFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.ManageEnvironmentTimetablesFragment
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
 
 class ManageEnvironmentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityManageEnvironmentBinding
@@ -64,7 +65,20 @@ class ManageEnvironmentActivity : AppCompatActivity() {
     }
 
     fun editPlantFragment(view: View) {
+        TemporaryManageEnvironmentData.selectedPlant = view.tag.toString()
         startFragment(ManageEnvironmentEditPlantFragment())
+    }
+
+    fun deletePlant(view: View) {
+        var plants = TemporaryManageEnvironmentData.plants?.toMutableList()
+        for (plant in plants!!) {
+            if (plant.name == view.tag.toString()) {
+                plants.remove(plant)
+                TemporaryManageEnvironmentData.plants = plants
+                break
+            }
+        }
+        plantsFragment(view)
     }
 
     fun timetablesFragment(view: View) {

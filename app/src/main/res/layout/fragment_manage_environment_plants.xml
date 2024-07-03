@@ -53,6 +53,7 @@
                 android:layout_marginTop="@dimen/small_btn_margin"
                 android:layout_marginBottom="@dimen/small_btn_margin"
                 android:background="@drawable/default_button"
+                android:onClick="goalFragment"
                 android:text="@string/back_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -82,6 +83,7 @@
                 android:layout_marginTop="@dimen/small_btn_margin"
                 android:layout_marginBottom="@dimen/small_btn_margin"
                 android:background="@drawable/default_button"
+                android:onClick="newPlantFragment"
                 android:text="@string/manage_environment_plants_create_plant_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -90,47 +92,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/manage_environment_plants_plants_title"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/text_size"
-                android:textStyle="bold"
-                android:textColor="?android:attr/textColorPrimary"/>
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:id="@+id/plant_1"
+                android:id="@+id/plants_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_top_margin"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Planta 1"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size" />
-
-                <Button
-                    android:id="@+id/plant_1_edit_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/small_btn_height"
-                    android:text="@string/edit_btn"
-                    android:background="@drawable/default_button"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:layout_marginStart="@dimen/default_small_margin"
-                    />
-
-                <Button
-                    android:id="@+id/plant_1_delete_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/small_btn_height"
-                    android:text="@string/delete_btn"
-                    android:background="@drawable/cancel_button"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:layout_marginStart="@dimen/default_small_margin"/>
 
             </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/plants_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -148,6 +125,7 @@
                 android:layout_marginTop="@dimen/btn_margin"
                 android:layout_marginBottom="@dimen/btn_margin"
                 android:background="@drawable/default_button"
+                android:onClick="timetablesFragment"
                 android:text="@string/next_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/btn_text_size"

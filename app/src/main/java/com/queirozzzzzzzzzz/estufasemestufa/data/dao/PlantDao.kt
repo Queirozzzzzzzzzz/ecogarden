@@ -8,6 +8,9 @@ import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Plant
 
 @Dao
 interface PlantDao {
+    @Query("SELECT * FROM plant;")
+    suspend fun getAllPlants(): List<Plant>
+
     @Query("SELECT * FROM plant WHERE environment_id = :environmentId;")
     suspend fun getPlantsByEnvironmentId(environmentId: Int): List<Plant>
 

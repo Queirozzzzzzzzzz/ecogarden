@@ -53,6 +53,7 @@
                 android:layout_marginTop="@dimen/cancel_btn_margin"
                 android:layout_marginBottom="@dimen/cancel_btn_margin"
                 android:background="@drawable/cancel_button"
+                android:onClick="plantsFragment"
                 android:text="@string/cancel_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -105,7 +106,7 @@
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/humidity"
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
@@ -139,7 +140,7 @@
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/light_intensity"
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
@@ -202,7 +203,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/edit_plant_soil_salinity"
+                    android:text="@string/edit_plant_temperature"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -232,7 +233,7 @@
                 android:layout_marginTop="@dimen/btn_margin"
                 android:layout_marginBottom="@dimen/btn_margin"
                 android:background="@drawable/default_button"
-                android:text="@string/create_btn"
+                android:text="@string/save_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/btn_text_size"
                 tools:ignore="MissingConstraints" />

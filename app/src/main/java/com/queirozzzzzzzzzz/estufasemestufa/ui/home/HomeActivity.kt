@@ -8,7 +8,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityHomeBinding
 import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environments.EnvironmentsActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
-import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryFormData
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
 import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.ThemeViewModel
 import kotlinx.coroutines.launch
 
@@ -49,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setButtons() {
         binding.btnCreateEnvironment.setOnClickListener {
-            TemporaryFormData.isEditing = false
+            TemporaryManageEnvironmentData.isEditing = false
             val intent = Intent(this, ManageEnvironmentActivity::class.java)
             startActivity(intent)
         }

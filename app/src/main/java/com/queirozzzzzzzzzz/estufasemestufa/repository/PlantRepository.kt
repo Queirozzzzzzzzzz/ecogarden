@@ -16,6 +16,10 @@ class PlantRepository
             plantDao = db.plantDao()
         }
 
+        suspend fun getAllPlants(): List<Plant> {
+            return plantDao.getAllPlants()
+        }
+
         suspend fun getPlantsByEnvironmentId(environmentId: Int): List<Plant> {
             return plantDao.getPlantsByEnvironmentId(environmentId)
         }

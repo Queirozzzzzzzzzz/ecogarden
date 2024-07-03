@@ -53,6 +53,7 @@
                 android:layout_marginTop="@dimen/cancel_btn_margin"
                 android:layout_marginBottom="@dimen/cancel_btn_margin"
                 android:background="@drawable/cancel_button"
+                android:onClick="plantsFragment"
                 android:text="@string/cancel_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -78,20 +79,6 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="@dimen/default_linear_layout_padding">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/new_plant_search"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size"
-                    android:textStyle="bold" />
-
-                <Spinner
-                    android:layout_width="@dimen/input_width"
-                    android:layout_height="@dimen/input_height"
-                    android:layout_marginBottom="@dimen/default_bottom_margin"
-                    android:spinnerMode="dropdown"/>
 
                 <TextView
                     android:layout_width="@dimen/input_width"
@@ -120,7 +107,7 @@
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/humidity"
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
@@ -156,7 +143,7 @@
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/light_intensity"
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
@@ -223,7 +210,7 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_soil_salinity"
+                    android:text="@string/new_plant_temperature"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
