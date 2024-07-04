@@ -34,28 +34,31 @@ class ManageEnvironmentGoalFragment : Fragment() {
         }
 
         // Checkbox
-        val optionIds =
-            listOf(
-                R.string.manage_environment_goal_aesthetic_option,
-                R.string.manage_environment_goal_air_option,
-                R.string.manage_environment_goal_medicinal_option,
-                R.string.manage_environment_goal_spices_option,
-            )
+        val options = listOf(
+            resources.getString(R.string.manage_environment_goal_aesthetic_option),
+            resources.getString(R.string.manage_environment_goal_air_option),
+            resources.getString(R.string.manage_environment_goal_medicinal_option),
+            resources.getString(R.string.manage_environment_goal_spices_option)
+        )
 
-        val checkboxMap =
-            mapOf(
-                optionIds[0] to binding.aestheticCheckbox,
-                optionIds[1] to binding.airCheckbox,
-                optionIds[2] to binding.medicinalCheckbox,
-                optionIds[3] to binding.spicesCheckbox,
-            )
+        val checkboxMap = mapOf(
+            options[0] to binding.aestheticCheckbox,
+            options[1] to binding.airCheckbox,
+            options[2] to binding.medicinalCheckbox,
+            options[3] to binding.spicesCheckbox
+        )
 
-        optionIds.forEach { optionId ->
-            val checkbox = checkboxMap[optionId]!!
-            checkbox.setOnClickListener { toggleCheckbox(optionId.toString(), checkbox) }
+        options.forEach { option ->
+            val checkbox = checkboxMap[option]!!
+            checkbox.setOnClickListener { toggleCheckbox(option, checkbox) }
             checkbox.setImageResource(
-                if (TemporaryManageEnvironmentData.goals?.contains(optionId.toString()) == true) R.drawable.checkbox_checked else R.drawable.checkbox_unchecked,
+                if (TemporaryManageEnvironmentData.goals?.contains(option) == true) R.drawable.checkbox_checked else R.drawable.checkbox_unchecked
             )
+        }
+
+        // Save Button
+        binding.btnSave.setOnClickListener {
+            binding.btnNext.performClick()
         }
     }
 

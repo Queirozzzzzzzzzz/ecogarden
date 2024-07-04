@@ -22,8 +22,8 @@ interface EnvironmentDao {
         id: Int,
         name: String,
         closed: Boolean,
-        biome: String,
-        goals: List<String>,
+        biome: String?,
+        goals: List<String>?,
     )
 
     @Query("DELETE FROM environment WHERE id = :id")

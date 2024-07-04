@@ -90,4 +90,7 @@
     <dimen name="gallery_image_width">350dp</dimen>
     <dimen name="gallery_image_height">275dp</dimen>
 
+    <!-- LIST -->
+    <dimen name="list_item_width">115dp</dimen>
+
 </resources>

@@ -16,5 +16,5 @@ data class Plant(
     @ColumnInfo(name = "soil_conductivity") var soilConductivity: Double?,
     @ColumnInfo(name = "soil_salinity") var soilSalinity: Double?,
     @ColumnInfo(name = "temperature") var temperature: Int?,
-    @ColumnInfo(name = "environment_id") var environmentId: Int?,
+    @ColumnInfo(name = "environment_id") var environmentId: Int,
 )

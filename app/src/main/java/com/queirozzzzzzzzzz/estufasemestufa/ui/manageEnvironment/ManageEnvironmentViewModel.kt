@@ -11,6 +11,11 @@ import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.PictureRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.TimetableRepository
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData.biome
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData.closed
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData.goals
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData.name
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -22,57 +27,12 @@ class ManageEnvironmentViewModel
         private val plantRepository: PlantRepository,
         private val timetableRepository: TimetableRepository,
     ) : ViewModel() {
-        private var environmentId: Int? = null
-        private var name: String? = null
-        private var closed: Boolean? = null
-        private var biome: String? = null
-        private var picture: Bitmap? = null
-        private var goals: List<String>? = null
-        private var plants: List<Plant>? = null
-        private var timetables: List<Timetable>? = null
 
         // Functions
-        fun setName(name: String) {
-            this.name = name
-        }
-
-        fun setClosed(closed: Boolean) {
-            this.closed = closed
-        }
-
-        fun setBiome(biome: String) {
-            this.biome = biome
-        }
-
-        fun setPicture(picture: Bitmap) {
-            this.picture = picture
-        }
-
-        fun setGoals(goals: List<String>) {
-            this.goals = goals
-        }
-
-        fun addPlant(plant: Plant) {
-            // TODO: Add plant
-        }
-
-        fun addTimetable(timetable: Timetable) {
-            // TODO: Add timetable
-        }
-
-        fun fakeSaveEnvironment() {
-            val environment = Environment(0, name!!, closed!!, biome!!, goals!!)
-            viewModelScope.launch {
-                environmentId = environmentRepository.insertEnvironment(environment).toInt()
-                println("Environment ID: $environmentId")
-                environmentRepository.deleteEnvironmentById(environmentId!!)
-            }
-        }
-
         fun createEnvironment() {
-            val environment = Environment(0, name!!, closed!!, biome!!, goals!!)
+            val environment = Environment(0, name!!, closed!!, biome, goals)
             viewModelScope.launch {
-                environmentId = environmentRepository.insertEnvironment(environment).toInt()
+                TemporaryManageEnvironmentData.environmentId = environmentRepository.insertEnvironment(environment).toInt()
 
                 savePicture()
                 savePlants()
@@ -85,27 +45,18 @@ class ManageEnvironmentViewModel
         }
 
         suspend fun savePlants() {
-            // TODO: Save plants
+            val plants = TemporaryManageEnvironmentData.plants
+            for (plant in plants!!) {
+                plant.environmentId = TemporaryManageEnvironmentData.environmentId!!
+                plantRepository.insertPlant(plant)
+            }
         }
 
         suspend fun saveTimetables() {
-            // TODO: Save timetables
-        }
-
-        // Queries
-        suspend fun insertEnvironment(environment: Environment) {
-            environmentRepository.insertEnvironment(environment)
-        }
-
-        suspend fun insertPicture(picture: Picture) {
-            pictureRepository.insertPicture(picture)
-        }
-
-        suspend fun insertPlant(plant: Plant) {
-            plantRepository.insertPlant(plant)
-        }
-
-        suspend fun insertTimetable(timetable: Timetable) {
-            timetableRepository.insertTimetable(timetable)
+            val timetables = TemporaryManageEnvironmentData.timetables
+            for (timetable in timetables!!) {
+                timetable.environmentId = TemporaryManageEnvironmentData.environmentId!!
+                timetableRepository.insertTimetable(timetable)
+            }
         }
     }

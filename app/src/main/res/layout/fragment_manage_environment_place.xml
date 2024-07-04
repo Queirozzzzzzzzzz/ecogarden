@@ -210,17 +210,23 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_next"
+                android:id="@+id/btn_save"
                 android:layout_width="@dimen/btn_width"
                 android:layout_height="@dimen/btn_height"
                 android:layout_marginTop="@dimen/btn_margin"
                 android:layout_marginBottom="@dimen/btn_margin"
                 android:background="@drawable/default_button"
                 android:text="@string/next_btn"
-                android:onClick="goalFragment"
                 android:textColor="@color/white"
                 android:textSize="@dimen/btn_text_size"
                 tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:onClick="goalFragment"
+                />
         </LinearLayout>
 
     </LinearLayout>

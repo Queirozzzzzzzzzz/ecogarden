@@ -15,7 +15,6 @@ import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
 class ManageEnvironmentPlantsFragment : Fragment() {
     private var _binding: FragmentManageEnvironmentPlantsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var plantRepository: PlantRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,8 +22,6 @@ class ManageEnvironmentPlantsFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentManageEnvironmentPlantsBinding.inflate(inflater, container, false)
-
-        plantRepository = PlantRepository(requireActivity().application)
 
         setElements()
 
@@ -38,5 +35,10 @@ class ManageEnvironmentPlantsFragment : Fragment() {
         val plants = TemporaryManageEnvironmentData.plants
         val adapter = PlantAdapter(plants!!)
         recyclerView.adapter = adapter
+
+        // Save Btn
+        binding.btnSave.setOnClickListener {
+            binding.btnNext.performClick()
+        }
     }
 }

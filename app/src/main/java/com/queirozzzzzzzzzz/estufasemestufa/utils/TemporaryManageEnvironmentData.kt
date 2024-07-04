@@ -14,4 +14,20 @@ object TemporaryManageEnvironmentData {
     var plants: List<Plant>? = emptyList()
     var selectedPlant: String? = null
     var timetables: List<Timetable>? = emptyList()
+    var selectedTimetable: String? = null
+    var environmentId: Int? = null
+
+    fun reset() {
+        isEditing = false
+        name = null
+        closed = null
+        biome = null
+        picture = null
+        goals = emptyList()
+        plants = emptyList()
+        selectedPlant = null
+        timetables = emptyList()
+        selectedTimetable = null
+        environmentId = null
+    }
 }

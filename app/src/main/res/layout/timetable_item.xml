@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/plants_recycler_view"
+    android:id="@+id/timetables_recycler_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -10,30 +10,30 @@
 
 
     <TextView
-        android:id="@+id/plant_name"
+        android:id="@+id/timetable_name"
         android:layout_width="@dimen/list_item_width"
         android:layout_height="wrap_content"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="@dimen/text_size" />
 
     <Button
-        android:id="@+id/plant_edit_btn"
+        android:id="@+id/timetable_edit_btn"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/small_btn_height"
         android:layout_marginStart="@dimen/default_small_margin"
         android:background="@drawable/default_button"
-        android:onClick="editPlantFragment"
+        android:onClick="editTimetableFragment"
         android:text="@string/edit_btn"
         android:textColor="@color/white"
         android:textSize="@dimen/small_text_size" />
 
     <Button
-        android:id="@+id/plant_delete_btn"
+        android:id="@+id/timetable_delete_btn"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/small_btn_height"
         android:layout_marginStart="@dimen/default_small_margin"
         android:background="@drawable/cancel_button"
-        android:onClick="deletePlant"
+        android:onClick="deleteTimetable"
         android:text="@string/delete_btn"
         android:textColor="@color/white"
         android:textSize="@dimen/small_text_size" />

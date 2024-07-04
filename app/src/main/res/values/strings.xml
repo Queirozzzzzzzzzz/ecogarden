@@ -188,6 +188,8 @@
 
     <string name="required_name">Nome é obrigatório!</string>
     <string name="plant_already_exists">Esta planta já foi criada!</string>
+    <string name="timetable_already_exists">Este horário já foi cadastrado!</string>
+    <string name="closed_required">Especifique se o ambiente é aberto ou fechado!</string>
 
 </resources>
 
