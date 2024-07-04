@@ -46,12 +46,12 @@ class ManageEnvironmentNewPlantFragment : Fragment() {
     var humidity: String = ""
 
     private fun createPlant() {
-        var name = binding.name.text.toString()
-        var ph = binding.ph.text.toString().toIntOrNull()
-        var lightDuration = binding.lightDuration.text.toString().toIntOrNull()
-        var soilConductivity = binding.soilConductivity.text.toString().toDoubleOrNull()
-        var soilSalinity = binding.soilSalinity.text.toString().toDoubleOrNull()
-        var temperature = binding.temperature.text.toString().toIntOrNull()
+        val name = binding.name.text.toString()
+        val ph = binding.ph.text.toString().toIntOrNull()
+        val lightDuration = binding.lightDuration.text.toString().toIntOrNull()
+        val soilConductivity = binding.soilConductivity.text.toString().toDoubleOrNull()
+        val soilSalinity = binding.soilSalinity.text.toString().toDoubleOrNull()
+        val temperature = binding.temperature.text.toString().toIntOrNull()
 
         if (name.isEmpty()) {
             Toast.makeText(requireContext(), R.string.required_name, Toast.LENGTH_SHORT).show()

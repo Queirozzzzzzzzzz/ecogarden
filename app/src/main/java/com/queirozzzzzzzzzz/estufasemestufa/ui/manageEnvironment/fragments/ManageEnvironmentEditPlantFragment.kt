@@ -55,7 +55,7 @@ class ManageEnvironmentEditPlantFragment : Fragment() {
             binding.humidity.setSelection(resources.getStringArray(R.array.humidity_array).indexOf(it.humidity))
             it.ph?.let { it1 -> binding.ph.setText(it1.toString()) }
             binding.lightIntensity.setSelection(resources.getStringArray(R.array.light_intensity_array).indexOf(it.lightIntensity))
-            it.lightDuration?.let { it1 -> binding.lightDuration.setText(it1) }
+            it.lightDuration?.let { it1 -> binding.lightDuration.setText(it1.toString()) }
             it.soilConductivity?.let { binding.soilConductivity.setText(it.toString()) }
             it.soilSalinity?.let { binding.soilSalinity.setText(it.toString()) }
             it.temperature?.let { binding.temperature.setText(it.toString()) }
