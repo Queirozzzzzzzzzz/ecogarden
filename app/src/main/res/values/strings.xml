@@ -190,6 +190,7 @@
     <string name="plant_already_exists">Esta planta já foi criada!</string>
     <string name="timetable_already_exists">Este horário já foi cadastrado!</string>
     <string name="closed_required">Especifique se o ambiente é aberto ou fechado!</string>
+    <string name="camera_permission_denied">Permissão negada!</string>
 
 </resources>
 

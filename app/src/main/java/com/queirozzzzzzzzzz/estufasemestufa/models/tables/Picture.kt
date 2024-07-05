@@ -1,5 +1,6 @@
 package com.queirozzzzzzzzzz.estufasemestufa.models.tables
 
+import android.net.Uri
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -8,6 +9,6 @@ import androidx.room.PrimaryKey
 data class Picture(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id") var id: Int,
-    @ColumnInfo(name = "path") var path: String,
+    @ColumnInfo(name = "path") var path: Uri,
     @ColumnInfo(name = "environment_id") var environmentId: Int,
 )

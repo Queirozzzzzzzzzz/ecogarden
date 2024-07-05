@@ -6,7 +6,10 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
@@ -15,13 +18,21 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import com.queirozzzzzzzzzz.estufasemestufa.R
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentManageEnvironmentPlaceBinding
 import com.queirozzzzzzzzzz.estufasemestufa.utils.Const.CAMERA_REQUEST_CODE
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class ManageEnvironmentPlaceFragment : Fragment() {
     private var _binding: FragmentManageEnvironmentPlaceBinding? = null
@@ -98,14 +109,16 @@ class ManageEnvironmentPlaceFragment : Fragment() {
 
         if (TemporaryManageEnvironmentData.biome != null) {
             binding.biome.setSelection(
-                resources.getStringArray(R.array.biomes_array).indexOf(TemporaryManageEnvironmentData.biome),
+                resources.getStringArray(R.array.biomes_array)
+                    .indexOf(TemporaryManageEnvironmentData.biome),
             )
         }
 
         // Save Button
         binding.btnSave.setOnClickListener {
             if (TemporaryManageEnvironmentData.closed == null) {
-                Toast.makeText(requireContext(), R.string.closed_required, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), R.string.closed_required, Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 binding.btnNext.performClick()
             }
@@ -142,22 +155,21 @@ class ManageEnvironmentPlaceFragment : Fragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.biome.adapter = adapter
 
-        binding.biome.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long,
-                ) {
-                    val selectedBiome = parent?.getItemAtPosition(position).toString()
-                    TemporaryManageEnvironmentData.biome = selectedBiome
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    println("Nothing selected")
-                }
+        binding.biome.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long,
+            ) {
+                val selectedBiome = parent?.getItemAtPosition(position).toString()
+                TemporaryManageEnvironmentData.biome = selectedBiome
             }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                println("Nothing selected")
+            }
+        }
     }
 
     fun dialogBox(
@@ -180,27 +192,48 @@ class ManageEnvironmentPlaceFragment : Fragment() {
                 requireContext(), Manifest.permission.CAMERA,
             ) == PackageManager.PERMISSION_GRANTED
         ) {
-            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(intent, CAMERA_REQUEST_CODE)
+            val photoFile: File? = try {
+                createImageFile()
+            } catch (e: IOException) {
+                null
+            }
+
+            photoFile?.also {
+                val photoURI: Uri = FileProvider.getUriForFile(
+                    requireContext(),
+                    "com.queirozzzzzzzzzz.estufasemestufa.fileprovider",
+                    it
+                )
+
+                TemporaryManageEnvironmentData.picturePath = photoURI
+
+                val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE).apply {
+                    putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+                }
+
+                startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE)
+            }
         } else {
-            ActivityCompat.requestPermissions(
-                requireActivity(),
-                arrayOf(Manifest.permission.CAMERA),
-                CAMERA_REQUEST_CODE,
-            )
+            requestPermissionLauncher.launch(Manifest.permission.CAMERA)
         }
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(
-        requestCode: Int,
-        resultCode: Int,
-        data: Intent?,
-    ) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            val imageBitmap = data?.extras?.get("data") as Bitmap?
-            TemporaryManageEnvironmentData.picture = imageBitmap
+    val requestPermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { isGranted:Boolean ->
+            if (isGranted) {
+                takePicture()
+            }
         }
+
+    @Throws(IOException::class)
+    private fun createImageFile(): File {
+        val timeStamp: String =
+            SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+        val storageDir: File? = context?.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        return File.createTempFile(
+            "ENVIRONMENT_${timeStamp}_", ".jpg", storageDir
+        )
     }
 }

@@ -131,9 +131,10 @@ class ManageEnvironmentActivity : AppCompatActivity() {
 
     fun finish(view: View) {
         lifecycleScope.launch {
-            viewModel.createEnvironment()
-            TemporaryManageEnvironmentData.reset()
-            loadEnvironments()
+            viewModel.createEnvironment {
+                TemporaryManageEnvironmentData.reset()
+                loadEnvironments()
+            }
         }
     }
 
