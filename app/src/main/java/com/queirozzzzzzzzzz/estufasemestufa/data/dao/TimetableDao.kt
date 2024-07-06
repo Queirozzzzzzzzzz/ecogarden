@@ -17,6 +17,13 @@ interface TimetableDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTimetable(timetable: Timetable)
 
+    @Query("UPDATE timetable SET startTime = :startTime, finishTime = :finishTime WHERE id = :id")
+    suspend fun updateTimetable(
+        id: Int,
+        startTime: Long,
+        finishTime: Long,
+    )
+
     @Query("DELETE FROM timetable WHERE id = :id")
     suspend fun deleteTimetableById(id: Int)
 }

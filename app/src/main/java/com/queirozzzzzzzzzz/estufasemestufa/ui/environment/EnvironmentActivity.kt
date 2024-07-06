@@ -7,8 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.lifecycleScope
 import com.queirozzzzzzzzzz.estufasemestufa.R
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityEnvironmentBinding
+import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
+import com.queirozzzzzzzzzz.estufasemestufa.repository.PictureRepository
+import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
+import com.queirozzzzzzzzzz.estufasemestufa.repository.TimetableRepository
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentCreateTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentEditTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentGalleryFragment
@@ -17,15 +22,26 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksHistoryFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
+import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentViewModel
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.ManageEnvironmentEditPlantFragment
+import kotlinx.coroutines.launch
 
 class EnvironmentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnvironmentBinding
+    private lateinit var manageEnvironmentViewModel: ManageEnvironmentViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEnvironmentBinding.inflate(layoutInflater)
         val view = binding.root
+
+        manageEnvironmentViewModel =
+            ManageEnvironmentViewModel(
+                EnvironmentRepository(application),
+                PictureRepository(application),
+                PlantRepository(application),
+                TimetableRepository(application),
+            )
 
         startFragment(EnvironmentMainFragment())
 
@@ -42,6 +58,10 @@ class EnvironmentActivity : AppCompatActivity() {
     }
 
     fun editEnvironmentActivity(view: View) {
+        lifecycleScope.launch {
+            manageEnvironmentViewModel.setEditEnvironment()
+        }
+
         val intent = Intent(this, ManageEnvironmentActivity::class.java)
         startActivity(intent)
     }

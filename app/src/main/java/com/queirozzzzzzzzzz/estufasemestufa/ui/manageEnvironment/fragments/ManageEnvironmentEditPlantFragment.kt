@@ -14,7 +14,6 @@ import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
 
 class ManageEnvironmentEditPlantFragment : Fragment() {
     private var _binding: FragmentManageEnvironmentEditPlantBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -46,11 +45,16 @@ class ManageEnvironmentEditPlantFragment : Fragment() {
     var lightIntensity: String = ""
     var humidity: String = ""
 
+    var plantId = 0
+
     private fun setValues() {
         val plant =
             TemporaryManageEnvironmentData.plants?.firstOrNull { it.name == TemporaryManageEnvironmentData.selectedPlant }
+        if (plant?.id != 0) {
+            plantId = plant?.id!!
+        }
 
-        plant?.let {
+        plant.let {
             binding.name.setText(it.name)
             binding.humidity.setSelection(resources.getStringArray(R.array.humidity_array).indexOf(it.humidity))
             it.ph?.let { it1 -> binding.ph.setText(it1.toString()) }
@@ -114,7 +118,7 @@ class ManageEnvironmentEditPlantFragment : Fragment() {
 
     private fun savePlant() {
         val editedPlant =
-            Plant(0, binding.name.text.toString(), binding.humidity.selectedItem.toString(), binding.ph.text.toString().toIntOrNull(), binding.lightIntensity.selectedItem.toString(), binding.lightDuration.text.toString().toIntOrNull(), binding.soilConductivity.text.toString().toDoubleOrNull(), binding.soilSalinity.text.toString().toDoubleOrNull(), binding.temperature.text.toString().toIntOrNull(), 0)
+            Plant(plantId, binding.name.text.toString(), binding.humidity.selectedItem.toString(), binding.ph.text.toString().toIntOrNull(), binding.lightIntensity.selectedItem.toString(), binding.lightDuration.text.toString().toIntOrNull(), binding.soilConductivity.text.toString().toDoubleOrNull(), binding.soilSalinity.text.toString().toDoubleOrNull(), binding.temperature.text.toString().toIntOrNull(), 0)
         val plants = TemporaryManageEnvironmentData.plants?.toMutableList()
         val index = plants?.indexOfFirst { it.name == TemporaryManageEnvironmentData.selectedPlant }
         if (index != null) {

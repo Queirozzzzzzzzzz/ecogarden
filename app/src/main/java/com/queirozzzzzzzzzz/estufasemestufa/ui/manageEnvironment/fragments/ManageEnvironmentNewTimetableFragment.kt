@@ -11,8 +11,6 @@ import com.queirozzzzzzzzzz.estufasemestufa.data.converters.LongTimeConverter
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentManageEnvironmentNewTimetableBinding
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Timetable
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
-import java.time.LocalDateTime
-import java.time.ZoneId
 
 class ManageEnvironmentNewTimetableFragment : Fragment() {
     private var _binding: FragmentManageEnvironmentNewTimetableBinding? = null
@@ -42,13 +40,12 @@ class ManageEnvironmentNewTimetableFragment : Fragment() {
     }
 
     private fun createTimetable() {
-
         val startTime = LongTimeConverter.toLongTime(binding.startTime.hour, binding.startTime.minute)
         val finishTime = LongTimeConverter.toLongTime(binding.finishTime.hour, binding.finishTime.minute)
 
         val timetable = Timetable(0, startTime, finishTime, 0)
         val timetables = TemporaryManageEnvironmentData.timetables?.toMutableList()
-        if(timetable in timetables!!) {
+        if (timetable in timetables!!) {
             Toast.makeText(requireContext(), R.string.timetable_already_exists, Toast.LENGTH_SHORT)
                 .show()
             return
@@ -57,7 +54,5 @@ class ManageEnvironmentNewTimetableFragment : Fragment() {
             TemporaryManageEnvironmentData.timetables = timetables
             binding.btnCancel.performClick()
         }
-
     }
-
 }

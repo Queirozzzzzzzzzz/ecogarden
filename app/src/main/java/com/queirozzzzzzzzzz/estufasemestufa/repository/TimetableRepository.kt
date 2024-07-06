@@ -28,6 +28,14 @@ class TimetableRepository
             timetableDao.insertTimetable(timetable)
         }
 
+        suspend fun updateTimetable(timetable: Timetable) {
+            val id = timetable.id
+            val startTime = timetable.startTime
+            val finishTime = timetable.finishTime
+
+            timetableDao.updateTimetable(id, startTime, finishTime)
+        }
+
         suspend fun deleteTimetable(timetableId: Int) {
             timetableDao.deleteTimetableById(timetableId)
         }

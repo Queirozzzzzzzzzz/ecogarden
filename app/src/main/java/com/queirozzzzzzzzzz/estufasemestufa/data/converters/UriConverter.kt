@@ -13,5 +13,4 @@ object UriConverter {
     fun toUri(uriString: String?): Uri? {
         return Uri.parse(uriString)
     }
-
 }

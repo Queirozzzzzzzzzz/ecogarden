@@ -1,6 +1,5 @@
 package com.queirozzzzzzzzzz.estufasemestufa.utils
 
-import android.graphics.Bitmap
 import android.net.Uri
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Plant
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Timetable
@@ -13,8 +12,10 @@ object TemporaryManageEnvironmentData {
     var picturePath: Uri? = null
     var goals: List<String>? = emptyList()
     var plants: List<Plant>? = emptyList()
+    var deletedPlants: List<Plant>? = emptyList()
     var selectedPlant: String? = null
     var timetables: List<Timetable>? = emptyList()
+    var deletedTimetables: List<Timetable>? = emptyList()
     var selectedTimetable: String? = null
     var environmentId: Int? = null
 
@@ -26,8 +27,10 @@ object TemporaryManageEnvironmentData {
         picturePath = null
         goals = emptyList()
         plants = emptyList()
+        deletedPlants = emptyList()
         selectedPlant = null
         timetables = emptyList()
+        deletedTimetables = emptyList()
         selectedTimetable = null
         environmentId = null
     }

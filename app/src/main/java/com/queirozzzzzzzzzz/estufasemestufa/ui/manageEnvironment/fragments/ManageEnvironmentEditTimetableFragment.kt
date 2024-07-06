@@ -13,7 +13,6 @@ import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
 
 class ManageEnvironmentEditTimetableFragment : Fragment() {
     private var _binding: FragmentManageEnvironmentEditTimetableBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -42,6 +41,7 @@ class ManageEnvironmentEditTimetableFragment : Fragment() {
 
     var selectedStartTime = 0L
     var selectedFinishTime = 0L
+
     private fun setSelectedTimes() {
         val selectedTime = TemporaryManageEnvironmentData.selectedTimetable
         val selectedTimeParts = selectedTime?.split("-")
@@ -51,10 +51,16 @@ class ManageEnvironmentEditTimetableFragment : Fragment() {
 
     var timetable: Timetable? = null
     private var timetableIndex = 0
+
+    var timetableId = 0
+
     private fun setTimetables() {
         setSelectedTimes()
         timetable =
             TemporaryManageEnvironmentData.timetables?.firstOrNull { it.startTime == selectedStartTime && it.finishTime == selectedFinishTime }
+        if (timetable?.id != 0) {
+            timetableId = timetable!!.id
+        }
         timetableIndex =
             TemporaryManageEnvironmentData.timetables?.indexOfFirst { it.startTime == selectedStartTime && it.finishTime == selectedFinishTime }!!
 
@@ -82,7 +88,7 @@ class ManageEnvironmentEditTimetableFragment : Fragment() {
             LongTimeConverter.toLongTime(binding.startTime.hour, binding.startTime.minute)
         val finishTime =
             LongTimeConverter.toLongTime(binding.finishTime.hour, binding.finishTime.minute)
-        val editedTimetable = Timetable(0, startTime, finishTime, 0)
+        val editedTimetable = Timetable(timetableId, startTime, finishTime, 0)
         val timetables = TemporaryManageEnvironmentData.timetables?.toMutableList()
 
         timetables?.set(timetableIndex, editedTimetable)
@@ -90,5 +96,4 @@ class ManageEnvironmentEditTimetableFragment : Fragment() {
         TemporaryManageEnvironmentData.timetables = timetables
         binding.btnCancel.performClick()
     }
-
 }

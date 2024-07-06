@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.queirozzzzzzzzzz.estufasemestufa.adapters.TimetableAdapter
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentManageEnvironmentTimetablesBinding
-import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Timetable
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
 
 class ManageEnvironmentTimetablesFragment : Fragment() {

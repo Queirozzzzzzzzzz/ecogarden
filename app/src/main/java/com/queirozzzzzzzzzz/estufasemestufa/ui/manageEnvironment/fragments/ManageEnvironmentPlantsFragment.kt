@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.queirozzzzzzzzzz.estufasemestufa.adapters.PlantAdapter
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentManageEnvironmentPlantsBinding
-import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
 
 class ManageEnvironmentPlantsFragment : Fragment() {

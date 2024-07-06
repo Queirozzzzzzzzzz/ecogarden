@@ -38,12 +38,13 @@ class ManageEnvironmentActivity : AppCompatActivity() {
         binding = ActivityManageEnvironmentBinding.inflate(layoutInflater)
         val view = binding.root
 
-        viewModel = ManageEnvironmentViewModel(
-            EnvironmentRepository(application),
-            PictureRepository(application),
-            PlantRepository(application),
-            TimetableRepository(application)
-        )
+        viewModel =
+            ManageEnvironmentViewModel(
+                EnvironmentRepository(application),
+                PictureRepository(application),
+                PlantRepository(application),
+                TimetableRepository(application),
+            )
 
         placeFragment(null)
 
@@ -85,9 +86,14 @@ class ManageEnvironmentActivity : AppCompatActivity() {
 
     fun deletePlant(view: View) {
         var plants = TemporaryManageEnvironmentData.plants?.toMutableList()
+        val deletedPlants = TemporaryManageEnvironmentData.deletedPlants?.toMutableList()
+
         for (plant in plants!!) {
             if (plant.name == view.tag.toString()) {
                 plants.remove(plant)
+                deletedPlants?.add(plant)
+
+                TemporaryManageEnvironmentData.deletedPlants = deletedPlants
                 TemporaryManageEnvironmentData.plants = plants
                 break
             }
@@ -114,10 +120,14 @@ class ManageEnvironmentActivity : AppCompatActivity() {
         val selectedTimeParts = selectedTime?.split("-")
         val selectedStartTime = selectedTimeParts?.get(0)?.toLong()!!
         val selectedFinishTime = selectedTimeParts?.get(1)?.toLong()!!
+        val deletedTimetables = TemporaryManageEnvironmentData.deletedTimetables?.toMutableList()
 
         for (timetable in timetables!!) {
             if (timetable.startTime == selectedStartTime && timetable.finishTime == selectedFinishTime) {
                 timetables.remove(timetable)
+                deletedTimetables?.add(timetable)
+
+                TemporaryManageEnvironmentData.deletedTimetables = deletedTimetables
                 TemporaryManageEnvironmentData.timetables = timetables
                 break
             }

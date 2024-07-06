@@ -59,6 +59,7 @@
                     android:text="@string/environment_edit_environment"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size"
+                    android:onClick="editEnvironmentActivity"
                     android:textStyle="bold" />
 
 

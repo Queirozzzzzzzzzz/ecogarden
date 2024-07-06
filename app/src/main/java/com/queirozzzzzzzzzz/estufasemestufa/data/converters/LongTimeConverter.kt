@@ -4,7 +4,10 @@ import androidx.room.TypeConverter
 
 object LongTimeConverter {
     @TypeConverter
-    fun toLongTime(hour: Int, minutes: Int): Long {
+    fun toLongTime(
+        hour: Int,
+        minutes: Int,
+    ): Long {
         return (hour * 60 + minutes).toLong()
     }
 

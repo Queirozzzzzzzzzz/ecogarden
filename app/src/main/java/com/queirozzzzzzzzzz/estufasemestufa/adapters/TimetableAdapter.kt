@@ -32,9 +32,10 @@ class TimetableAdapter(private val timetables: List<Timetable>) :
         position: Int,
     ) {
         val timetable = timetables[position]
-        val timetableDate = LongTimeConverter.fromLongTime(
-            timetable.startTime.toString().toLong()
-        ) + " - " + LongTimeConverter.fromLongTime(timetable.finishTime.toString().toLong())
+        val timetableDate =
+            LongTimeConverter.fromLongTime(
+                timetable.startTime.toString().toLong(),
+            ) + " - " + LongTimeConverter.fromLongTime(timetable.finishTime.toString().toLong())
 
         holder.timetableNameTextView.text = timetableDate
         holder.editButton.tag =

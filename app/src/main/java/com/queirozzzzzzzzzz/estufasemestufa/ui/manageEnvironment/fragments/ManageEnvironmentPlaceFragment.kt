@@ -6,9 +6,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -21,7 +19,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.content.contentValuesOf
@@ -35,7 +32,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
-import java.io.FileOutputStream
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -170,21 +166,22 @@ class ManageEnvironmentPlaceFragment : Fragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.biome.adapter = adapter
 
-        binding.biome.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long,
-            ) {
-                val selectedBiome = parent?.getItemAtPosition(position).toString()
-                TemporaryManageEnvironmentData.biome = selectedBiome
-            }
+        binding.biome.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long,
+                ) {
+                    val selectedBiome = parent?.getItemAtPosition(position).toString()
+                    TemporaryManageEnvironmentData.biome = selectedBiome
+                }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                println("Nothing selected")
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    println("Nothing selected")
+                }
             }
-        }
     }
 
     fun dialogBox(
@@ -204,27 +201,30 @@ class ManageEnvironmentPlaceFragment : Fragment() {
 
     private fun takePicture() {
         if (ContextCompat.checkSelfPermission(
-                requireContext(), Manifest.permission.CAMERA
+                requireContext(), Manifest.permission.CAMERA,
             ) == PackageManager.PERMISSION_GRANTED
         ) {
-            val photoFile: File? = try {
-                createImageFile()
-            } catch (e: IOException) {
-                null
-            }
+            val photoFile: File? =
+                try {
+                    createImageFile()
+                } catch (e: IOException) {
+                    null
+                }
 
             photoFile?.also {
-                val photoURI: Uri = FileProvider.getUriForFile(
-                    requireContext(),
-                    "com.queirozzzzzzzzzz.estufasemestufa.fileprovider", // Replace with your actual authority
-                    it
-                )
+                val photoURI: Uri =
+                    FileProvider.getUriForFile(
+                        requireContext(),
+                        "com.queirozzzzzzzzzz.estufasemestufa.fileprovider", // Replace with your actual authority
+                        it,
+                    )
 
                 TemporaryManageEnvironmentData.picturePath = photoURI
 
-                val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE).apply {
-                    putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                }
+                val takePictureIntent =
+                    Intent(MediaStore.ACTION_IMAGE_CAPTURE).apply {
+                        putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+                    }
 
                 startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE)
             }
@@ -233,7 +233,11 @@ class ManageEnvironmentPlaceFragment : Fragment() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(
+        requestCode: Int,
+        resultCode: Int,
+        data: Intent?,
+    ) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             val imageUri = TemporaryManageEnvironmentData.picturePath
@@ -253,17 +257,24 @@ class ManageEnvironmentPlaceFragment : Fragment() {
             SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
         val storageDir: File? = requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile(
-            "ENVIRONMENT_${timeStamp}_", ".jpg", storageDir
+            "ENVIRONMENT_${timeStamp}_",
+            ".jpg",
+            storageDir,
         )
     }
 
-    private suspend fun savePhotoToMediaStore(context: Context, fileName: String, imageData: ByteArray): Uri? {
+    private suspend fun savePhotoToMediaStore(
+        context: Context,
+        fileName: String,
+        imageData: ByteArray,
+    ): Uri? {
         return withContext(Dispatchers.IO) {
-            val contentValues = contentValuesOf(
-                MediaStore.MediaColumns.DISPLAY_NAME to fileName,
-                MediaStore.MediaColumns.MIME_TYPE to "image/jpeg",
-                MediaStore.MediaColumns.RELATIVE_PATH to "Pictures/${context.getString(R.string.app_name)}"
-            )
+            val contentValues =
+                contentValuesOf(
+                    MediaStore.MediaColumns.DISPLAY_NAME to fileName,
+                    MediaStore.MediaColumns.MIME_TYPE to "image/jpeg",
+                    MediaStore.MediaColumns.RELATIVE_PATH to "Pictures/${context.getString(R.string.app_name)}",
+                )
 
             contentValues.put(MediaStore.MediaColumns.IS_PENDING, 1)
 
@@ -284,9 +295,13 @@ class ManageEnvironmentPlaceFragment : Fragment() {
         }
     }
 
-    private suspend fun getByteArrayFromUri(context: Context, uri: Uri): ByteArray = withContext(Dispatchers.IO) {
-        context.contentResolver.openInputStream(uri)?.use { inputStream ->
-            inputStream.readBytes()
-        } ?: byteArrayOf()
-    }
+    private suspend fun getByteArrayFromUri(
+        context: Context,
+        uri: Uri,
+    ): ByteArray =
+        withContext(Dispatchers.IO) {
+            context.contentResolver.openInputStream(uri)?.use { inputStream ->
+                inputStream.readBytes()
+            } ?: byteArrayOf()
+        }
 }
