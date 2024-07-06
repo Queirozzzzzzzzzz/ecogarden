@@ -141,5 +141,6 @@ class ManageEnvironmentActivity : AppCompatActivity() {
     private fun loadEnvironments() {
         val intent = Intent(this, EnvironmentsActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }

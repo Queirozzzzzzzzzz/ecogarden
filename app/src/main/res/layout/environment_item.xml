@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/environments_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/default_btn_padding"
+    tools:context=".ui.environments.EnvironmentsActivity">
+
+    <Button
+        android:id="@+id/environment_btn"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:background="@drawable/right_round_rectangle"
+        android:onClick="startEnvironment"
+        android:textColor="@color/white"
+        android:textSize="@dimen/up_text_size"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>

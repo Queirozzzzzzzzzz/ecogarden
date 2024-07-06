@@ -39,11 +39,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            android:padding="@dimen/default_linear_layout_padding">
 
             <LinearLayout
                 android:id="@+id/environments_layout"
@@ -52,18 +47,14 @@
                 android:orientation="vertical"
                 android:gravity="center">
 
-                <Button
-                    android:id="@+id/environment_1"
-                    android:layout_width="@dimen/btn_width"
-                    android:layout_height="@dimen/btn_height"
-                    android:background="@drawable/right_round_rectangle"
-                    android:text="Ambiente 1"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/up_text_size"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/environments_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
-        </ScrollView>
+
 
     </LinearLayout>
 

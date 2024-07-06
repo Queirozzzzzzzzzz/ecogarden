@@ -25,10 +25,17 @@ class HomeActivity : AppCompatActivity() {
         viewModel = HomeViewModel(EnvironmentRepository(application))
         themeViewModel = ThemeViewModel()
 
+        TemporaryManageEnvironmentData.reset()
+
         animateLogo()
         setButtons()
 
         setContentView(view)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        TemporaryManageEnvironmentData.reset()
     }
 
     private fun switchTheme() {
