@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/environments_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/default_btn_padding"
+    tools:context=".ui.environment.EnvironmentActivity">
+
+    <TextView
+        android:id="@+id/created_at"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="@dimen/gallery_image_width"
+        android:layout_height="@dimen/gallery_image_height"
+        android:layout_marginTop="@dimen/default_top_margin" />
+
+    <Button
+        android:id="@+id/delete_btn"
+        android:layout_width="@dimen/small_btn_width"
+        android:layout_height="@dimen/small_btn_height"
+        android:layout_marginTop="@dimen/default_top_margin"
+        android:background="@drawable/cancel_button"
+        android:text="@string/delete_btn"
+        android:onClick="deletePicture"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text_size" />
+
+</LinearLayout>

@@ -56,6 +56,8 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.gson)
     implementation(libs.hilt.navigation.fragment)
+    implementation(libs.com.github.bumptech.glide.glide)
+    annotationProcessor(libs.compiler)
     ksp(libs.androidx.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

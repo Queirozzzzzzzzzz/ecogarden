@@ -14,6 +14,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityEnvironmentBindi
 import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.PictureRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
+import com.queirozzzzzzzzzz.estufasemestufa.repository.TaskRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.TimetableRepository
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentCreateTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentEditTaskFragment
@@ -26,17 +27,25 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environments.EnvironmentsActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentViewModel
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.ManageEnvironmentEditPlantFragment
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
 import kotlinx.coroutines.launch
 
 class EnvironmentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnvironmentBinding
     private lateinit var manageEnvironmentViewModel: ManageEnvironmentViewModel
+    private lateinit var viewModel: EnvironmentViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEnvironmentBinding.inflate(layoutInflater)
         val view = binding.root
 
+        viewModel =
+            EnvironmentViewModel(
+                EnvironmentRepository(application),
+                PictureRepository(application),
+                TaskRepository(application),
+            )
         manageEnvironmentViewModel =
             ManageEnvironmentViewModel(
                 EnvironmentRepository(application),
@@ -134,5 +143,11 @@ class EnvironmentActivity : AppCompatActivity() {
         val intent = Intent(this, EnvironmentsActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    fun deletePicture(view: View) {
+        TemporaryData.selectedPictureId = view.tag.toString().toInt()
+        viewModel.deletePicture()
+        galleryFragment(view)
     }
 }

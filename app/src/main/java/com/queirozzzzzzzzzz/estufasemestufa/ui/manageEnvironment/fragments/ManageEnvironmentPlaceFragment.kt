@@ -215,7 +215,7 @@ class ManageEnvironmentPlaceFragment : Fragment() {
                 val photoURI: Uri =
                     FileProvider.getUriForFile(
                         requireContext(),
-                        "com.queirozzzzzzzzzz.estufasemestufa.fileprovider", // Replace with your actual authority
+                        "com.queirozzzzzzzzzz.estufasemestufa.fileprovider",
                         it,
                     )
 

@@ -59,6 +59,7 @@ class ManageEnvironmentViewModel
                     Picture(
                         0,
                         picturePath!!,
+                        System.currentTimeMillis(),
                         environmentId!!,
                     )
                 pictureRepository.insertPicture(picture)
