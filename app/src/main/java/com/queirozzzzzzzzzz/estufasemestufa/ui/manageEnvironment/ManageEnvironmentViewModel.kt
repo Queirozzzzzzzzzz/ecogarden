@@ -140,4 +140,15 @@ class ManageEnvironmentViewModel
             plants = plantRepository.getPlantsByEnvironmentId(environment!!.id)
             timetables = timetableRepository.getEnvironmentTimetables(environment.id)
         }
+
+        suspend fun deleteEnvironment(onCompleted: () -> Unit) {
+            viewModelScope.launch {
+                environmentRepository.deleteEnvironmentById(selectedEnvironmentId!!)
+                pictureRepository.deletePicturesByEnvironmentId(selectedEnvironmentId!!)
+                plantRepository.deletePlantsByEnvironmentId(selectedEnvironmentId!!)
+                timetableRepository.deleteTimetablesByEnvironmentId(selectedEnvironmentId!!)
+
+                return@launch onCompleted()
+            }
+        }
     }

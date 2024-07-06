@@ -39,4 +39,8 @@ class TimetableRepository
         suspend fun deleteTimetable(timetableId: Int) {
             timetableDao.deleteTimetableById(timetableId)
         }
+
+        suspend fun deleteTimetablesByEnvironmentId(environmentId: Int) {
+            timetableDao.deleteTimetablesByEnvironmentId(environmentId)
+        }
     }

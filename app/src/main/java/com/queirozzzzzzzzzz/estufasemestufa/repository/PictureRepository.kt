@@ -27,4 +27,8 @@ class PictureRepository
         suspend fun deletePicture(pictureId: Int) {
             pictureDao.deletePictureById(pictureId)
         }
+
+        suspend fun deletePicturesByEnvironmentId(environmentId: Int) {
+            pictureDao.deletePicturesByEnvironmentId(environmentId)
+        }
     }

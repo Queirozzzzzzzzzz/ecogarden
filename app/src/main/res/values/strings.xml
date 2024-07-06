@@ -160,6 +160,7 @@
     <string name="environment_tasks_create_task_friday">Sexta</string>
     <string name="environment_tasks_create_task_saturday">Sábado</string>
     <string name="environment_edit_environment">EDITAR AMBIENTE</string>
+    <string name="environment_delete">EXCLUIR AMBIENTE</string>
 
     <!-- IN CODE -->
     <string-array name="biomes_array">

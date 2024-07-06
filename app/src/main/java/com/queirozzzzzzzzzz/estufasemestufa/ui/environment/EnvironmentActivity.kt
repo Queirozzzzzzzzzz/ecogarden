@@ -1,5 +1,6 @@
 package com.queirozzzzzzzzzz.estufasemestufa.ui.environment
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -21,6 +22,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentManageTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksHistoryFragment
+import com.queirozzzzzzzzzz.estufasemestufa.ui.environments.EnvironmentsActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentViewModel
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.ManageEnvironmentEditPlantFragment
@@ -96,5 +98,41 @@ class EnvironmentActivity : AppCompatActivity() {
 
     fun editTaskFragment(view: View) {
         startFragment(EnvironmentEditTaskFragment())
+    }
+
+    fun deleteEnvironment(view: View) {
+        dialogBox()
+    }
+
+    private fun deleteEnvironmentAccepted() {
+        lifecycleScope.launch {
+            manageEnvironmentViewModel.deleteEnvironment {
+                deleteEnvironmentActivity()
+            }
+        }
+    }
+
+    private fun dialogBox() {
+        val alert: AlertDialog.Builder = AlertDialog.Builder(this)
+        alert.setTitle(title)
+        alert.setMessage("Você tem certeza que deseja excluir este ambiente?")
+
+        alert.setNegativeButton(
+            "Cancelar",
+        ) { dialog, whichButton -> }
+
+        alert.setPositiveButton(
+            "Sim",
+        ) { dialog, whichButton ->
+            deleteEnvironmentAccepted()
+        }
+
+        alert.show()
+    }
+
+    private fun deleteEnvironmentActivity() {
+        val intent = Intent(this, EnvironmentsActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

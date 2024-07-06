@@ -16,4 +16,7 @@ interface PictureDao {
 
     @Query("DELETE FROM picture WHERE id = :id")
     suspend fun deletePictureById(id: Int)
+
+    @Query("DELETE FROM picture WHERE environment_id = :environmentId")
+    suspend fun deletePicturesByEnvironmentId(environmentId: Int)
 }

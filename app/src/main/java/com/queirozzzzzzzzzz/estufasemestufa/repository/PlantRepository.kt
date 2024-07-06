@@ -59,4 +59,8 @@ class PlantRepository
         suspend fun deletePlant(plantId: Int) {
             plantDao.deletePlantById(plantId)
         }
+
+        suspend fun deletePlantsByEnvironmentId(environmentId: Int) {
+            plantDao.deletePlantsByEnvironmentId(environmentId)
+        }
     }
