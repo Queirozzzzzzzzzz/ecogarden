@@ -53,6 +53,7 @@
                 android:layout_marginTop="@dimen/small_btn_margin"
                 android:layout_marginBottom="@dimen/small_btn_margin"
                 android:background="@drawable/default_button"
+                android:onClick="mainFragment"
                 android:text="@string/back_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -73,6 +74,7 @@
                 android:layout_height="@dimen/medium_btn_height"
                 android:layout_marginBottom="@dimen/small_btn_margin"
                 android:background="@drawable/right_round_rectangle"
+                android:onClick="tasksHistoryFragment"
                 android:text="@string/environment_tasks_history"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size" />
@@ -82,6 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/medium_btn_height"
                 android:background="@drawable/right_round_rectangle"
+                android:onClick="manageTasksFragment"
                 android:text="@string/environment_tasks_manage_tasks"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size" />
@@ -102,10 +105,10 @@
                 android:padding="@dimen/default_linear_layout_padding">
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/default_top_margin"
                     android:id="@+id/sunday"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_top_margin"
                     android:orientation="vertical">
 
                     <TextView
@@ -153,10 +156,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/default_top_margin"
                     android:id="@+id/monday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
                     android:orientation="vertical">
 
                     <TextView
@@ -170,10 +173,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/default_top_margin"
                     android:id="@+id/tuesday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
                     android:orientation="vertical">
 
                     <TextView
@@ -187,10 +190,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/default_top_margin"
                     android:id="@+id/wednesday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
                     android:orientation="vertical">
 
                     <TextView
@@ -232,10 +235,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/default_top_margin"
                     android:id="@+id/thursday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
                     android:orientation="vertical">
 
                     <TextView
@@ -249,10 +252,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/default_top_margin"
                     android:id="@+id/friday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
                     android:orientation="vertical">
 
                     <TextView
@@ -266,10 +269,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/default_top_margin"
                     android:id="@+id/saturday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_top_margin"
                     android:orientation="vertical">
 
                     <TextView

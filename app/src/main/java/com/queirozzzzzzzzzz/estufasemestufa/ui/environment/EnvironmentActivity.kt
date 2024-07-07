@@ -26,7 +26,6 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environments.EnvironmentsActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentViewModel
-import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.fragments.ManageEnvironmentEditPlantFragment
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
 import kotlinx.coroutines.launch
 
@@ -53,11 +52,16 @@ class EnvironmentActivity : AppCompatActivity() {
                 PlantRepository(application),
                 TimetableRepository(application),
             )
-        viewModel.setEnvironmentName()
 
-        startFragment(EnvironmentMainFragment())
+        setEnvironment()
 
         setContentView(view)
+    }
+
+    private fun setEnvironment() {
+        viewModel.setEnvironmentName {
+            mainFragment(null)
+        }
     }
 
     private fun startFragment(fragment: Fragment) {
@@ -82,10 +86,6 @@ class EnvironmentActivity : AppCompatActivity() {
         startFragment(EnvironmentMainFragment())
     }
 
-    fun editPlantFragment(view: View) {
-        startFragment(ManageEnvironmentEditPlantFragment())
-    }
-
     fun galleryFragment(view: View) {
         startFragment(EnvironmentGalleryFragment())
     }
@@ -107,7 +107,13 @@ class EnvironmentActivity : AppCompatActivity() {
     }
 
     fun editTaskFragment(view: View) {
+        TemporaryData.selectedTaskId = view.tag.toString().toInt()
         startFragment(EnvironmentEditTaskFragment())
+    }
+
+    fun deleteTask(view: View) {
+        viewModel.deleteTask(view.tag.toString().toInt())
+        manageTasksFragment(view)
     }
 
     fun deleteEnvironment(view: View) {

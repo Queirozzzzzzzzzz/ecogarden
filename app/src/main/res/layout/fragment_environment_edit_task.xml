@@ -53,6 +53,7 @@
                 android:layout_marginTop="@dimen/cancel_btn_margin"
                 android:layout_marginBottom="@dimen/cancel_btn_margin"
                 android:background="@drawable/cancel_button"
+                android:onClick="manageTasksFragment"
                 android:text="@string/cancel_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -94,9 +95,9 @@
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
                     android:hint="Nome da tarefa"
-                    android:text="Regar planta 1"
                     android:inputType="text"
-                    android:padding="@dimen/input_padding" />
+                    android:padding="@dimen/input_padding"
+                    android:text="Regar planta 1" />
 
                 <TextView
                     android:layout_width="@dimen/input_width"
@@ -121,7 +122,7 @@
                         android:layout_height="@dimen/small_checkbox_height"
                         android:layout_margin="@dimen/small_checkbox_margin"
                         android:contentDescription="@string/checkbox_description"
-                        android:src="@drawable/checkbox_checked" />
+                        android:src="@drawable/checkbox_unchecked" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -193,7 +194,7 @@
                         android:layout_height="@dimen/small_checkbox_height"
                         android:layout_margin="@dimen/small_checkbox_margin"
                         android:contentDescription="@string/checkbox_description"
-                        android:src="@drawable/checkbox_checked" />
+                        android:src="@drawable/checkbox_unchecked" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -287,13 +288,13 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_create"
+                android:id="@+id/btn_save"
                 android:layout_width="@dimen/btn_width"
                 android:layout_height="@dimen/btn_height"
                 android:layout_marginTop="@dimen/btn_margin"
                 android:layout_marginBottom="@dimen/btn_margin"
                 android:background="@drawable/default_button"
-                android:text="@string/create_btn"
+                android:text="@string/save_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/btn_text_size"
                 tools:ignore="MissingConstraints" />

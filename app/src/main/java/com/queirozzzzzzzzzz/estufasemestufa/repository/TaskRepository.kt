@@ -20,6 +20,10 @@ class TaskRepository
             return taskDao.getTasksByEnvironmentId(environmentId)
         }
 
+        suspend fun getTaskById(id: Int): Task {
+            return taskDao.getTaskById(id)
+        }
+
         suspend fun insertTask(task: Task) {
             taskDao.insertTask(task)
         }

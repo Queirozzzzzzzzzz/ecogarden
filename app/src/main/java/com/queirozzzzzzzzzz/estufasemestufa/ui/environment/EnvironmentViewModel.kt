@@ -16,17 +16,25 @@ class EnvironmentViewModel
         private val pictureRepository: PictureRepository,
         private val taskRepository: TaskRepository,
     ) : ViewModel() {
-        fun setEnvironmentName() {
+        fun setEnvironmentName(onCompleted: () -> Unit) {
             viewModelScope.launch {
                 val environment =
                     environmentRepository.getEnvironmentById(TemporaryData.selectedEnvironmentId!!)
                 TemporaryData.selectedEnvironmentName = environment?.name
+
+                return@launch onCompleted()
             }
         }
 
         fun deletePicture() {
             viewModelScope.launch {
                 pictureRepository.deletePicture(TemporaryData.selectedPictureId!!)
+            }
+        }
+
+        fun deleteTask(id: Int) {
+            viewModelScope.launch {
+                taskRepository.deleteTask(id)
             }
         }
     }

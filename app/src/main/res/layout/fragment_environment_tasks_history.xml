@@ -53,6 +53,7 @@
                 android:layout_marginTop="@dimen/small_btn_margin"
                 android:layout_marginBottom="@dimen/small_btn_margin"
                 android:background="@drawable/default_button"
+                android:onClick="tasksFragment"
                 android:text="@string/back_btn"
                 android:textColor="@color/white"
                 android:textSize="@dimen/small_text_size" />
@@ -81,10 +82,10 @@
                 android:padding="@dimen/default_linear_layout_padding">
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/default_top_margin"
                     android:id="@+id/wednesday_01_08_2025"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_top_margin"
                     android:orientation="vertical">
 
                     <TextView
@@ -127,7 +128,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        tools:ignore="UseCompoundDrawables"/>
+                        tools:ignore="UseCompoundDrawables" />
 
                     <LinearLayout
                         android:id="@+id/sunday_task_2"
@@ -135,7 +136,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        tools:ignore="UseCompoundDrawables"/>
+                        tools:ignore="UseCompoundDrawables" />
 
                 </LinearLayout>
 

@@ -66,6 +66,9 @@ class ManageEnvironmentPlaceFragment : Fragment() {
         if (TemporaryManageEnvironmentData.isEditing) {
             binding.headerTitle.text = resources.getString(R.string.manage_environment_edit_title)
             binding.picture.visibility = View.GONE
+            binding.btnCancelEnvironment.setOnClickListener {
+                activity?.finish()
+            }
         } else {
             // Picture
             binding.pictureIcon.setOnClickListener {
