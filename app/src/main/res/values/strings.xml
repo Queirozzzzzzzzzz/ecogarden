@@ -16,6 +16,8 @@
     <string name="logo_description" translatable="false">logo</string>
     <string name="theme_icon_description" translatable="false">theme</string>
     <string name="checkbox_description" translatable="false">checkbox</string>
+    <string name="full_screen_image_description" translatable="false">full screen image description</string>
+
 
     <!-- HOME -->
     <string name="home_logo_title" translatable="false">ESTUFA SEM ESTUFA</string>

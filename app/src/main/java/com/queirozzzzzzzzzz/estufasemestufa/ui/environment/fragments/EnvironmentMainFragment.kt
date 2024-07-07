@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentEnvironmentMainBinding
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
 
 class EnvironmentMainFragment : Fragment() {
     private var _binding: FragmentEnvironmentMainBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,6 +18,13 @@ class EnvironmentMainFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentEnvironmentMainBinding.inflate(inflater, container, false)
+
+        setElements()
+
         return binding.root
+    }
+
+    private fun setElements() {
+        binding.headerTitle.text = TemporaryData.selectedEnvironmentName
     }
 }

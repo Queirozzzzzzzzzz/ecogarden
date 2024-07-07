@@ -53,6 +53,7 @@ class EnvironmentActivity : AppCompatActivity() {
                 PlantRepository(application),
                 TimetableRepository(application),
             )
+        viewModel.setEnvironmentName()
 
         startFragment(EnvironmentMainFragment())
 

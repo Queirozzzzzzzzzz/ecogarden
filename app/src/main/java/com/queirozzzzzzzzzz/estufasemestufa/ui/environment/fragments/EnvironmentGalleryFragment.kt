@@ -66,6 +66,8 @@ class EnvironmentGalleryFragment : Fragment() {
     }
 
     private fun setElements() {
+        binding.headerTitle.text = TemporaryData.selectedEnvironmentName
+
         lifecycleScope.launch {
             val recyclerView: RecyclerView = binding.picturesRecyclerView
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -156,6 +158,7 @@ class EnvironmentGalleryFragment : Fragment() {
                         imageData,
                     )
                 TemporaryManageEnvironmentData.picturePath = savedImageUri
+                binding.btnRefresh.performClick()
             }
         }
     }

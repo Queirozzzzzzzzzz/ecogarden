@@ -41,7 +41,6 @@ class EnvironmentsActivity : AppCompatActivity() {
     }
 
     fun startEnvironment(view: View) {
-        println(view.tag)
         TemporaryData.selectedEnvironmentId = view.tag.toString().toInt()
         val intent = Intent(this, EnvironmentActivity::class.java)
         startActivity(intent)

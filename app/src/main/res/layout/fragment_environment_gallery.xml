@@ -68,6 +68,13 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="galleryFragment"
+            />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -105,6 +112,12 @@
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/full_screen_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/pictures_recycler_view"

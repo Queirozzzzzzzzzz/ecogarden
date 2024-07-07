@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentEnvironmentManageTasksBinding
+import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
 
 class EnvironmentManageTasksFragment : Fragment() {
     private var _binding: FragmentEnvironmentManageTasksBinding? = null
@@ -18,6 +19,12 @@ class EnvironmentManageTasksFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentEnvironmentManageTasksBinding.inflate(inflater, container, false)
+        setElements()
+
         return binding.root
+    }
+
+    private fun setElements() {
+        binding.headerTitle.text = TemporaryData.selectedEnvironmentName
     }
 }
