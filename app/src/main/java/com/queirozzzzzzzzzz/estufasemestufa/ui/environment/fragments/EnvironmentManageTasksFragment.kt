@@ -37,12 +37,16 @@ class EnvironmentManageTasksFragment : Fragment() {
         binding.headerTitle.text = TemporaryData.selectedEnvironmentName
 
         lifecycleScope.launch {
-            val recyclerView: RecyclerView = binding.tasksRecyclerView
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-            val tasks = taskRepository.getTasksByEnvironmentId(TemporaryData.selectedEnvironmentId!!)
-            val adapter = TaskAdapter(tasks)
-            recyclerView.adapter = adapter
+            setRecyclerView()
         }
+    }
+
+    private suspend fun setRecyclerView() {
+        val recyclerView: RecyclerView = binding.tasksRecyclerView
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val tasks = taskRepository.getTasksByEnvironmentId(TemporaryData.selectedEnvironmentId!!)
+        val adapter = TaskAdapter(tasks)
+        recyclerView.adapter = adapter
     }
 }

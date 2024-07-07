@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.lifecycleScope
 import com.queirozzzzzzzzzz.estufasemestufa.R
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityEnvironmentBinding
+import com.queirozzzzzzzzzz.estufasemestufa.repository.CompletedTaskRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.PictureRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
@@ -23,7 +24,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentManageTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksHistoryFragment
-import com.queirozzzzzzzzzz.estufasemestufa.ui.environments.EnvironmentsActivity
+import com.queirozzzzzzzzzz.estufasemestufa.ui.home.HomeActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentViewModel
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
@@ -44,6 +45,7 @@ class EnvironmentActivity : AppCompatActivity() {
                 EnvironmentRepository(application),
                 PictureRepository(application),
                 TaskRepository(application),
+                CompletedTaskRepository(application),
             )
         manageEnvironmentViewModel =
             ManageEnvironmentViewModel(
@@ -147,14 +149,19 @@ class EnvironmentActivity : AppCompatActivity() {
     }
 
     private fun deleteEnvironmentActivity() {
-        val intent = Intent(this, EnvironmentsActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
-        finish()
     }
 
     fun deletePicture(view: View) {
         TemporaryData.selectedPictureId = view.tag.toString().toInt()
         viewModel.deletePicture()
         galleryFragment(view)
+    }
+
+    fun completeTask(view: View) {
+        viewModel.completeTask(view.tag.toString().toInt())
+        tasksFragment(view)
     }
 }

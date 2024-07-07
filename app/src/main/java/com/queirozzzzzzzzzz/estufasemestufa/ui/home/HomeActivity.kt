@@ -36,6 +36,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         TemporaryManageEnvironmentData.reset()
+        setButtons()
     }
 
     private fun switchTheme() {

@@ -5,8 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.queirozzzzzzzzzz.estufasemestufa.data.converters.DateTypeConverter
 import com.queirozzzzzzzzzz.estufasemestufa.data.converters.DaysListTypeConverter
+import com.queirozzzzzzzzzz.estufasemestufa.data.converters.LongDateConverter
 import com.queirozzzzzzzzzz.estufasemestufa.data.converters.StringListConverter
 import com.queirozzzzzzzzzz.estufasemestufa.data.converters.UriConverter
 import com.queirozzzzzzzzzz.estufasemestufa.data.dao.CompletedTaskDao
@@ -26,9 +26,9 @@ import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Timetable
 
 @Database(
     entities = [CompletedTask::class, Environment::class, EnvironmentData::class, Picture::class, Plant::class, Task::class, Timetable::class],
-    version = 11,
+    version = 14,
 )
-@TypeConverters(DateTypeConverter::class, StringListConverter::class, DaysListTypeConverter::class, UriConverter::class)
+@TypeConverters(LongDateConverter::class, StringListConverter::class, DaysListTypeConverter::class, UriConverter::class)
 abstract class LocalDatabase : RoomDatabase() {
     abstract fun completedTaskDao(): CompletedTaskDao
 

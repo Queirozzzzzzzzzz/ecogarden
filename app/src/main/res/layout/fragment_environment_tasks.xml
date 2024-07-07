@@ -112,6 +112,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/sunday_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/environment_tasks_sunday"
@@ -119,39 +120,10 @@
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
 
-                    <LinearLayout
-                        android:id="@+id/sunday_task_1"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sunday_task_recycler_view"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        tools:ignore="UseCompoundDrawables">
-
-                        <TextView
-                            android:id="@+id/sunday_task_1_task"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Regar planta 1"
-                            android:textColor="?android:attr/textColorPrimary"
-                            android:textSize="@dimen/text_size" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/sunday_task_2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        tools:ignore="UseCompoundDrawables">
-
-                        <TextView
-                            android:id="@+id/sunday_task_2_task"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Adubar o solo"
-                            android:textColor="?android:attr/textColorPrimary"
-                            android:textSize="@dimen/text_size" />
-                    </LinearLayout>
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -163,12 +135,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/monday_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/environment_tasks_monday"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/monday_task_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -180,12 +158,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tuesday_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/environment_tasks_tuesday"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/tuesday_task_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -197,40 +181,20 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/wednesday_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/round_rectangle"
                         android:paddingStart="@dimen/medium_btn_padding"
                         android:paddingEnd="@dimen/medium_btn_padding"
                         android:text="@string/environment_tasks_wednesday"
-                        android:textColor="@color/white"
+                        android:textColor="?android:attr/textColorPrimary"
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
 
-                    <LinearLayout
-                        android:id="@+id/wednesday_task_1"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/wednesday_task_recycler_view"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        tools:ignore="UseCompoundDrawables">
-
-                        <ImageView
-                            android:id="@+id/wednesday_task_1_checkbox"
-                            android:layout_width="@dimen/small_checkbox_width"
-                            android:layout_height="@dimen/small_checkbox_height"
-                            android:layout_margin="@dimen/small_checkbox_margin"
-                            android:contentDescription="@string/checkbox_description"
-                            android:src="@drawable/checkbox_unchecked" />
-
-                        <TextView
-                            android:id="@+id/wednesday_task_1_task"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Regar planta 1"
-                            android:textColor="?android:attr/textColorPrimary"
-                            android:textSize="@dimen/text_size" />
-                    </LinearLayout>
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -242,12 +206,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/thursday_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/environment_tasks_thursday"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/thursday_task_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -259,12 +229,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/friday_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/environment_tasks_friday"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/friday_task_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -276,12 +252,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/saturday_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/environment_tasks_saturday"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="@dimen/text_size"
                         android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/saturday_task_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 

@@ -81,64 +81,10 @@
                 android:orientation="vertical"
                 android:padding="@dimen/default_linear_layout_padding">
 
-                <LinearLayout
-                    android:id="@+id/wednesday_01_08_2025"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/history_tasks_recycler_view"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/default_top_margin"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/wednesday_01_08_2025_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="QUARTA-FEIRA (08/01/2025)"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/text_size"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:id="@+id/wednesday_01_08_2025_task_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        tools:ignore="UseCompoundDrawables">
-
-                        <ImageView
-                            android:id="@+id/wednesday_task_1_checkbox"
-                            android:layout_width="@dimen/small_checkbox_width"
-                            android:layout_height="@dimen/small_checkbox_height"
-                            android:layout_margin="@dimen/small_checkbox_margin"
-                            android:contentDescription="@string/checkbox_description"
-                            android:src="@drawable/checkbox_checked" />
-
-                        <TextView
-                            android:id="@+id/wednesday_task_1_task"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" ̶R̶e̶g̶a̶r̶ ̶p̶l̶a̶n̶t̶a̶ ̶1̶"
-                            android:textColor="?android:attr/textColorPrimary"
-                            android:textSize="@dimen/text_size" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/sunday_task_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        tools:ignore="UseCompoundDrawables" />
-
-                    <LinearLayout
-                        android:id="@+id/sunday_task_2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        tools:ignore="UseCompoundDrawables" />
-
-                </LinearLayout>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 

@@ -18,7 +18,6 @@
     <string name="checkbox_description" translatable="false">checkbox</string>
     <string name="full_screen_image_description" translatable="false">full screen image description</string>
 
-
     <!-- HOME -->
     <string name="home_logo_title" translatable="false">ESTUFA SEM ESTUFA</string>
     <string name="home_btn_create_environment">NOVO AMBIENTE</string>
@@ -145,6 +144,7 @@
 
     <!-- ENVIRONMENT TASKS HISTORY -->
     <string name="environment_tasks_history_subtitle">HISTÓRICO</string>
+    <string name="environment_tasks_history_tasks_deleted_task_name">Tarefa excluída!</string>
 
     <!-- ENVIRONMENT TASKS MANAGE TASKS -->
     <string name="environment_tasks_manage_tasks_tasks">TAREFAS</string>

@@ -12,4 +12,6 @@ data class Task(
     @ColumnInfo(name = "name") var name: String,
     @ColumnInfo(name = "days") var days: DaysList,
     @ColumnInfo(name = "environment_id") var environmentId: Int,
-)
+) {
+    var completionDate: Long = 0
+}

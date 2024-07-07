@@ -6,10 +6,15 @@ import com.queirozzzzzzzzzz.estufasemestufa.utils.Const
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 
 object DateTypeConverter {
     @SuppressLint("ConstantLocale")
     private val displayDateFormat = SimpleDateFormat(Const.DATE_TIME_FORMAT, Locale.getDefault())
+
+    init {
+        displayDateFormat.timeZone = TimeZone.getTimeZone(Const.DATE_TIME_ZONE)
+    }
 
     @TypeConverter
     @JvmStatic
