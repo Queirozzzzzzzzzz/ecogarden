@@ -71,12 +71,25 @@ class EnvironmentTasksFragment : Fragment() {
         for (completedTask in completedTasks) {
             if (getDay(completedTask.completionDate) == todayDay) {
                 completedTasksIds.add(completedTask.taskId)
+                println(completedTasksIds)
             }
         }
 
+        val today = LocalDate.now()
+        val dayOfWeek = today.dayOfWeek
+
         for (task in tasks) {
             if (task.id in completedTasksIds) {
-                task.days.sunday = false
+                when (dayOfWeek) {
+                    DayOfWeek.MONDAY -> task.days.monday = false
+                    DayOfWeek.TUESDAY -> task.days.tuesday = false
+                    DayOfWeek.WEDNESDAY -> task.days.wednesday = false
+                    DayOfWeek.THURSDAY -> task.days.thursday = false
+                    DayOfWeek.FRIDAY -> task.days.friday = false
+                    DayOfWeek.SATURDAY -> task.days.saturday = false
+                    DayOfWeek.SUNDAY -> task.days.sunday = false
+                    else -> throw IllegalArgumentException("Invalid day")
+                }
             }
         }
 
