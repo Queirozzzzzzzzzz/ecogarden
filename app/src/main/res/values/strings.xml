@@ -195,5 +195,9 @@
     <string name="closed_required">Especifique se o ambiente é aberto ou fechado!</string>
     <string name="camera_permission_denied">Permissão negada!</string>
 
+    <string name="delete_environment_confirmation">Você tem certeza que deseja excluir esse ambiente?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="yes">Sim</string>
+
 </resources>
 

@@ -133,14 +133,14 @@ class EnvironmentActivity : AppCompatActivity() {
     private fun dialogBox() {
         val alert: AlertDialog.Builder = AlertDialog.Builder(this)
         alert.setTitle(title)
-        alert.setMessage("Você tem certeza que deseja excluir este ambiente?")
+        alert.setMessage(getString(R.string.delete_environment_confirmation))
 
         alert.setNegativeButton(
-            "Cancelar",
+            getString(R.string.cancel)
         ) { dialog, whichButton -> }
 
         alert.setPositiveButton(
-            "Sim",
+            getString(R.string.yes)
         ) { dialog, whichButton ->
             deleteEnvironmentAccepted()
         }

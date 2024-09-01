@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DEFAULT -->
+    <string name="explain_me_text">(Why?)</string>
+    <string name="next_btn">NEXT</string>
+    <string name="back_btn">BACK</string>
+    <string name="cancel_btn">CANCEL</string>
+    <string name="create_btn">CREATE</string>
+    <string name="finish_btn">FINISH</string>
+    <string name="save_btn">SAVE</string>
+    <string name="delete_btn">DELETE</string>
+    <string name="edit_btn">EDIT</string>
+
+    <!-- DESCRIPTIONS -->
+
+    <!-- HOME -->
+    <string name="home_btn_create_environment">NEW ENVIRONMENT</string>
+    <string name="home_btn_access_environments">ENVIRONMENTS</string>
+
+    <!-- MANAGE ENVIRONMENT -->
+    <string name="manage_environment_title">NEW ENVIRONMENT</string>
+    <string name="manage_environment_edit_title">EDIT ENVIRONMENT</string>
+
+    <!-- MANAGE ENVIRONMENT PLACE -->
+    <string name="manage_environment_place_subtitle">PLANTING LOCATION</string>
+    <string name="manage_environment_place_closed_environments_text">Closed environment (Houses, Yards…)</string>
+    <string name="manage_environment_place_open_environments_text">Open environment (Parks, Forests…)</string>
+    <string name="manage_environment_place_biome">BIOME</string>
+    <string name="manage_environment_place_picture_text">Environment photo</string>
+
+    <!-- MANAGE ENVIRONMENT GOAL -->
+    <string name="manage_environment_goal_subtitle">GOAL</string>
+    <string name="manage_environment_goal_aesthetic_option">Beautiful environment</string>
+    <string name="manage_environment_goal_air_option">Air filtration</string>
+    <string name="manage_environment_goal_medicinal_option">Medicinal plants</string>
+    <string name="manage_environment_goal_spices_option">Spices</string>
+
+    <!-- MANAGE ENVIRONMENT PLANTS -->
+    <string name="manage_environment_plants_subtitle">PLANTS</string>
+    <string name="manage_environment_plants_create_plant_btn">+ NEW PLANT</string>
+    <string name="manage_environment_plants_plants_title">PLANTS</string>
+
+    <!-- NEW PLANT -->
+    <string name="new_plant_subtitle">PLANT</string>
+    <string name="new_plant_search">SEARCH PLANT</string>
+    <string name="new_plant_name">NAME (*)</string>
+    <string name="new_plant_humidity">HUMIDITY</string>
+    <string name="new_plant_ph">pH</string>
+    <string name="new_plant_light_intensity">LIGHT INTENSITY</string>
+    <string name="new_plant_light_duration">LIGHT DURATION</string>
+    <string name="new_plant_soil_conductivity">SOIL CONDUCTIVITY</string>
+    <string name="new_plant_soil_salinity">SOIL SALINITY</string>
+    <string name="new_plant_temperature">TEMPERATURE</string>
+
+    <string name="new_plant_search_hint">Name</string>
+    <string name="new_plant_name_hint">Plant Name</string>
+    <string name="new_plant_humidity_hint">Humidity</string>
+    <string name="new_plant_ph_hint">0</string>
+    <string name="new_plant_light_intensity_hint">Intensity</string>
+    <string name="new_plant_light_duration_hint">0h</string>
+    <string name="new_plant_soil_conductivity_hint">0 (µS/cm)</string>
+    <string name="new_plant_soil_salinity_hint">0 (mg/L)</string>
+    <string name="new_plant_temperature_hint">0 (°C)</string>
+
+    <!-- MANAGE ENVIRONMENT TIMETABLES -->
+    <string name="manage_environment_timetables_subtitle">TIMETABLES</string>
+    <string name="manage_environment_timetables_create_plant_btn">+ NEW TIMETABLE</string>
+    <string name="manage_environment_timetables_timetables_title">TIMETABLES</string>
+    <string name="manage_environment_timetables_times_between">to</string>
+
+    <!-- NEW TIMETABLE -->
+    <string name="new_timetable_subtitle">TIMETABLE</string>
+    <string name="new_timetable_start">START</string>
+    <string name="new_timetable_finish">END</string>
+    <string name="environments_title">ENVIRONMENTS</string>
+
+    <!-- MANAGE ENVIRONMENT NAME -->
+    <string name="manage_environment_name_subtitle">ENVIRONMENT NAME</string>
+    <string name="manage_environment_name">Name</string>
+
+    <!-- ENVIRONMENT MAIN -->
+    <string name="environment_main_gallery_btn">GALLERY</string>
+    <string name="environment_main_tasks_btn">TASKS</string>
+
+    <string name="environment_main_soil">SOIL</string>
+    <string name="environment_main_soil_ph">pH</string>
+    <string name="environment_main_soil_conductivity">Conductivity</string>
+    <string name="environment_main_soil_salinity">Salinity</string>
+    <string name="environment_main_soil_umidity">Humidity</string>
+
+    <string name="environment_main_weather">WEATHER</string>
+    <string name="environment_main_weather_temperature">Temperature</string>
+    <string name="environment_main_weather_light_intensity">Light Intensity</string>
+
+    <string name="environment_main_plant_light_duration">LIGHT DURATION</string>
+    <string name="environment_main_plant_light_intensity">LIGHT INTENSITY</string>
+    <string name="environment_main_plant_umidity">HUMIDITY</string>
+    <string name="environment_main_plant_soil_conductivity">SOIL CONDUCTIVITY</string>
+    <string name="environment_main_plant_soil_salinity">SOIL SALINITY</string>
+    <string name="environment_main_plant_temperature">TEMPERATURE</string>
+
+    <!-- EDIT PLANT -->
+    <string name="edit_plant_subtitle">EDIT PLANT</string>
+
+    <string name="edit_plant_name">NAME</string>
+    <string name="edit_plant_humidity">HUMIDITY</string>
+    <string name="edit_plant_ph">pH</string>
+    <string name="edit_plant_light_intensity">LIGHT INTENSITY</string>
+    <string name="edit_plant_light_duration">LIGHT DURATION</string>
+    <string name="edit_plant_soil_conductivity">SOIL CONDUCTIVITY</string>
+    <string name="edit_plant_soil_salinity">SOIL SALINITY</string>
+    <string name="edit_plant_temperature">TEMPERATURE</string>
+
+    <!-- GALLERY -->
+    <string name="environment_gallery_title">GALLERY</string>
+    <string name="environment_gallery_subtitle">GALLERY</string>
+    <string name="environment_gallery_add_new_picture">+ ADD PHOTO</string>
+
+    <!-- ENVIRONMENT TASKS -->
+    <string name="environment_tasks_history">HISTORY</string>
+    <string name="environment_tasks_manage_tasks">MANAGE TASKS</string>
+
+    <string name="environment_tasks_sunday">SUNDAY</string>
+    <string name="environment_tasks_monday">MONDAY</string>
+    <string name="environment_tasks_tuesday">TUESDAY</string>
+    <string name="environment_tasks_wednesday">WEDNESDAY</string>
+    <string name="environment_tasks_thursday">THURSDAY</string>
+    <string name="environment_tasks_friday">FRIDAY</string>
+    <string name="environment_tasks_saturday">SATURDAY</string>
+
+    <!-- ENVIRONMENT TASKS HISTORY -->
+    <string name="environment_tasks_history_subtitle">HISTORY</string>
+    <string name="environment_tasks_history_tasks_deleted_task_name">Task deleted!</string>
+
+    <!-- ENVIRONMENT TASKS MANAGE TASKS -->
+    <string name="environment_tasks_manage_tasks_tasks">TASKS</string>
+    <string name="environment_tasks_manage_tasks_subtitle">MANAGE TASKS</string>
+
+    <!-- ENVIRONMENT TASKS CREATE TASK -->
+    <string name="environment_tasks_create_task_subtitle">NEW TASK</string>
+    <string name="environment_tasks_create_task_name">NAME</string>
+
+    <string name="environment_tasks_create_task_sunday">Sunday</string>
+    <string name="environment_tasks_create_task_monday">Monday</string>
+    <string name="environment_tasks_create_task_tuesday">Tuesday</string>
+    <string name="environment_tasks_create_task_wednesday">Wednesday</string>
+    <string name="environment_tasks_create_task_thursday">Thursday
+
+</string>
+    <string name="environment_tasks_create_task_friday">Friday</string>
+    <string name="environment_tasks_create_task_saturday">Saturday</string>
+    <string name="environment_edit_environment">EDIT ENVIRONMENT</string>
+    <string name="environment_delete">DELETE ENVIRONMENT</string>
+
+    <!-- IN CODE -->
+    <string-array name="biomes_array">
+        <item>Amazônia</item>
+        <item>Cerrado</item>
+        <item>Caatinga</item>
+        <item>Mata Atlântica</item>
+        <item>Pantanal</item>
+    </string-array>
+
+    <string name="biome_explain_me_title">Why specify the biome?</string>
+    <string name="biome_explain_me_message">It is necessary to specify the biome for open environments to avoid harm to local ecosystems.</string>
+    <string name="picture_explain_me_title">Why add a photo?</string>
+    <string name="picture_explain_me_message">It is useful to take photos of the progress of your garden to observe patterns and enjoy its growth.</string>
+
+    <string-array name="light_intensity_array">
+        <item>Strong</item>
+        <item>Medium</item>
+        <item>Weak</item>
+    </string-array>
+
+    <string-array name="humidity_array">
+        <item>Wet</item>
+        <item>Dry</item>
+    </string-array>
+
+    <string name="required_name">Name is required!</string>
+    <string name="plant_already_exists">This plant has already been created!</string>
+    <string name="timetable_already_exists">This timetable has already been registered!</string>
+    <string name="closed_required">Specify whether the environment is open or closed!</string>
+    <string name="camera_permission_denied">Permission denied!</string>
+
+    <string name="delete_environment_confirmation">Are you sure you want to delete this environment?</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+
+</resources>
