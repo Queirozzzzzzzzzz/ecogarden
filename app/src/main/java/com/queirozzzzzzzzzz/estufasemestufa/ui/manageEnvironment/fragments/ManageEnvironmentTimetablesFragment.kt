@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.queirozzzzzzzzzz.estufasemestufa.R
 import com.queirozzzzzzzzzz.estufasemestufa.adapters.TimetableAdapter
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentManageEnvironmentTimetablesBinding
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
@@ -29,6 +30,11 @@ class ManageEnvironmentTimetablesFragment : Fragment() {
     }
 
     private fun setElements() {
+        // Header
+        if (TemporaryManageEnvironmentData.isEditing) {
+            binding.headerTitle.text = resources.getString(R.string.manage_environment_edit_title)
+        }
+
         val recyclerView: RecyclerView = binding.timetablesRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
