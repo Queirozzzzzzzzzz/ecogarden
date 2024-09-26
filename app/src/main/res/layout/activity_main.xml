@@ -9,17 +9,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
-        >
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="@dimen/main_logo_width"
             android:layout_height="wrap_content"
             android:contentDescription="@string/logo_description"
-            android:src="@drawable/logo"
-            />
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/logo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

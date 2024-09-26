@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             withEndAction {
                 binding.logo.postDelayed({
                     animateLogo()
-                }, 500)
+                }, 5000)
             }
         }
     }

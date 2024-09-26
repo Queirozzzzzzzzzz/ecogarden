@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.SignupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/home_logo_width"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/logo_description"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/logo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_logo_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/small_btn_height"
+            android:layout_marginTop="@dimen/small_btn_margin"
+            android:layout_marginBottom="@dimen/small_btn_margin"
+            android:background="@drawable/default_button"
+            android:text="@string/signup_signup_btn"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:layout_width="@dimen/input_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/input_margin_top"
+            android:text="@string/signup_email_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="@dimen/input_width"
+            android:layout_height="@dimen/input_height"
+            android:autofillHints=""
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/input_padding" />
+
+        <TextView
+            android:layout_width="@dimen/input_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/input_margin_top"
+            android:text="@string/signup_password_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="@dimen/input_width"
+            android:layout_height="@dimen/input_height"
+            android:autofillHints=""
+            android:inputType="textPassword"
+            android:padding="@dimen/input_padding" />
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_margin"
+            android:layout_marginBottom="@dimen/btn_margin"
+            android:background="@drawable/default_button"
+            android:text="@string/signup_btn"
+            android:textColor="@color/white"
+            android:textSize="@dimen/btn_text_size"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

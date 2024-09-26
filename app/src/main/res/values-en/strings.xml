@@ -13,6 +13,18 @@
 
     <!-- DESCRIPTIONS -->
 
+    <!-- LOGIN -->
+    <string name="login_password_title">Password</string>
+    <string name="login_logo_title">Login to your account</string>
+    <string name="login_btn">LOGIN</string>
+    <string name="login_signup_btn">DON\'T HAVE AN ACCOUNT</string>
+
+    <!-- SIGNUP -->
+    <string name="signup_password_title">Password</string>
+    <string name="signup_logo_title">Create your account</string>
+    <string name="signup_btn">CREATE</string>
+    <string name="signup_signup_btn">ALREADY HAVE AN ACCOUNT</string>
+
     <!-- HOME -->
     <string name="home_btn_create_environment">NEW ENVIRONMENT</string>
     <string name="home_btn_access_environments">ENVIRONMENTS</string>

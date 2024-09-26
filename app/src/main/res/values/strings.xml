@@ -18,6 +18,20 @@
     <string name="checkbox_description" translatable="false">checkbox</string>
     <string name="full_screen_image_description" translatable="false">full screen image description</string>
 
+    <!-- LOGIN -->
+    <string name="login_email_title" translatable="false">E-mail</string>
+    <string name="login_password_title">Senha</string>
+    <string name="login_logo_title">Entre na sua conta</string>
+    <string name="login_btn">ENTRAR</string>
+    <string name="login_signup_btn">NÃO TENHO UMA CONTA</string>
+
+    <!-- SIGNUP -->
+    <string name="signup_email_title" translatable="false">E-mail</string>
+    <string name="signup_password_title">Senha</string>
+    <string name="signup_logo_title">Crie a sua conta</string>
+    <string name="signup_btn">CRIAR</string>
+    <string name="signup_signup_btn">JÁ TENHO UMA CONTA</string>
+
     <!-- HOME -->
     <string name="home_logo_title" translatable="false">ESTUFA SEM ESTUFA</string>
     <string name="home_btn_create_environment">NOVO AMBIENTE</string>
