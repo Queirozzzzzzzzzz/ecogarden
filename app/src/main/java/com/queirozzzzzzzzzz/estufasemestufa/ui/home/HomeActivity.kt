@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.queirozzzzzzzzzz.estufasemestufa.data.Preferences
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityHomeBinding
 import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
+import com.queirozzzzzzzzzz.estufasemestufa.ui.auth.LoginActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environments.EnvironmentsActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryManageEnvironmentData
@@ -69,6 +71,13 @@ class HomeActivity : AppCompatActivity() {
         binding.btnAccessEnvironments.setOnClickListener {
             val intent = Intent(this, EnvironmentsActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnLogout.setOnClickListener {
+            Preferences.setAuthCookie("")
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         binding.theme.setOnClickListener {

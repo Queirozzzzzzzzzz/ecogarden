@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.queirozzzzzzzzzz.estufasemestufa.data.Preferences
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityMainBinding
+import com.queirozzzzzzzzzz.estufasemestufa.ui.auth.LoginActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.home.HomeActivity
 import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.ThemeViewModel
 
@@ -40,7 +41,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadApp() {
-        val intent = Intent(this, HomeActivity::class.java)
+        val intent: Intent = if (Preferences.getAuthCookie() == "null" || Preferences.getAuthCookie().isNullOrEmpty()) {
+            Intent(this, LoginActivity::class.java)
+        }  else  {
+            Intent(this, HomeActivity::class.java)
+        }
+
         startActivity(intent)
         finish()
     }

@@ -60,6 +60,18 @@
             android:textColor="@color/white"
             android:textSize="@dimen/btn_text_size"
             tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="@dimen/small_btn_width"
+            android:layout_height="@dimen/small_btn_height"
+            android:layout_margin="@dimen/btn_margin"
+            android:background="@drawable/cancel_button"
+            android:text="SAIR DA CONTA"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size"
+            tools:ignore="MissingConstraints" />
+
     </LinearLayout>
 
     <LinearLayout

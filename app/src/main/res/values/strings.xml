@@ -24,6 +24,7 @@
     <string name="login_logo_title">Entre na sua conta</string>
     <string name="login_btn">ENTRAR</string>
     <string name="login_signup_btn">NÃO TENHO UMA CONTA</string>
+    <string name="login_failed">Login falhou, tente novamente.</string>
 
     <!-- SIGNUP -->
     <string name="signup_email_title" translatable="false">E-mail</string>
@@ -31,6 +32,7 @@
     <string name="signup_logo_title">Crie a sua conta</string>
     <string name="signup_btn">CRIAR</string>
     <string name="signup_signup_btn">JÁ TENHO UMA CONTA</string>
+    <string name="signup_failed">Cadastro falhou, tente novamente.</string>
 
     <!-- HOME -->
     <string name="home_logo_title" translatable="false">ESTUFA SEM ESTUFA</string>

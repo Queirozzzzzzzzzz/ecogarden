@@ -18,6 +18,8 @@
     <string name="login_logo_title">Login to your account</string>
     <string name="login_btn">LOGIN</string>
     <string name="login_signup_btn">DON\'T HAVE AN ACCOUNT</string>
+    <string name="login_failed">Login failed, try again.</string>
+    <string name="signup_failed">Signup failed, try again.</string>
 
     <!-- SIGNUP -->
     <string name="signup_password_title">Password</string>

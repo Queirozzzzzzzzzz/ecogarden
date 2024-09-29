@@ -6,12 +6,10 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 
 object Preferences {
-    const val PREF_NAME: String = "prefs"
-
     private var prefs: SharedPreferences? = null
 
     fun setup(con: Context) {
-        prefs = con.getSharedPreferences(PREF_NAME, MODE_PRIVATE)
+        prefs = con.getSharedPreferences("estufasemestufa_prefs", MODE_PRIVATE)
     }
 
     fun setDarkTheme(darkTheme: Boolean) {
@@ -22,9 +20,35 @@ object Preferences {
         return Key.KEY_DARK_THEME.getBoolean() ?: false
     }
 
+    fun setAuthCookie(token: String) {
+        Key.KEY_AUTH_TOKEN.setString(token)
+    }
+
+    fun getAuthCookie(): String? {
+        return Key.KEY_AUTH_TOKEN.getString()
+    }
+
+    fun setLoginError(error: String) {
+        Key.KEY_LOGIN_ERROR.setString(error)
+    }
+
+    fun getLoginError(): String? {
+        return Key.KEY_LOGIN_ERROR.getString()
+    }
+
+    fun setSignupError(error: String) {
+        Key.KEY_SIGNUP_ERROR.setString(error)
+    }
+
+    fun getSignupError(): String? {
+        return Key.KEY_SIGNUP_ERROR.getString()
+    }
+
     private enum class Key {
         KEY_DARK_THEME,
-        KEY_DEVICE_ID,
+        KEY_AUTH_TOKEN,
+        KEY_LOGIN_ERROR,
+        KEY_SIGNUP_ERROR,
         ;
 
         fun getBoolean(): Boolean? = if (prefs!!.contains(name)) prefs!!.getBoolean(name, false) else null
