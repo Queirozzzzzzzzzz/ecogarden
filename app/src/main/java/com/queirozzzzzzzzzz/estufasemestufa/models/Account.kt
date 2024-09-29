@@ -21,7 +21,7 @@ class Account {
                 res.body()?.let { resBody ->
                     val jsonObject = Gson().fromJson(resBody.string(), JsonObject::class.java)
                     val token = jsonObject.get("token").asString
-                    Preferences.setAuthCookie("token: $token")
+                    Preferences.setAuthCookie("token=$token")
                 }
             } else {
                 Preferences.setAuthCookie("")
