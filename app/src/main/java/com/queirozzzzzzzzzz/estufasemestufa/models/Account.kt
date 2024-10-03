@@ -10,7 +10,7 @@ import kotlinx.coroutines.withContext
 import org.json.JSONObject
 
 class Account {
-    private val service  = Service().getService()
+    private val service = Service().getService()
 
     suspend fun login(email: String, password: String): Boolean {
         val res = withContext(Dispatchers.IO) {

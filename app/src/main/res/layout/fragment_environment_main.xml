@@ -126,6 +126,17 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <Button
+                    android:id="@+id/refresh_data_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/medium_btn_height"
+                    android:layout_marginBottom="@dimen/btn_margin"
+                    android:background="@drawable/right_round_rectangle"
+                    android:text="@string/environment_main_refresh_data"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -144,7 +155,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/soil_ph"
+                    android:id="@+id/ph"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="7"
@@ -167,7 +178,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/soil_umidity"
+                        android:id="@+id/humidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Úmido"
@@ -175,40 +186,6 @@
                         android:textSize="@dimen/text_size" />
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_section_margin_top"
-                    android:text="@string/environment_main_soil_conductivity"
-                    android:textColor="@color/primary_light"
-                    android:textSize="@dimen/text_size"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/soil_conductivity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="11.29 μS/cm"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_section_margin_top"
-                    android:text="@string/environment_main_soil_salinity"
-                    android:textColor="@color/primary_light"
-                    android:textSize="@dimen/text_size"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/soil_salinity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="97 mg/L"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -229,7 +206,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/weather_temperature"
+                    android:id="@+id/temperature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="27°C"
@@ -246,7 +223,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/weather_light_intensity"
+                    android:id="@+id/light_intensity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Forte"
@@ -283,27 +260,6 @@
                         android:textSize="@dimen/up_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_top_margin"
-                    android:background="@drawable/round_rectangle"
-                    android:backgroundTint="@color/yellow_dark"
-                    android:padding="@dimen/default_background_color_padding"
-                    android:text="@string/environment_main_plant_light_duration"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/plant_1_light_duration"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_small_margin"
-                    android:text="30 minutos restantes"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -365,46 +321,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/default_small_margin"
                     android:text="4 níveis abaixo"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_top_margin"
-                    android:background="@drawable/round_rectangle"
-                    android:backgroundTint="@color/gray_dark"
-                    android:padding="@dimen/default_background_color_padding"
-                    android:text="@string/environment_main_plant_soil_conductivity"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_small_margin"
-                    android:text="Sem informações predefinidas"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_top_margin"
-                    android:background="@drawable/round_rectangle"
-                    android:backgroundTint="@color/gray_dark"
-                    android:padding="@dimen/default_background_color_padding"
-                    android:text="@string/environment_main_plant_soil_salinity"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_small_margin"
-                    android:text="Sem informações predefinidas"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
 

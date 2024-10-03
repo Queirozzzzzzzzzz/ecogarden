@@ -113,6 +113,8 @@
     <string name="environment_main_plant_soil_salinity">SOIL SALINITY</string>
     <string name="environment_main_plant_temperature">TEMPERATURE</string>
 
+    <string name="environment_main_refresh_data">REFRESH INFO</string>
+
     <!-- EDIT PLANT -->
     <string name="edit_plant_subtitle">EDIT PLANT</string>
 
