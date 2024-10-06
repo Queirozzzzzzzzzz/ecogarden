@@ -30,6 +30,7 @@
     <!-- HOME -->
     <string name="home_btn_create_environment">NEW ENVIRONMENT</string>
     <string name="home_btn_access_environments">ENVIRONMENTS</string>
+    <string name="home_logout_btn">LOGOUT</string>
 
     <!-- MANAGE ENVIRONMENT -->
     <string name="manage_environment_title">NEW ENVIRONMENT</string>
@@ -190,6 +191,7 @@
 
     <string-array name="humidity_array">
         <item>Wet</item>
+        <item>Normal</item>
         <item>Dry</item>
     </string-array>
 
@@ -202,5 +204,23 @@
     <string name="delete_environment_confirmation">Are you sure you want to delete this environment?</string>
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
+
+    <string name="environment_plant_undefined">No information</string>
+
+    <string name="humidity_good">Good</string>
+    <string name="humidity_bad">Bad</string>
+    <string name="humidity_very_bad">Very Bad</string>
+
+    <string name="light_intensity_good">Good</string>
+    <string name="light_intensity_bad">Bad</string>
+    <string name="light_intensity_very_bad">Very Bad</string>
+
+    <string name="ph_good">Good</string>
+    <string name="ph_less">Below</string>
+    <string name="ph_more">Above</string>
+
+    <string name="temperature_good">Good</string>
+    <string name="temperature_less">Below</string>
+    <string name="temperature_more">Above</string>
 
 </resources>

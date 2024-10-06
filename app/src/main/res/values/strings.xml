@@ -38,6 +38,7 @@
     <string name="home_logo_title" translatable="false">ESTUFA SEM ESTUFA</string>
     <string name="home_btn_create_environment">NOVO AMBIENTE</string>
     <string name="home_btn_access_environments">AMBIENTES</string>
+    <string name="home_logout_btn">SAIR DA CONTA</string>
 
     <!-- MANAGE ENVIRONMENT -->
     <string name="manage_environment_title">NOVO AMBIENTE</string>
@@ -198,12 +199,13 @@
 
     <string-array name="light_intensity_array">
         <item>Forte</item>
-        <item>Médio</item>
-        <item>Fraco</item>
+        <item>Normal</item>
+        <item>Fraca</item>
     </string-array>
 
     <string-array name="humidity_array">
         <item>Úmido</item>
+        <item>Normal</item>
         <item>Seco</item>
     </string-array>
 
@@ -216,6 +218,24 @@
     <string name="delete_environment_confirmation">Você tem certeza que deseja excluir esse ambiente?</string>
     <string name="cancel">Cancelar</string>
     <string name="yes">Sim</string>
+
+    <string name="environment_plant_undefined">Sem informações</string>
+
+    <string name="humidity_good">Boa</string>
+    <string name="humidity_bad">Ruim</string>
+    <string name="humidity_very_bad">Muito Ruim</string>
+
+    <string name="light_intensity_good">Boa</string>
+    <string name="light_intensity_bad">Ruim</string>
+    <string name="light_intensity_very_bad">Muito Ruim</string>
+
+    <string name="ph_good">Bom</string>
+    <string name="ph_less">Abaixo</string>
+    <string name="ph_more">Acima</string>
+
+    <string name="temperature_good">Bom</string>
+    <string name="temperature_less">Abaixo</string>
+    <string name="temperature_more">Acima</string>
 
 </resources>
 
