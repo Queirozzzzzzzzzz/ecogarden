@@ -48,9 +48,6 @@ class ManageEnvironmentNewPlantFragment : Fragment() {
     private fun createPlant() {
         val name = binding.name.text.toString()
         val ph = binding.ph.text.toString().toIntOrNull()
-        val lightDuration = binding.lightDuration.text.toString().toIntOrNull()
-        val soilConductivity = binding.soilConductivity.text.toString().toDoubleOrNull()
-        val soilSalinity = binding.soilSalinity.text.toString().toDoubleOrNull()
         val temperature = binding.temperature.text.toString().toIntOrNull()
 
         if (name.isEmpty()) {
@@ -58,7 +55,7 @@ class ManageEnvironmentNewPlantFragment : Fragment() {
             return
         }
 
-        val plant = Plant(0, name, humidity, ph, lightIntensity, lightDuration, soilConductivity, soilSalinity, temperature, 0)
+        val plant = Plant(0, name, humidity, ph, lightIntensity, temperature, 0)
         val plants = TemporaryManageEnvironmentData.plants?.toMutableList()
         if (plant in plants!!) {
             Toast.makeText(requireContext(), R.string.plant_already_exists, Toast.LENGTH_SHORT)

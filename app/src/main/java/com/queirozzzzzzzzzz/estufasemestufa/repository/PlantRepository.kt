@@ -38,9 +38,6 @@ class PlantRepository
             val humidity = plant.humidity
             val ph = plant.ph
             val lightIntensity = plant.lightIntensity
-            val lightDuration = plant.lightDuration
-            val soilConductivity = plant.soilConductivity
-            val soilSalinity = plant.soilSalinity
             val temperature = plant.temperature
 
             plantDao.updatePlant(
@@ -49,9 +46,6 @@ class PlantRepository
                 humidity,
                 ph,
                 lightIntensity,
-                lightDuration,
-                soilConductivity,
-                soilSalinity,
                 temperature,
             )
         }

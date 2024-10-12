@@ -156,60 +156,6 @@
                     android:layout_width="@dimen/input_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_light_duration"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/light_duration"
-                    android:layout_width="@dimen/input_width"
-                    android:layout_height="@dimen/input_height"
-                    android:autofillHints=""
-                    android:hint="@string/new_plant_light_duration_hint"
-                    android:inputType="numberDecimal"
-                    android:padding="@dimen/input_padding" />
-
-                <TextView
-                    android:layout_width="@dimen/input_width"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_soil_conductivity"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/soil_conductivity"
-                    android:layout_width="@dimen/input_width"
-                    android:layout_height="@dimen/input_height"
-                    android:autofillHints=""
-                    android:hint="@string/new_plant_soil_conductivity_hint"
-                    android:inputType="numberDecimal"
-                    android:padding="@dimen/input_padding" />
-
-                <TextView
-                    android:layout_width="@dimen/input_width"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/input_margin_top"
-                    android:text="@string/new_plant_soil_salinity"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="@dimen/text_size"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/soil_salinity"
-                    android:layout_width="@dimen/input_width"
-                    android:layout_height="@dimen/input_height"
-                    android:autofillHints=""
-                    android:hint="@string/new_plant_soil_salinity_hint"
-                    android:inputType="numberDecimal"
-                    android:padding="@dimen/input_padding" />
-
-                <TextView
-                    android:layout_width="@dimen/input_width"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/input_margin_top"
                     android:text="@string/new_plant_temperature"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="@dimen/text_size"

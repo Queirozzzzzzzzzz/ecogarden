@@ -49,6 +49,8 @@ class EnvironmentMainFragment : Fragment() {
     }
 
     private fun refreshData() {
+        showLoadingDialog()
+
         CoroutineScope(Dispatchers.IO).launch {
             val values = viewmodel.getNew()
             withContext(Dispatchers.Main) {
@@ -58,8 +60,21 @@ class EnvironmentMainFragment : Fragment() {
                 binding.lightIntensity.text = values.get("light_intensity")?.takeUnless { it.isJsonNull }?.asString ?: "--"
 
                 setPlants(values)
+                hideLoadingDialog()
             }
         }
+    }
+
+    private fun showLoadingDialog() {
+        binding.data.visibility = View.GONE
+        binding.environmentPlantsRecyclerView.visibility = View.GONE
+        binding.loading.visibility = View.VISIBLE
+    }
+
+    private fun hideLoadingDialog() {
+        binding.data.visibility = View.VISIBLE
+        binding.environmentPlantsRecyclerView.visibility = View.VISIBLE
+        binding.loading.visibility = View.GONE
     }
 
     private fun setElements() {
@@ -73,13 +88,19 @@ class EnvironmentMainFragment : Fragment() {
     private fun setPlants(data: JsonObject) {
         lifecycleScope.launch {
             val plants = plantRepository.getPlantsByEnvironmentId(TemporaryData.selectedEnvironmentId!!)
-            val environmentPlants = getEnvironmentPlants(plants, data)
 
-            val recyclerView = binding.environmentPlantsRecyclerView
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            if (isAdded) {
+                val environmentPlants = withContext(Dispatchers.Default) {
+                    getEnvironmentPlants(plants, data)
+                }
 
-            val adapter = EnvironmentPlantsAdapter(environmentPlants)
-            recyclerView.adapter = adapter
+                withContext(Dispatchers.Main) {
+                    val recyclerView = binding.environmentPlantsRecyclerView
+                    recyclerView.layoutManager = LinearLayoutManager(requireContext())
+                    val adapter = EnvironmentPlantsAdapter(environmentPlants)
+                    recyclerView.adapter = adapter
+                }
+            }
         }
     }
 

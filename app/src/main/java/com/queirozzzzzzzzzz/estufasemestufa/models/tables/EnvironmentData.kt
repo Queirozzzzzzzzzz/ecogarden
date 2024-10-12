@@ -12,9 +12,6 @@ data class EnvironmentData(
     @ColumnInfo(name = "humidity") var humidity: String?,
     @ColumnInfo(name = "ph") var ph: Int?,
     @ColumnInfo(name = "light_intensity") var lightIntensity: String?,
-    @ColumnInfo(name = "light_duration") var lightDuration: Int?,
-    @ColumnInfo(name = "soil_conductivity") var soilConductivity: Double?,
-    @ColumnInfo(name = "soil_salinity") var soilSalinity: Double?,
     @ColumnInfo(name = "temperature") var temperature: Int?,
     @ColumnInfo(name = "environment_id") var environmentId: Int,
 )

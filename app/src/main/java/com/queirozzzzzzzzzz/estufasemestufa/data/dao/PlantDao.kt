@@ -21,7 +21,7 @@ interface PlantDao {
     suspend fun insertPlant(plant: Plant)
 
     @Query(
-        "UPDATE plant SET name = :name, humidity = :humidity, ph = :ph, light_intensity = :lightIntensity, light_duration = :lightDuration, soil_conductivity = :soilConductivity, soil_salinity = :soilSalinity, temperature = :temperature WHERE id = :id;",
+        "UPDATE plant SET name = :name, humidity = :humidity, ph = :ph, light_intensity = :lightIntensity, temperature = :temperature WHERE id = :id;",
     )
     suspend fun updatePlant(
         id: Int,
@@ -29,9 +29,6 @@ interface PlantDao {
         humidity: String?,
         ph: Int?,
         lightIntensity: String?,
-        lightDuration: Int?,
-        soilConductivity: Double?,
-        soilSalinity: Double?,
         temperature: Int?,
     )
 
