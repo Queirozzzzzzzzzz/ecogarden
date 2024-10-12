@@ -18,6 +18,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentEnvironmentMainB
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.EnvironmentPlant
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Plant
 import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
+import com.queirozzzzzzzzzz.estufasemestufa.utils.NetworkUtils
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
 import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.DataViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -49,6 +50,12 @@ class EnvironmentMainFragment : Fragment() {
     }
 
     private fun refreshData() {
+        if(!NetworkUtils.hasInternet(this.requireContext())) {
+            binding.noInternetText.visibility = View.VISIBLE
+            return
+        }
+        binding.noInternetText.visibility = View.GONE
+
         showLoadingDialog()
 
         CoroutineScope(Dispatchers.IO).launch {
@@ -69,12 +76,16 @@ class EnvironmentMainFragment : Fragment() {
         binding.data.visibility = View.GONE
         binding.environmentPlantsRecyclerView.visibility = View.GONE
         binding.loading.visibility = View.VISIBLE
+
+        binding.refreshDataBtn.isEnabled = false
     }
 
     private fun hideLoadingDialog() {
         binding.data.visibility = View.VISIBLE
         binding.environmentPlantsRecyclerView.visibility = View.VISIBLE
         binding.loading.visibility = View.GONE
+
+        binding.refreshDataBtn.isEnabled = true
     }
 
     private fun setElements() {

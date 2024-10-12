@@ -132,6 +132,8 @@
 
     <string name="environment_main_refresh_data">ATUALIZAR INFORMAÇÕES</string>
 
+    <string name="environment_main_no_internet_text">Falha ao carregar dados. Verifique sua conexão com a internet.</string>
+
     <!-- EDIT PLANT -->
     <string name="edit_plant_subtitle">EDITAR PLANTA</string>
 

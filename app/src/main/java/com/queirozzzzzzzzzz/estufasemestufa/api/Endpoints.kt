@@ -18,4 +18,8 @@ interface Endpoints {
 
     @GET("/api/v1/data")
     suspend fun getNewData(): Response<ResponseBody>
+
+    @GET("/api/v1/status")
+    suspend fun checkLogin(): Response<ResponseBody>
+
 }

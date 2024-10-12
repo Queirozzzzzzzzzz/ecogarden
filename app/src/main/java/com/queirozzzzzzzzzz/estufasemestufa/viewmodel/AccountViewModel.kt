@@ -17,4 +17,9 @@ class AccountViewModel: ViewModel() {
 
         return account.signup(cpf, password)
     }
+
+    suspend fun checkLogin(): Boolean {
+        return account.checkLogin()
+    }
+
 }

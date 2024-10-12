@@ -116,6 +116,8 @@
 
     <string name="environment_main_refresh_data">REFRESH INFO</string>
 
+    <string name="environment_main_no_internet_text">Failed to load data. Check your internet connection.</string>
+
     <!-- EDIT PLANT -->
     <string name="edit_plant_subtitle">EDIT PLANT</string>
 

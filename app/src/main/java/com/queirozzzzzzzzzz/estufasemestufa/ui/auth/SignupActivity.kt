@@ -16,14 +16,14 @@ import kotlinx.coroutines.launch
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignupBinding
-    private lateinit var viewModel: AccountViewModel
+    private lateinit var accountViewModel: AccountViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this)[AccountViewModel::class.java]
+        accountViewModel = ViewModelProvider(this)[AccountViewModel::class.java]
 
         checkLogin()
         setInputs()
@@ -55,7 +55,7 @@ class SignupActivity : AppCompatActivity() {
                     }
                 }
 
-                val res = viewModel.signup(email, password)
+                val res = accountViewModel.signup(email, password)
 
                 dialogJob.cancel()
                 runOnUiThread {

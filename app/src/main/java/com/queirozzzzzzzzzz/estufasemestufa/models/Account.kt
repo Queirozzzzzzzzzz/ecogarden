@@ -54,4 +54,12 @@ class Account {
         return "Erro desconhecido"
     }
 
+    suspend fun checkLogin(): Boolean {
+        val res = withContext(Dispatchers.IO) {
+            service.checkLogin()
+        }
+
+        return res.isSuccessful
+    }
+
 }

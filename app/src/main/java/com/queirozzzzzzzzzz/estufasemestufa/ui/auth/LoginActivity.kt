@@ -3,10 +3,8 @@ package com.queirozzzzzzzzzz.estufasemestufa.ui.auth
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.queirozzzzzzzzzz.estufasemestufa.R
 import com.queirozzzzzzzzzz.estufasemestufa.data.Preferences
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityLoginBinding
 import com.queirozzzzzzzzzz.estufasemestufa.ui.home.HomeActivity
@@ -18,14 +16,14 @@ import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var viewModel: AccountViewModel
+    private lateinit var accountViewModel: AccountViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this)[AccountViewModel::class.java]
+        accountViewModel = ViewModelProvider(this)[AccountViewModel::class.java]
 
         checkLogin()
         setInputs()
@@ -57,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
 
-                val res = viewModel.login(email, password)
+                val res = accountViewModel.login(email, password)
 
                 dialogJob.cancel()
                 runOnUiThread {
