@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- DEFAULT -->
-    <string name="app_name" translatable="false">Estufa sem Estufa</string>
+    <string name="app_name" translatable="false">Eco Garden</string>
     <string name="explain_me_text">(Por quê?)</string>
     <string name="next_btn">PRÓXIMO</string>
     <string name="back_btn">VOLTAR</string>
@@ -35,7 +35,7 @@
     <string name="signup_failed">Cadastro falhou, tente novamente.</string>
 
     <!-- HOME -->
-    <string name="home_logo_title" translatable="false">ESTUFA SEM ESTUFA</string>
+    <string name="home_logo_title" translatable="false">ECO GARDEN</string>
     <string name="home_btn_create_environment">NOVO AMBIENTE</string>
     <string name="home_btn_access_environments">AMBIENTES</string>
     <string name="home_logout_btn">SAIR DA CONTA</string>

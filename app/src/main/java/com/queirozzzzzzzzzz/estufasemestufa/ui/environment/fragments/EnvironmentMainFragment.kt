@@ -31,6 +31,7 @@ class EnvironmentMainFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewmodel: DataViewModel
     private lateinit var plantRepository: PlantRepository
+    private var isRefreshing = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,6 +51,8 @@ class EnvironmentMainFragment : Fragment() {
     }
 
     private fun refreshData() {
+        if(isRefreshing) return
+
         if(!NetworkUtils.hasInternet(this.requireContext())) {
             binding.noInternetText.visibility = View.VISIBLE
             return
@@ -76,16 +79,14 @@ class EnvironmentMainFragment : Fragment() {
         binding.data.visibility = View.GONE
         binding.environmentPlantsRecyclerView.visibility = View.GONE
         binding.loading.visibility = View.VISIBLE
-
-        binding.refreshDataBtn.isEnabled = false
+        isRefreshing = true
     }
 
     private fun hideLoadingDialog() {
         binding.data.visibility = View.VISIBLE
         binding.environmentPlantsRecyclerView.visibility = View.VISIBLE
         binding.loading.visibility = View.GONE
-
-        binding.refreshDataBtn.isEnabled = true
+        isRefreshing = false
     }
 
     private fun setElements() {

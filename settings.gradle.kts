@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Estufa sem Estufa"
+rootProject.name = "Eco Garden"
 include(":app")
