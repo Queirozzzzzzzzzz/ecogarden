@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Service {
-    private val baseUrl = "https://estufa-sem-estufa-api.vercel.app"
+    private val baseUrl = "https://ecogarden.vercel.app"
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(CookiesInterceptor())

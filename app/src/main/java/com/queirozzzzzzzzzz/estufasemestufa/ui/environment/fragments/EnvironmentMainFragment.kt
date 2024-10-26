@@ -3,9 +3,11 @@ package com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments
 import EnvironmentPlantsAdapter
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
@@ -62,15 +64,25 @@ class EnvironmentMainFragment : Fragment() {
         showLoadingDialog()
 
         CoroutineScope(Dispatchers.IO).launch {
-            val values = viewmodel.getNew()
-            withContext(Dispatchers.Main) {
-                binding.ph.text = values.get("ph")?.takeUnless { it.isJsonNull }?.asString ?: "--"
-                binding.humidity.text = values.get("humidity")?.takeUnless { it.isJsonNull }?.asString ?: "--"
-                binding.temperature.text = values.get("temperature")?.takeUnless { it.isJsonNull }?.asString ?: "--"
-                binding.lightIntensity.text = values.get("light_intensity")?.takeUnless { it.isJsonNull }?.asString ?: "--"
+            try {
+                val values = viewmodel.getNew()
+                withContext(Dispatchers.Main) {
+                    binding.ph.text = values.get("ph")?.takeUnless { it.isJsonNull }?.asString ?: "--"
+                    binding.humidity.text = values.get("humidity")?.takeUnless { it.isJsonNull }?.asString ?: "--"
+                    binding.temperature.text = values.get("temperature")?.takeUnless { it.isJsonNull }?.asString ?: "--"
+                    binding.lightIntensity.text = values.get("light_intensity")?.takeUnless { it.isJsonNull }?.asString ?: "--"
 
-                setPlants(values)
-                hideLoadingDialog()
+                    setPlants(values)
+                }
+            } catch (e: Exception) {
+                Log.e("CoroutineException", "An error occurred while fetching data", e)
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(context, "Um erro ocorreu ao carregar os dados.", Toast.LENGTH_SHORT).show()
+                }
+            } finally {
+                withContext(Dispatchers.Main) {
+                    hideLoadingDialog()
+                }
             }
         }
     }
