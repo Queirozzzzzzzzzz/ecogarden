@@ -166,6 +166,32 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/synchronize_prototype_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-5dp"
+                    android:layout_marginBottom="@dimen/btn_margin"
+                    android:gravity="center"
+                    android:onClick="synchronizePrototypeFragment"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/embed_btn_image_width"
+                        android:layout_height="@dimen/embed_btn_image_height"
+                        android:src="@drawable/prototipe_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-8dp"
+                        android:background="@drawable/right_round_rectangle"
+                        android:text="@string/environment_main_synchronize_prototipe"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
                 <TextView
                     android:id="@+id/no_internet_text"
                     android:layout_width="match_parent"

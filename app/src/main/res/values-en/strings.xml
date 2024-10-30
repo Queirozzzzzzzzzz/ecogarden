@@ -115,6 +115,7 @@
     <string name="environment_main_plant_temperature">TEMPERATURE</string>
 
     <string name="environment_main_refresh_data">REFRESH INFO</string>
+    <string name="environment_main_synchronize_prototipe">SYNCHRONIZE PROTOTIPE</string>
 
     <string name="environment_main_no_internet_text">Failed to load data. Check your internet connection.</string>
 

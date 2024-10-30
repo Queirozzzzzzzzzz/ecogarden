@@ -22,6 +22,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentGalleryFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentMainFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentManageTasksFragment
+import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentSynchronizePrototypeFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksHistoryFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.home.HomeActivity
@@ -111,6 +112,10 @@ class EnvironmentActivity : AppCompatActivity() {
     fun editTaskFragment(view: View) {
         TemporaryData.selectedTaskId = view.tag.toString().toInt()
         startFragment(EnvironmentEditTaskFragment())
+    }
+
+    fun synchronizePrototypeFragment(view: View) {
+        startFragment(EnvironmentSynchronizePrototypeFragment())
     }
 
     fun deleteTask(view: View) {

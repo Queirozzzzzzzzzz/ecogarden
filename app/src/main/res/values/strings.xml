@@ -131,6 +131,7 @@
     <string name="environment_main_plant_temperature">TEMPERATURA</string>
 
     <string name="environment_main_refresh_data">ATUALIZAR INFORMAÇÕES</string>
+    <string name="environment_main_synchronize_prototipe">SINCRONIZAR PROTÓTIPO</string>
 
     <string name="environment_main_no_internet_text">Falha ao carregar dados. Verifique sua conexão com a internet.</string>
 
@@ -238,6 +239,8 @@
     <string name="temperature_good">Bom</string>
     <string name="temperature_less">Abaixo</string>
     <string name="temperature_more">Acima</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
 
