@@ -23,7 +23,6 @@ import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
 import com.queirozzzzzzzzzz.estufasemestufa.utils.NetworkUtils
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
 import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.DataViewModel
-import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.PrototypeViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,11 +31,9 @@ import kotlinx.coroutines.withContext
 class EnvironmentMainFragment : Fragment() {
     private var _binding: FragmentEnvironmentMainBinding? = null
     private val binding get() = _binding!!
-    private lateinit var prototypeViewModel: PrototypeViewModel
     private lateinit var dataViewModel: DataViewModel
     private lateinit var plantRepository: PlantRepository
     private var isRefreshing = false
-    private var isSynchronizing = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,8 +51,6 @@ class EnvironmentMainFragment : Fragment() {
 
         return binding.root
     }
-
-
 
     private fun refreshData() {
         if(isRefreshing) return

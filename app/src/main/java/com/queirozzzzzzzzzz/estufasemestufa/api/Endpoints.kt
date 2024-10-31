@@ -21,5 +21,4 @@ interface Endpoints {
 
     @GET("/api/v1/status")
     suspend fun checkLogin(): Response<ResponseBody>
-
 }

@@ -7,6 +7,7 @@ import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.JsonSyntaxException
 import com.queirozzzzzzzzzz.estufasemestufa.api.Service
+import com.queirozzzzzzzzzz.estufasemestufa.data.Preferences
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
@@ -24,6 +25,10 @@ class Data {
                             gson.fromJson(responseString, JsonObject::class.java)
                         } ?: JsonObject()
                     } else {
+                        if ( res.code() == 404 ) {
+                            Preferences.setAuthCookie("")
+                        }
+
                         Log.e("DATA FETCH ERROR", res.errorBody()?.string() ?: "Unknown error")
                         JsonObject()
                     }

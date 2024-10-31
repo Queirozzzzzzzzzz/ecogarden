@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.queirozzzzzzzzzz.estufasemestufa.R
 import com.queirozzzzzzzzzz.estufasemestufa.data.Preferences
@@ -18,6 +19,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.repository.PictureRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.TaskRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.TimetableRepository
+import com.queirozzzzzzzzzz.estufasemestufa.ui.auth.LoginActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentCreateTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentEditTaskFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentGalleryFragment
@@ -28,18 +30,25 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.home.HomeActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentActivity
 import com.queirozzzzzzzzzz.estufasemestufa.ui.manageEnvironment.ManageEnvironmentViewModel
+import com.queirozzzzzzzzzz.estufasemestufa.utils.NetworkUtils
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
+import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.AccountViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class EnvironmentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnvironmentBinding
     private lateinit var manageEnvironmentViewModel: ManageEnvironmentViewModel
     private lateinit var viewModel: EnvironmentViewModel
+    private val accountViewModel: AccountViewModel by lazy { ViewModelProvider(this)[AccountViewModel::class.java] }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEnvironmentBinding.inflate(layoutInflater)
         val view = binding.root
+
+        checkLogin()
 
         viewModel =
             EnvironmentViewModel(
@@ -59,6 +68,26 @@ class EnvironmentActivity : AppCompatActivity() {
         setEnvironment()
 
         setContentView(view)
+    }
+
+    private fun checkLogin() {
+        lifecycleScope.launch {
+            if (Preferences.getAuthCookie().isNullOrEmpty() ||isLoginExpired()) {
+                Preferences.setAuthCookie("")
+                val intent = Intent(this@EnvironmentActivity, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+    }
+
+    private suspend fun isLoginExpired(): Boolean = withContext(Dispatchers.IO) {
+        if(NetworkUtils.hasInternet(this@EnvironmentActivity)) {
+            !accountViewModel.checkLogin()
+        } else {
+            false
+        }
+
     }
 
     private fun setEnvironment() {

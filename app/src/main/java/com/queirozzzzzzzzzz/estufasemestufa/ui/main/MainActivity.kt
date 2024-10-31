@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadApp() {
         lifecycleScope.launch {
-            val intent = if (Preferences.getAuthCookie().isNullOrEmpty() ||isLoginExpired()) {
+            val intent = if (Preferences.getAuthCookie().isNullOrEmpty() || isLoginExpired()) {
                 Preferences.setAuthCookie("")
                 Intent(this@MainActivity, LoginActivity::class.java)
             } else {

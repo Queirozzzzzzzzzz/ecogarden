@@ -172,7 +172,6 @@
                     android:layout_marginStart="-5dp"
                     android:layout_marginBottom="@dimen/btn_margin"
                     android:gravity="center"
-                    android:onClick="synchronizePrototypeFragment"
                     android:orientation="horizontal">
 
                     <ImageView
