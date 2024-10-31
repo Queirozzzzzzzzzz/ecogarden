@@ -9,13 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.StringRes
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.JsonObject
 import com.queirozzzzzzzzzz.estufasemestufa.R
+import com.queirozzzzzzzzzz.estufasemestufa.data.Preferences
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentEnvironmentMainBinding
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.EnvironmentPlant
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Plant
@@ -23,6 +23,7 @@ import com.queirozzzzzzzzzz.estufasemestufa.repository.PlantRepository
 import com.queirozzzzzzzzzz.estufasemestufa.utils.NetworkUtils
 import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
 import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.DataViewModel
+import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.PrototypeViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,9 +32,11 @@ import kotlinx.coroutines.withContext
 class EnvironmentMainFragment : Fragment() {
     private var _binding: FragmentEnvironmentMainBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewmodel: DataViewModel
+    private lateinit var prototypeViewModel: PrototypeViewModel
+    private lateinit var dataViewModel: DataViewModel
     private lateinit var plantRepository: PlantRepository
     private var isRefreshing = false
+    private var isSynchronizing = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,13 +47,15 @@ class EnvironmentMainFragment : Fragment() {
 
         setElements()
 
-        viewmodel = ViewModelProvider(this)[DataViewModel::class.java]
+        dataViewModel = ViewModelProvider(this)[DataViewModel::class.java]
         plantRepository = PlantRepository(requireActivity().application)
 
         refreshData()
 
         return binding.root
     }
+
+
 
     private fun refreshData() {
         if(isRefreshing) return
@@ -65,7 +70,7 @@ class EnvironmentMainFragment : Fragment() {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val values = viewmodel.getNew()
+                val values = dataViewModel.getNew()
                 withContext(Dispatchers.Main) {
                     binding.ph.text = values.get("ph")?.takeUnless { it.isJsonNull }?.asString ?: "--"
                     binding.humidity.text = values.get("humidity")?.takeUnless { it.isJsonNull }?.asString ?: "--"
@@ -147,7 +152,11 @@ class EnvironmentMainFragment : Fragment() {
     }
 
     private fun getStringFromData(data: JsonObject, key: String): String {
-        return data.get(key)?.asString ?: "--"
+        val element = data.get(key)
+        return if (element != null && element.isJsonPrimitive && element.asJsonPrimitive.isString) {
+            element.asString} else {
+            "--"
+        }
     }
 
     enum class HumidityState(@StringRes private val resourceId: Int) {

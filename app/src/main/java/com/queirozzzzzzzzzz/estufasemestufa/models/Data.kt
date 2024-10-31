@@ -2,6 +2,7 @@ package com.queirozzzzzzzzzz.estufasemestufa.models
 
 import android.util.Log
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.JsonSyntaxException
@@ -12,6 +13,7 @@ import org.json.JSONObject
 
 class Data {
     private val service = Service().getService()
+    private val gson = GsonBuilder().serializeNulls().create()
 
     suspend fun getNew(): JsonObject {
         return withContext(Dispatchers.IO) {
@@ -19,7 +21,7 @@ class Data {
                 service.getNewData().let{ res ->
                     if (res.isSuccessful) {
                         res.body()?.string()?.let { responseString ->
-                            Gson().fromJson(responseString, JsonObject::class.java)
+                            gson.fromJson(responseString, JsonObject::class.java)
                         } ?: JsonObject()
                     } else {
                         Log.e("DATA FETCH ERROR", res.errorBody()?.string() ?: "Unknown error")

@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.lifecycleScope
 import com.queirozzzzzzzzzz.estufasemestufa.R
+import com.queirozzzzzzzzzz.estufasemestufa.data.Preferences
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.ActivityEnvironmentBinding
 import com.queirozzzzzzzzzz.estufasemestufa.repository.CompletedTaskRepository
 import com.queirozzzzzzzzzz.estufasemestufa.repository.EnvironmentRepository
@@ -22,7 +23,6 @@ import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.Environment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentGalleryFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentMainFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentManageTasksFragment
-import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentSynchronizePrototypeFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.environment.fragments.EnvironmentTasksHistoryFragment
 import com.queirozzzzzzzzzz.estufasemestufa.ui.home.HomeActivity
@@ -112,10 +112,6 @@ class EnvironmentActivity : AppCompatActivity() {
     fun editTaskFragment(view: View) {
         TemporaryData.selectedTaskId = view.tag.toString().toInt()
         startFragment(EnvironmentEditTaskFragment())
-    }
-
-    fun synchronizePrototypeFragment(view: View) {
-        startFragment(EnvironmentSynchronizePrototypeFragment())
     }
 
     fun deleteTask(view: View) {
