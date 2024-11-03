@@ -108,7 +108,7 @@
                     android:textStyle="bold" />
 
                 <Spinner
-                    android:id="@+id/humidity"
+                    android:id="@+id/soil_humidity"
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""
@@ -162,7 +162,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/temperature"
+                    android:id="@+id/air_temperature"
                     android:layout_width="@dimen/input_width"
                     android:layout_height="@dimen/input_height"
                     android:autofillHints=""

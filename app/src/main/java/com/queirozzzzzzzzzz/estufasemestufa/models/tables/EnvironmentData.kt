@@ -9,9 +9,9 @@ data class EnvironmentData(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id") var id: Int,
     @ColumnInfo(name = "date") var date: Long?,
-    @ColumnInfo(name = "humidity") var humidity: String?,
+    @ColumnInfo(name = "soil_humidity") var humidity: String?,
     @ColumnInfo(name = "ph") var ph: Int?,
     @ColumnInfo(name = "light_intensity") var lightIntensity: String?,
-    @ColumnInfo(name = "temperature") var temperature: Int?,
+    @ColumnInfo(name = "air_temperature") var temperature: Int?,
     @ColumnInfo(name = "environment_id") var environmentId: Int,
 )

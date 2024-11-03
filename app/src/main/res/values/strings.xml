@@ -116,7 +116,7 @@
     <string name="environment_main_soil_ph">pH</string>
     <string name="environment_main_soil_conductivity">Condutividade</string>
     <string name="environment_main_soil_salinity">Salinidade</string>
-    <string name="environment_main_soil_umidity">Umidade</string>
+    <string name="environment_main_soil_humidity">Umidade</string>
 
     <string name="environment_main_weather">TEMPO</string>
     <string name="environment_main_weather_temperature">Temperatura</string>
@@ -124,11 +124,11 @@
 
     <string name="environment_main_plant_light_duration">DURAÇÃO DA LUZ</string>
     <string name="environment_main_plant_light_intensity">INTENSIDADE DA LUZ</string>
-    <string name="environment_main_plant_umidity">UMIDADE</string>
+    <string name="environment_main_plant_soil_humidity">UMIDADE DO SOLO</string>
     <string name="environment_main_plant_ph" translatable="false">pH</string>
     <string name="environment_main_plant_soil_conductivity">CONDUTIVIDADE DO SOLO</string>
     <string name="environment_main_plant_soil_salinity">SALINIDADE DO SOLO</string>
-    <string name="environment_main_plant_temperature">TEMPERATURA</string>
+    <string name="environment_main_plant_air_temperature">TEMPERATURA</string>
 
     <string name="environment_main_refresh_data">ATUALIZAR INFORMAÇÕES</string>
     <string name="environment_main_synchronize_prototipe">SINCRONIZAR PROTÓTIPO</string>
@@ -139,7 +139,7 @@
     <string name="edit_plant_subtitle">EDITAR PLANTA</string>
 
     <string name="edit_plant_name">NOME</string>
-    <string name="edit_plant_humidity">UMIDADE</string>
+    <string name="edit_plant_humidity">UMIDADE DO SOLO</string>
     <string name="edit_plant_ph">pH</string>
     <string name="edit_plant_light_intensity">INTENSIDADE DA LUZ</string>
     <string name="edit_plant_light_duration">DURAÇÃO DA LUZ</string>
@@ -202,15 +202,21 @@
 
     <string-array name="light_intensity_array">
         <item>Forte</item>
-        <item>Normal</item>
+        <item>Moderada</item>
         <item>Fraca</item>
     </string-array>
 
+    <string name="light_intensity_low">Fraca</string>
+    <string name="light_intensity_medium">Moderada</string>
+    <string name="light_intensity_strong">Forte</string>
+
     <string-array name="humidity_array">
         <item>Úmido</item>
-        <item>Normal</item>
         <item>Seco</item>
     </string-array>
+
+    <string name="humidity_low">Seco</string>
+    <string name="humidity_high">Úmido</string>
 
     <string name="required_name">Nome é obrigatório!</string>
     <string name="plant_already_exists">Esta planta já foi criada!</string>

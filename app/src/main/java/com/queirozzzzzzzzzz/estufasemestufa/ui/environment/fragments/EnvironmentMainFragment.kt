@@ -15,7 +15,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.JsonObject
 import com.queirozzzzzzzzzz.estufasemestufa.R
-import com.queirozzzzzzzzzz.estufasemestufa.data.Preferences
 import com.queirozzzzzzzzzz.estufasemestufa.databinding.FragmentEnvironmentMainBinding
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.EnvironmentPlant
 import com.queirozzzzzzzzzz.estufasemestufa.models.tables.Plant
@@ -68,9 +67,33 @@ class EnvironmentMainFragment : Fragment() {
                 val values = dataViewModel.getNew()
                 withContext(Dispatchers.Main) {
                     binding.ph.text = values.get("ph")?.takeUnless { it.isJsonNull }?.asString ?: "--"
-                    binding.humidity.text = values.get("humidity")?.takeUnless { it.isJsonNull }?.asString ?: "--"
-                    binding.temperature.text = values.get("temperature")?.takeUnless { it.isJsonNull }?.asString ?: "--"
-                    binding.lightIntensity.text = values.get("light_intensity")?.takeUnless { it.isJsonNull }?.asString ?: "--"
+
+                    binding.soilHumidity.text = values.get("soil_humidity")?.takeUnless { it.isJsonNull }?.asString?.let{ humidityRawValue ->
+                        humidityRawValue.toIntOrNull()?.let { currentHumidityInt ->
+                            val humidityState = when {
+                                currentHumidityInt > 30 -> getString(R.string.humidity_high)
+                                currentHumidityInt < 30 -> getString(R.string.humidity_low)
+                                else -> ""
+                            }
+                            "$humidityState ($humidityRawValue)"
+                        } ?: humidityRawValue
+                    } ?: "--"
+
+                    binding.lightIntensity.text = values.get("light_intensity")?.takeUnless { it.isJsonNull }?.asString?.let { lightIntensityRawValue ->
+                        lightIntensityRawValue.toDoubleOrNull()?.let { currentLightIntensityDouble ->
+                            val intensityState = when {
+                                currentLightIntensityDouble < 3 -> getString(R.string.light_intensity_low)
+                                currentLightIntensityDouble in 3.0..7.0 -> getString(R.string.light_intensity_medium)
+                                currentLightIntensityDouble > 7 -> getString(R.string.light_intensity_strong)
+                                else -> ""
+                            }
+                            "$intensityState ($lightIntensityRawValue)"
+                        } ?: lightIntensityRawValue
+                    } ?: "--"
+
+                    binding.airTemperature.text = values.get("air_temperature")?.takeUnless { it.isJsonNull }?.asString?.let { airTemperatureValue ->
+                        if (airTemperatureValue != "--") "$airTemperatureValue °C" else airTemperatureValue
+                    } ?: "--"
 
                     setPlants(values)
                 }
@@ -131,16 +154,16 @@ class EnvironmentMainFragment : Fragment() {
     private fun getEnvironmentPlants(plants: List<Plant>, data: JsonObject): List<EnvironmentPlant> {
         return plants.map { plant ->
             with(plant) {
-                val currentHumidity = getStringFromData(data, "humidity")
+                val currentSoilHumidity = getStringFromData(data, "soil_humidity")
                 val currentLightIntensity = getStringFromData(data, "light_intensity")
                 val currentPh = getStringFromData(data, "ph")
-                val currentTemperature = getStringFromData(data, "temperature")
+                val currentAirTemperature = getStringFromData(data, "air_temperature")
 
                 EnvironmentPlant(name = name,
-                    light_intensity = evaluateLightIntensity(lightIntensity!!, currentLightIntensity),
-                    humidity = evaluateHumidity(humidity!!, currentHumidity),
-                    ph = evaluatePh(ph!!, currentPh),
-                    temperature = evaluateTemperature(temperature!!, currentTemperature)
+                    light_intensity = (lightIntensity?.let { evaluateLightIntensity(it, currentLightIntensity) } ?: getString(R.string.environment_plant_undefined)),
+                    soil_humidity = (soilHumidity?.let { evaluateHumidity(it, currentSoilHumidity) } ?: getString(R.string.environment_plant_undefined)),
+                    ph = (ph?.let { evaluatePh(it, currentPh) } ?: getString(R.string.environment_plant_undefined)),
+                    air_temperature = (airTemperature?.let { evaluateTemperature(it, currentAirTemperature) } ?: getString(R.string.environment_plant_undefined))
                 )
             }
         }
@@ -148,17 +171,13 @@ class EnvironmentMainFragment : Fragment() {
 
     private fun getStringFromData(data: JsonObject, key: String): String {
         val element = data.get(key)
-        return if (element != null && element.isJsonPrimitive && element.asJsonPrimitive.isString) {
-            element.asString} else {
-            "--"
-        }
+        return if (element != null) { element.asString } else { "--" }
     }
 
     enum class HumidityState(@StringRes private val resourceId: Int) {
         UNDEFINED(R.string.environment_plant_undefined),
         GOOD(R.string.humidity_good),
-        BAD(R.string.humidity_bad),
-        VERY_BAD(R.string.humidity_very_bad);
+        BAD(R.string.humidity_bad);
 
         fun asString(context: Context): String {
             return context.getString(resourceId)
@@ -199,33 +218,43 @@ class EnvironmentMainFragment : Fragment() {
     }
 
     private fun evaluateHumidity(plantHumidity: String, currentHumidity: String): String {
-        val state = when (plantHumidity to currentHumidity) {
-            "Úmido" to "Normal", "Seco" to "Normal", "Normal" to "Seco","Normal" to "Úmido", "Seco" to "Úmido" -> HumidityState.BAD
-            "Úmido" to "Seco" -> HumidityState.VERY_BAD
-            else -> when (currentHumidity) {
-                plantHumidity -> HumidityState.GOOD
-                else -> HumidityState.UNDEFINED
-            }
+        val currentHumidityInt = currentHumidity.toIntOrNull() ?: return getString(R.string.environment_plant_undefined)
+
+        val humidityState = when {
+            currentHumidityInt > 30 -> getString(R.string.humidity_high)
+            currentHumidityInt < 30 -> getString(R.string.humidity_low)
+            else -> HumidityState.UNDEFINED
         }
+
+        val state = if (plantHumidity == humidityState) {
+            HumidityState.GOOD
+        } else {
+            HumidityState.BAD
+        }
+
         return state.asString(requireContext())
     }
 
     private fun evaluateLightIntensity(plantLightIntensity: String, currentLightIntensity: String): String {
-        val state = when (plantLightIntensity to currentLightIntensity) {
-            "Forte" to "Normal", "Fraca" to "Normal", "Normal" to "Fraca", "Normal" to "Forte", "Fraca" to "Forte" -> LightIntensityState.BAD
-            "Forte" to "Fraca" -> LightIntensityState.VERY_BAD
-            else -> when (currentLightIntensity) {
-                plantLightIntensity -> LightIntensityState.GOOD
-                else -> LightIntensityState.UNDEFINED
-            }
+        val currentLightIntensityDouble = currentLightIntensity.toDoubleOrNull() ?: return getString(R.string.environment_plant_undefined)
+
+        val intensityState = when {
+            currentLightIntensityDouble < 3 -> getString(R.string.light_intensity_low)
+            currentLightIntensityDouble in 3.0..7.0 -> getString(R.string.light_intensity_medium)
+            else -> getString(R.string.light_intensity_strong)
         }
+
+        val state = if (plantLightIntensity == intensityState) {
+            LightIntensityState.GOOD
+        } else {
+            LightIntensityState.BAD
+        }
+
         return state.asString(requireContext())
     }
 
-
-
-    private fun evaluatePh(plantPh:Int, currentPh: String): String {
-        val currentPhInt = currentPh.toIntOrNull() ?: return getString(R.string.environment_plant_undefined) // Handle invalid currentPh
+    private fun evaluatePh(plantPh: Int, currentPh: String): String {
+        val currentPhInt = currentPh.toIntOrNull() ?: return getString(R.string.environment_plant_undefined)
 
         val state = when {
             plantPh == currentPhInt -> PhState.GOOD
@@ -238,8 +267,8 @@ class EnvironmentMainFragment : Fragment() {
         return "${state.asString(requireContext())} (${if (difference > 0) "+" else ""}$difference)"
     }
 
-    private fun evaluateTemperature(plantTemperature: Int, currentTemperature: String): String {
-        val currentTemperatureInt = currentTemperature.toIntOrNull() ?: return getString(R.string.environment_plant_undefined) // Handle invalid currentTemperature
+    private fun evaluateTemperature(plantTemperature: Double, currentTemperature: String): String {
+        val currentTemperatureInt = currentTemperature.toDoubleOrNull() ?: return getString(R.string.environment_plant_undefined)
 
         val state = when {
             plantTemperature == currentTemperatureInt -> TemperatureState.GOOD
@@ -249,6 +278,6 @@ class EnvironmentMainFragment : Fragment() {
         }
 
         val difference = currentTemperatureInt - plantTemperature
-        return "${state.asString(requireContext())} (${if (difference > 0) "+" else ""}$difference)"
+        return "${state.asString(requireContext())} (${if (difference > 0) "+" else ""}$difference °C)"
     }
 }

@@ -35,18 +35,18 @@ class PlantRepository
         suspend fun updatePlant(plant: Plant) {
             val id = plant.id
             val name = plant.name
-            val humidity = plant.humidity
+            val soilHumidity = plant.soilHumidity
             val ph = plant.ph
             val lightIntensity = plant.lightIntensity
-            val temperature = plant.temperature
+            val airTemperature = plant.airTemperature
 
             plantDao.updatePlant(
                 id,
                 name,
-                humidity,
+                soilHumidity,
                 ph,
                 lightIntensity,
-                temperature,
+                airTemperature,
             )
         }
 

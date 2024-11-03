@@ -12,9 +12,9 @@ class EnvironmentPlantsAdapter(private val environmentPlants: List<EnvironmentPl
     class EnvironmentPlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val plantNameTextView: TextView = itemView.findViewById(R.id.plant_name)
         val lightIntensityTextView: TextView = itemView.findViewById(R.id.plant_light_intensity)
-        val humidityTextView: TextView = itemView.findViewById(R.id.plant_humidity)
+        val soilHumidityTextView: TextView = itemView.findViewById(R.id.plant_soil_humidity)
         val phTextView: TextView = itemView.findViewById(R.id.plant_ph)
-        val temperatureTextView: TextView = itemView.findViewById(R.id.plant_temperature)
+        val airTemperatureTextView: TextView = itemView.findViewById(R.id.plant_air_temperature)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EnvironmentPlantViewHolder {
@@ -27,9 +27,9 @@ class EnvironmentPlantsAdapter(private val environmentPlants: List<EnvironmentPl
         val environmentPlant = environmentPlants[position]
         holder.plantNameTextView.text = environmentPlant.name
         holder.lightIntensityTextView.text = environmentPlant.light_intensity
-        holder.humidityTextView.text = environmentPlant.humidity
+        holder.soilHumidityTextView.text = environmentPlant.soil_humidity
         holder.phTextView.text = environmentPlant.ph
-        holder.temperatureTextView.text = environmentPlant.temperature
+        holder.airTemperatureTextView.text = environmentPlant.air_temperature
     }
 
     override fun getItemCount(): Int = environmentPlants.size

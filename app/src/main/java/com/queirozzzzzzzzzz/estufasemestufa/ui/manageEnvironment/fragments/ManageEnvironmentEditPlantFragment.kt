@@ -56,10 +56,10 @@ class ManageEnvironmentEditPlantFragment : Fragment() {
 
         plant.let {
             binding.name.setText(it.name)
-            binding.humidity.setSelection(resources.getStringArray(R.array.humidity_array).indexOf(it.humidity))
+            binding.soilHumidity.setSelection(resources.getStringArray(R.array.humidity_array).indexOf(it.soilHumidity))
             it.ph?.let { it1 -> binding.ph.setText(it1.toString()) }
             binding.lightIntensity.setSelection(resources.getStringArray(R.array.light_intensity_array).indexOf(it.lightIntensity))
-            it.temperature?.let { binding.temperature.setText(it.toString()) }
+            it.airTemperature?.let { binding.airTemperature.setText(it.toString()) }
         }
     }
 
@@ -93,9 +93,9 @@ class ManageEnvironmentEditPlantFragment : Fragment() {
         val adapter =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, humidityList)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.humidity.adapter = adapter
+        binding.soilHumidity.adapter = adapter
 
-        binding.humidity.onItemSelectedListener =
+        binding.soilHumidity.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
@@ -115,7 +115,7 @@ class ManageEnvironmentEditPlantFragment : Fragment() {
 
     private fun savePlant() {
         val editedPlant =
-            Plant(plantId, binding.name.text.toString(), binding.humidity.selectedItem.toString(), binding.ph.text.toString().toIntOrNull(), binding.lightIntensity.selectedItem.toString(), binding.temperature.text.toString().toIntOrNull(), 0)
+            Plant(plantId, binding.name.text.toString(), binding.soilHumidity.selectedItem.toString(), binding.ph.text.toString().toIntOrNull(), binding.lightIntensity.selectedItem.toString(), binding.airTemperature.text.toString().toDoubleOrNull(), 0)
         val plants = TemporaryManageEnvironmentData.plants?.toMutableList()
         val index = plants?.indexOfFirst { it.name == TemporaryManageEnvironmentData.selectedPlant }
         if (index != null) {

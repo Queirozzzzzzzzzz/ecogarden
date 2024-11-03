@@ -43,19 +43,19 @@ class ManageEnvironmentNewPlantFragment : Fragment() {
     }
 
     var lightIntensity: String = ""
-    var humidity: String = ""
+    var soilHumidity: String = ""
 
     private fun createPlant() {
         val name = binding.name.text.toString()
         val ph = binding.ph.text.toString().toIntOrNull()
-        val temperature = binding.temperature.text.toString().toIntOrNull()
+        val airTemperature = binding.airTemperature.text.toString().toDoubleOrNull()
 
         if (name.isEmpty()) {
             Toast.makeText(requireContext(), R.string.required_name, Toast.LENGTH_SHORT).show()
             return
         }
 
-        val plant = Plant(0, name, humidity, ph, lightIntensity, temperature, 0)
+        val plant = Plant(0, name, soilHumidity, ph, lightIntensity, airTemperature, 0)
         val plants = TemporaryManageEnvironmentData.plants?.toMutableList()
         if (plant in plants!!) {
             Toast.makeText(requireContext(), R.string.plant_already_exists, Toast.LENGTH_SHORT)
@@ -98,9 +98,9 @@ class ManageEnvironmentNewPlantFragment : Fragment() {
         val adapter =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, humidityList)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.humidity.adapter = adapter
+        binding.soilHumidity.adapter = adapter
 
-        binding.humidity.onItemSelectedListener =
+        binding.soilHumidity.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
@@ -109,7 +109,7 @@ class ManageEnvironmentNewPlantFragment : Fragment() {
                     id: Long,
                 ) {
                     val selectedHumidity = parent?.getItemAtPosition(position).toString()
-                    humidity = selectedHumidity
+                    soilHumidity = selectedHumidity
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {

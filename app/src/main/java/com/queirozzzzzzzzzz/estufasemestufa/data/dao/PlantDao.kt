@@ -21,15 +21,15 @@ interface PlantDao {
     suspend fun insertPlant(plant: Plant)
 
     @Query(
-        "UPDATE plant SET name = :name, humidity = :humidity, ph = :ph, light_intensity = :lightIntensity, temperature = :temperature WHERE id = :id;",
+        "UPDATE plant SET name = :name, soil_humidity = :soilHumidity, ph = :ph, light_intensity = :lightIntensity, air_temperature = :airTemperature WHERE id = :id;",
     )
     suspend fun updatePlant(
         id: Int,
         name: String,
-        humidity: String?,
+        soilHumidity: String?,
         ph: Int?,
         lightIntensity: String?,
-        temperature: Int?,
+        airTemperature: Double?,
     )
 
     @Query("DELETE FROM plant WHERE id = :id;")

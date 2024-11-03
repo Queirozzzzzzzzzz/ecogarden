@@ -58,19 +58,19 @@
             android:textSize="@dimen/text_size" />
 
         <TextView
-            android:id="@+id/plant_humidity_title"
+            android:id="@+id/plant_soil_humidity_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_top_margin"
             android:background="@drawable/round_rectangle"
             android:padding="@dimen/default_background_color_padding"
-            android:text="@string/environment_main_plant_umidity"
+            android:text="@string/environment_main_plant_soil_humidity"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text_size"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/plant_humidity"
+            android:id="@+id/plant_soil_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_small_margin"
@@ -98,19 +98,19 @@
             android:textSize="@dimen/text_size" />
 
         <TextView
-            android:id="@+id/plant_temperature_title"
+            android:id="@+id/plant_air_temperature_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_top_margin"
             android:background="@drawable/round_rectangle"
             android:padding="@dimen/default_background_color_padding"
-            android:text="@string/environment_main_plant_temperature"
+            android:text="@string/environment_main_plant_air_temperature"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text_size"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/plant_temperature"
+            android:id="@+id/plant_air_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_small_margin"

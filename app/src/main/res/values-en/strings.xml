@@ -101,7 +101,7 @@
     <string name="environment_main_soil_ph">pH</string>
     <string name="environment_main_soil_conductivity">Conductivity</string>
     <string name="environment_main_soil_salinity">Salinity</string>
-    <string name="environment_main_soil_umidity">Humidity</string>
+    <string name="environment_main_soil_humidity">Humidity</string>
 
     <string name="environment_main_weather">WEATHER</string>
     <string name="environment_main_weather_temperature">Temperature</string>
@@ -109,10 +109,10 @@
 
     <string name="environment_main_plant_light_duration">LIGHT DURATION</string>
     <string name="environment_main_plant_light_intensity">LIGHT INTENSITY</string>
-    <string name="environment_main_plant_umidity">HUMIDITY</string>
+    <string name="environment_main_plant_soil_humidity">SOIL HUMIDITY</string>
     <string name="environment_main_plant_soil_conductivity">SOIL CONDUCTIVITY</string>
     <string name="environment_main_plant_soil_salinity">SOIL SALINITY</string>
-    <string name="environment_main_plant_temperature">TEMPERATURE</string>
+    <string name="environment_main_plant_air_temperature">TEMPERATURE</string>
 
     <string name="environment_main_refresh_data">REFRESH INFO</string>
     <string name="environment_main_synchronize_prototipe">SYNCHRONIZE PROTOTIPE</string>
@@ -123,7 +123,7 @@
     <string name="edit_plant_subtitle">EDIT PLANT</string>
 
     <string name="edit_plant_name">NAME</string>
-    <string name="edit_plant_humidity">HUMIDITY</string>
+    <string name="edit_plant_humidity">SOIL HUMIDITY</string>
     <string name="edit_plant_ph">pH</string>
     <string name="edit_plant_light_intensity">LIGHT INTENSITY</string>
     <string name="edit_plant_light_duration">LIGHT DURATION</string>
@@ -189,14 +189,21 @@
     <string-array name="light_intensity_array">
         <item>Strong</item>
         <item>Medium</item>
-        <item>Weak</item>
+        <item>Low</item>
     </string-array>
+
+    <string name="light_intensity_low">Low</string>
+    <string name="light_intensity_medium">Medium</string>
+    <string name="light_intensity_strong">Strong</string>
+
 
     <string-array name="humidity_array">
         <item>Wet</item>
-        <item>Normal</item>
         <item>Dry</item>
     </string-array>
+
+    <string name="humidity_low">Dry</string>
+    <string name="humidity_high">Wet</string>
 
     <string name="required_name">Name is required!</string>
     <string name="plant_already_exists">This plant has already been created!</string>
