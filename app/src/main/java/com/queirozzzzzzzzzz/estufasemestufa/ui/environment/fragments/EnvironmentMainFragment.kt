@@ -24,6 +24,9 @@ import com.queirozzzzzzzzzz.estufasemestufa.utils.TemporaryData
 import com.queirozzzzzzzzzz.estufasemestufa.viewmodel.DataViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -33,6 +36,8 @@ class EnvironmentMainFragment : Fragment() {
     private lateinit var dataViewModel: DataViewModel
     private lateinit var plantRepository: PlantRepository
     private var isRefreshing = false
+    private var refreshJob: Job? = null
+    private var clickedRefresh: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,12 +51,43 @@ class EnvironmentMainFragment : Fragment() {
         dataViewModel = ViewModelProvider(this)[DataViewModel::class.java]
         plantRepository = PlantRepository(requireActivity().application)
 
-        refreshData()
+        refreshData(false)
 
         return binding.root
     }
 
-    private fun refreshData() {
+    override fun onResume() {
+        super.onResume()
+        startDataRefresh()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        stopDataRefresh()
+    }
+
+    private fun startDataRefresh() {
+        refreshJob?.cancel()
+
+        refreshJob = lifecycleScope.launch {
+            while (isActive) {
+                if (clickedRefresh) {
+                    clickedRefresh = false
+                } else {
+                    refreshData(true)
+                }
+
+                delay(5000)
+            }
+        }
+    }
+
+    private fun stopDataRefresh(){
+        refreshJob?.cancel()
+        refreshJob = null
+    }
+
+    private fun refreshData(isAutomatic: Boolean) {
         if(isRefreshing) return
 
         if(!NetworkUtils.hasInternet(this.requireContext())) {
@@ -60,7 +96,9 @@ class EnvironmentMainFragment : Fragment() {
         }
         binding.noInternetText.visibility = View.GONE
 
-        showLoadingDialog()
+        if(!isAutomatic) {
+            showLoadingDialog()
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -104,7 +142,9 @@ class EnvironmentMainFragment : Fragment() {
                 }
             } finally {
                 withContext(Dispatchers.Main) {
-                    hideLoadingDialog()
+                    if(!isAutomatic){
+                        hideLoadingDialog()
+                    }
                 }
             }
         }
@@ -128,7 +168,8 @@ class EnvironmentMainFragment : Fragment() {
         binding.headerTitle.text = TemporaryData.selectedEnvironmentName
 
         binding.refreshDataBtn.setOnClickListener {
-            refreshData()
+            clickedRefresh = true
+            refreshData(false)
         }
     }
 
